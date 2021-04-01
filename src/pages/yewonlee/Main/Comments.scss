@@ -1,0 +1,69 @@
+@import "../index.scss";
+
+		/*comments*/
+		.comments-box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			border-top: $main-border;
+		}
+		.comments-box {
+			input {
+				width: 100%;
+				height: 55px;
+				padding: 10px;
+				border-style: none;
+			}
+
+			button {
+				width: 70px;
+				border-style: none;
+				background-color: white;
+				color: rgba(22, 150, 247, 0.3); /*opacity는 모든 요소에 적용*/
+				cursor: not-allowed;
+			}
+
+			#comments-button-enabled {
+				color: $main-button-color;
+				cursor: pointer;
+			}
+
+			#comments-button-disabled {
+				color: rgba(22, 150, 247, 0.3);
+				cursor: not-allowed;
+			}
+		}
+
+		/*comments-list*/
+		.comments-list {
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			padding: 0px 10px 5px 10px;
+			font-size: $main-font-size;
+
+			.each-comment {
+				position: relative;
+				margin-bottom: 5px;
+
+				.comment-icon-button {
+					display: none;
+					margin-left: 5px;
+					padding: 0;
+					border: none;
+					background-color: transparent;
+					cursor: pointer;
+				}
+
+				#delete-button {
+					position: absolute;
+					right: 20px;
+				}
+
+				#heart-button {
+					position: absolute;
+					right: 0;
+				}
+			}
+		}
