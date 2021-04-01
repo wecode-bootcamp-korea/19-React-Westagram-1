@@ -48,27 +48,6 @@
             }
         }
 
-        li {
-            display: flex;
-            padding: 0.5rem 0;
-            justify-content: space-between;
-            align-items: center;
-
-            div {
-                width: 70%;
-
-                span:last-child {
-                    font-size: 0.75rem;
-                    color: $gray;
-                }
-            }
-
-            img {
-                width: 2rem;
-                border-radius: 50%;
-            }
-        }
-
         .recommend-for-user {
             padding-bottom: 0.625rem;
 
