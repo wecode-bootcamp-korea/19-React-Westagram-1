@@ -1,4 +1,4 @@
-import  { Component } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import './Login.scss';
@@ -8,35 +8,49 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-          backgroundColor: '#0094f64b'
+            backgroundColor: '#0094f64b',
+            id: "",
+            pw: "",
+            buttonOn:false
         };
     }
 
     goToMain = () => {
-        this.props.history.push('/main');
+        this.props.history.push('/maindh')
     }
 
-    handleColor = () => {
+    handleIdInput = (event) => {
         this.setState({
-        backgroundColor: '#0094f6'
+            id: event.target.value,
+        })
+    }
+
+    handlePwInput = (event) => {
+        this.setState({
+            pw: event.target.value
         })
     }
 
     render() { 
+
         return ( 
-            <body>
+            <>
                 <div className="login-wrap">
                     <h1 className="title">Westagram</h1>
                     <div className="inner-wrap">
-                        <input className="id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-                        <input className="password" type="password" placeholder="비밀번호" />
-                        <button style={{ backgroundColor: this.state.backgroundColor }} onClick={this.handleColor}>로그인</button>
+                        <input className="id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={this.handleIdInput} value={this.state.id}/>
+                        <input className="password" type="password" placeholder="비밀번호" onChange={this.handlePwInput} value={this.state.pw}/>
+                        <button className="on" style={{ backgroundColor: this.state.id.includes("@") && this.state.pw.length >= 5 ? '#0094f6' : this.state.backgroundColor}} onClick={this.goToMain}>로그인</button>
                         <p><Link to="/Main">비밀번호를 잊으셨나요?</Link></p>
                     </div>
                 </div>  
-            </body>
+            </>
          );
     }
 }
 
 export default withRouter(Login);
+
+//객체 구조 분해 할당
+
+//const { fontState} = this.state
