@@ -1,0 +1,71 @@
+// @import "../../styles/common.scss";
+@import "../styles/common.scss";
+
+.insta-story {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 1.875rem;
+    border: 1px solid $border;
+    border-radius: 0.1875rem;
+
+    .scroll-btn-wrap {
+        width: 38.38rem;
+        position: absolute;
+
+        button {
+            width: 1.563rem;
+            height: 1.563rem;
+            margin: 0.3125rem;
+            background-color: $white;
+            border: 0;
+            border-radius: 50%;
+            mix-blend-mode: screen;
+            box-shadow: rgba(100, 100, 111, 0.5) 0 0.4375rem 1.813rem 0;
+        }
+
+        .next-btn {
+            float: right;
+        }
+    }
+
+    ul {
+        display: flex;
+        overflow: auto;
+
+        li {
+            margin: 0 0.625rem;
+
+            .gradient-wrap {
+                width: 3.75rem;
+                height: 3.75rem;
+                margin-bottom: 0.3125rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                background: radial-gradient(circle at bottom left, #F58529 20%, #C42D91);
+
+                img {
+                    border-radius: 50%;
+                    width: 3.5rem;
+                    border: 2px solid $white;
+                }
+            }
+
+            p {
+                text-overflow: ellipsis;
+                max-width: 3.75rem;
+                overflow: hidden;
+                margin: 0;
+                font-size: 0.75rem;
+                letter-spacing: 0.1px;
+                text-align: center;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}

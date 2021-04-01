@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import "../styles/common.scss";
+
+.login {
+    @extend %flex-center;
+    width: 21.88rem;
+    margin: 3.125rem auto;
+    flex-direction: column;
+    border: 1px solid $border;
+    background-color: $white;
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .login-logo {
+        font-family: cursive, 'Lobster';
+        margin: 2.5rem 0;
+        font-size: 2.5rem;
+    }
+
+    .login-wrap {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        form {
+            display: grid;
+
+            .login-btn {
+                height: 2.5rem;
+                margin: 0.5rem 0;
+                border: 0;
+                border-radius: 0.3125rem;
+                background-color: $disabled;
+                color: $white;
+                font-weight: 700;
+                font-size: 0.9375rem;
+            }
+
+            .enabled-login-btn {
+                background-color: $enabled;
+                cursor: pointer;
+            }
+            
+            .disabled-login-btn {
+                background-color: $disabled;
+                cursor: default;
+            }
+        }
+
+        input {
+            height: 2.5rem;
+            margin: 0.1875rem 0px;
+            padding: 0.875rem 0.625rem 0.875rem 0.625rem;
+            background: $background;
+            border: 1px solid $border;
+            border-radius: 0.1875rem;
+
+            &:focus {
+                border: 1px solid #a8a8a8;
+            }
+
+            &::placeholder {
+                color: #ACACAC;
+            }
+        }
+
+        .find-password {
+            margin: 3.75rem 0 1.25rem 0;
+            color: #00376b;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .login {
+        background-color: $background;
+        border: 0;
+    }
+}

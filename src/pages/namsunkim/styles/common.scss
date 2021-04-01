@@ -1,0 +1,69 @@
+$background: #FAFAFA;
+$black: #000;
+$white: #fff;
+$enabled: #0095F6;
+$disabled: #B9DFFC;
+$border: #DBDBDB;
+$gray: #8e8e8e;
+
+%flex-center {
+	display: flex;
+	justify-content: center;
+    align-items: center
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+
+    &:link{
+        text-decoration: none;
+    }
+    
+    &:visited{
+        text-decoration: none;
+    }
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+input {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.black {
+    color: $black;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,92 @@
+// @import "../../styles/common.scss";
+@import "../styles/common.scss";
+
+.main-right {
+    width: 18.31rem;
+    position: fixed;
+    left: 55.44rem;
+    top: 5.5rem;
+    padding-left: 0.3125rem;
+    z-index: -1;
+
+    .account {
+        display: flex;
+        padding: 1.25rem 0;
+        align-items: center;
+
+        a {
+            color: $enabled;
+            font-size: 0.75rem;
+        }
+
+        img {
+            width: 3.5rem;
+            border-radius: 50%;
+        }
+
+        .id-wrap {
+            width: 100%;
+
+            span{
+                margin: 0 0.625rem;
+            }
+
+            a {
+                float: right;
+            }
+        }
+    }
+
+    .recommend-list {
+
+        span {
+            display: flex;
+            justify-content: space-between;
+
+            span:first-child {
+                color: $gray;
+            }
+        }
+
+        li {
+            display: flex;
+            padding: 0.5rem 0;
+            justify-content: space-between;
+            align-items: center;
+
+            div {
+                width: 70%;
+
+                span:last-child {
+                    font-size: 0.75rem;
+                    color: $gray;
+                }
+            }
+
+            img {
+                width: 2rem;
+                border-radius: 50%;
+            }
+        }
+
+        .recommend-for-user {
+            padding-bottom: 0.625rem;
+
+            a {
+                font-size: 0.75rem;
+            }
+        }
+
+        .follow {
+            color: $enabled;
+            font-size: 0.75rem;
+        }
+
+    }
+}
+
+@media (max-width: 1078px) {
+    .main-right {
+        display: none;
+    }
+}

@@ -1,0 +1,35 @@
+@import "../styles/common.scss";
+
+.reply-list{
+    padding: 0 1rem 0.75rem 1rem;
+}
+
+.add-comment {
+    height: 3.125rem;
+    display: flex;
+    padding: 0 0.9375rem;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $border;
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    input {
+        width: 85%;
+        border: 0;
+    }
+
+    .enabled-add-comment-btn {
+        border: 0;
+        background-color: $white;
+        color: $enabled;
+    }
+    .disabled-add-comment-btn {
+        border: 0;
+        background-color: $white;
+        color: $disabled;
+    }
+}
