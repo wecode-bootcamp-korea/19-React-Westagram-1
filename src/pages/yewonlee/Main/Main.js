@@ -21,9 +21,7 @@ class Main extends Component {
            
        })
     }
-
-    submitCommentLine = (e) => {
-        e.preventDefault();
+    setCommentLine = () => {
         this.setState({
             commentLine: [...this.state.commentLine, {text: this.state.commentValue, id: Math.random()*1000,}]
         });
@@ -33,6 +31,16 @@ class Main extends Component {
         })
     }
     
+    submitCommentLine = (e) => {
+        e.preventDefault();
+        this.setCommentLine();
+    }
+    
+    enterCommentLine = (e) => {
+        if (e.charCode === 13) {
+            this.setCommentLine();
+        }
+    }
     
     enableCommentsButton = () => {
         return( this.state.commentValue ? false : true );
@@ -42,19 +50,8 @@ class Main extends Component {
         return (this.state.commentValue ? "comments-button-enabled" : "comments-button-disabled");
     }
     
-    // enterComment = (e) => {
-    //     if(e.key === 13){
-          
-    //     }
-    // }
-  
+   
     render() {
-        // const eachComment = this.state.commentValue.map((val) => {
-        //     return (
-        //         <span id={val.key}>{val.comment}</span>
-        //     )
-        // });
-       
         return (
             <>
             <div className = "Main">
@@ -118,7 +115,7 @@ class Main extends Component {
                                 })}
                             </ul>
                             <div className="comments-box">
-                                <input value={this.state.commentValue}id="comments-input" onChange ={this.handleCommentValue} 
+                                <input onKeyPress={this.enterCommentLine} value={this.state.commentValue} id="comments-input" onChange ={this.handleCommentValue} 
                                 type="text" placeholder="댓글 달기..."/>
                                 <button onClick={this.submitCommentLine} type="submit" className="comments-button" value={this.state.commentInput} 
                                 id={this.changeCommentsButtonStyle()} disabled={this.enableCommentsButton()}>게시</button>
