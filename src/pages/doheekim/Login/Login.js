@@ -40,7 +40,7 @@ class Login extends Component {
                     <div className="inner-wrap">
                         <input className="id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={this.handleIdInput} value={this.state.id}/>
                         <input className="password" type="password" placeholder="비밀번호" onChange={this.handlePwInput} value={this.state.pw}/>
-                        <button className="on" style={{ backgroundColor: this.state.id.includes("@") && this.state.pw.length >= 5 ? '#0094f6' : this.state.backgroundColor}} onClick={this.goToMain}>로그인</button>
+                        <button style={{ backgroundColor: this.state.id.includes("@") && this.state.pw.length >= 5 ? '#0094f6' : this.state.backgroundColor}} onClick={this.goToMain}>로그인</button>
                         <p><Link to="/Main">비밀번호를 잊으셨나요?</Link></p>
                     </div>
                 </div>  

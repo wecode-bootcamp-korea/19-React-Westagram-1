@@ -1,0 +1,44 @@
+.feeds-header {
+    width:100%;
+    height:55px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .feeds-idwrap {
+        width:100%;
+        height:inherit;
+
+        ul{
+            width:22%;
+            height:inherit;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .mini-profile {
+                margin-left:20px;
+
+                img{
+                    width:30px;
+                    height:30px;
+                    border-radius: 50%;
+                }
+            }
+
+            .mini-id {
+                font-weight: 600;
+                font-size:16px;
+                margin-left:20px;
+                color:#000;
+            }
+        }
+    }
+
+    .more {
+        margin-right:20px;
+        font-size:15px;
+        cursor:pointer;
+    }
+
+}
