@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
-import Story from '../Story/Story';
+import StoryList from '../Story/StoryList';
 import Feed from '../Feed/Feed';
-import Recommend from '../Recommend/Recommend';
+import MainRight from '../MainRight/MainRight';
 import './Main.scss';
 
+const userId = localStorage.getItem('userId');
+
 export default class Main extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      userId: userId
+    }
+  }
 
   render() {
     return (
       <>
         <Nav />
-        <section className="main-feed">
+        <section className="main">
           <section className="feeds">
-            <Story />
+            <StoryList />
             <Feed />
           </section>
-          <Recommend />
+          <MainRight userId={userId} />
         </section>
       </>
     )

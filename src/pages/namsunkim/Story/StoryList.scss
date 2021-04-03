@@ -1,14 +1,14 @@
 @import '../../../styles/common.scss';
 @import '../styles/variable.scss';
 
-.insta-story {
+.storyList {
   @extend %flexCenter;
     padding: 1rem 0;
     margin-bottom: 1.875rem;
     border: 1px solid $border;
     border-radius: 0.1875rem;
 
-    .scroll-btn-wrap {
+    .scrollBtnWrap {
         width: 38.38rem;
         position: absolute;
 
@@ -24,7 +24,7 @@
             box-shadow: rgba(100, 100, 111, 0.5) 0 0.4375rem 1.813rem 0;
         }
 
-        .next-btn {
+        .nextBtn {
             float: right;
         }
     }

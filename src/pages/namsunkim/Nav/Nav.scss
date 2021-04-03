@@ -10,12 +10,12 @@ nav {
     }
 }
 
-.nav-bar {
+.navBar {
     height: 3.375rem;
     background-color: $white;
     border-bottom: 1px solid $border;
 
-    .navbar-wrap {
+    .navWrap {
         width: 58.44rem;
         height: 100%;
         display: flex;
@@ -37,10 +37,10 @@ nav {
             font-weight: 600;
         }
 
-        .search-wrap {
+        .searchWrap {
             position: relative;
 
-            .search-input {
+            .searchInput {
                 flex: 0 1 auto;
                 min-width: 7.813rem;
                 width: 13.44rem;
@@ -72,7 +72,7 @@ nav {
                 }
             }
 
-            .keyword-delete-btn {
+            .keywordDelBtn {
                 position: absolute;
                 right: 0.3125rem;
                 bottom: 0.3rem;
@@ -86,14 +86,14 @@ nav {
                 padding: 0px 0px 1px 1px;
             }
 
-            .search-result-wrap {
+            .searchResultWrap {
                 position: absolute;
                 width: 150%;
                 left: 50%;
                 margin: 0.9375rem 0;
                 transform:translateX(-50%);
 
-                .speech-bubble {
+                .speechBubble {
                     width: 0.9375rem;
                     height: 0.9375rem;
                     margin: -0.4375rem auto;
@@ -104,7 +104,7 @@ nav {
                                 rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
                 }
 
-                .search-result {
+                .searchResult {
                     position: relative;
                     padding: 0.5rem 1rem;
                     border-radius: 0.3125rem;
@@ -112,7 +112,7 @@ nav {
                     box-shadow: rgba(50, 50, 93, 0.25) 0 0.8125rem 1.688rem -0.3125rem,
                                 rgba(0, 0, 0, 0.3) 0 0.5rem 1rem -0.5rem;
 
-                    .search-list{
+                    .searchList{
                         span {
                             display: flex;
                         }
@@ -153,13 +153,13 @@ nav {
 
     }
     @media (max-width: 1078px) {
-        .navbar-wrap {
+        .navWrap {
             justify-content: space-evenly;
         }
     }
 
     @media (max-width: 768px) {
-        .search-wrap {
+        .searchWrap {
             display: none;
         }
     }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
 @import '../styles/variable.scss';
 
@@ -6,7 +6,7 @@ a, span {
     font-size: 0.875rem;
 }
 
-.main-feed {
+.main {
     width: 58.44rem;
     display: flex;
     margin: 0 auto;
@@ -18,25 +18,19 @@ a, span {
     justify-content: center;
 }
 
-.enabled-btn {
+.enabledBtn {
     color: $enabled;
     cursor: pointer;
 }
 
-.disabled-btn {
+.disabledBtn {
     color: $disabled;
     cursor: default;
 }
 
 @media (max-width: 1078px) {
-    .main-feed {
+    .main {
         justify-content: center;
     }
 
-}
-
-@media (max-width: 768px) {
-    .search-wrap {
-        display: none;
-    }
 }

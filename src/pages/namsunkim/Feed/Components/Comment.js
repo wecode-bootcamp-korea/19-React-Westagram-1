@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './oneReply.scss';
+import './Comment.scss';
 
-export default class OneReply extends Component {
+export default class Comment extends Component {
 
   render() {
     const { userName, comment, isLiked, likeFnc, deleteFnc, id } = this.props;
@@ -11,9 +11,9 @@ export default class OneReply extends Component {
         <li>
           <a href="#!" className="bold black">{userName}</a>
           <span>{comment}</span>
-          <i className="xi-close-min delete-reply pointer"
+          <i className="xi-close-min deleteComment pointer"
             onClick={() => deleteFnc(id)}></i>
-          <i className={'xi-heart' + (!isLiked ? '-o' : ' reply-like') + ' like-heart pointer'}
+          <i className={'xi-heart' + (!isLiked ? '-o' : ' likeComment') + ' likeHeart pointer'}
             onClick={() => likeFnc(id)}></i>
         </li>
       </>

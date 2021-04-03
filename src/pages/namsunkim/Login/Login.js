@@ -37,12 +37,7 @@ export default class Login extends Component {
 
   goToMain = () => {
     const { text, password, isEnable } = this.state;
-
     (text && password) && this.props.history.push('/mainns');
-
-    // if (text && password) {
-    //   this.props.history.push('/mainns');
-    // }
   }
 
   render() {
@@ -51,16 +46,16 @@ export default class Login extends Component {
     return (
       <>
         <section className="login">
-          <h1 className="login-logo">Westagram</h1>
-          <div className="login-wrap">
+          <h1 className="logo">Westagram</h1>
+          <div className="loginWrap">
             <form action="#!" onKeyUp={changeValue}>
-              <input className="id-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-              <input className="pw-input" type="password" placeholder="비밀번호" />
-              <button className={'login-btn ' + (isEnable ? 'enabled-login-btn' : 'disabled-login-btn')}
+              <input className="idInput" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
+              <input className="pwInput" type="password" placeholder="비밀번호" />
+              <button className={'loginBtn ' + (isEnable ? 'enabledBtn' : 'disabledBtn')}
                 onClick={goToMain}
                 readOnly>로그인</button>
             </form>
-            <a href="#!" className="find-password">비밀번호를 잊으셨나요?</a>
+            <a href="#!" className="findPassword">비밀번호를 잊으셨나요?</a>
           </div>
         </section>
       </>

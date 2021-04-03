@@ -25,16 +25,16 @@ export default class NavProfile extends Component {
     const { profileClick } = this;
     return (
       <>
-        <div className="profile-wrap">
+        <div className="profileWrap">
           <a href="#!" onClick={profileClick}>
-            <img alt="profile" className="profile-img"
+            <img alt="profile" className="profileImg"
               src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/21042108_123408488308642_162793317946359808_a.jpg?tp=1&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_ohc=dNYrSrarQiIAX-G37Vy&amp;ccb=7-4&amp;oh=11f32acd151a8b5da3c7d685ea00c444&amp;oe=607FAF16" />
           </a>
-          <div className={'profile-menu-wrap' + (!isProfileClick ? ' hidden' : '')}>
-            <div className="speech-bubble">
+          <div className={'profileMenuWrap' + (!isProfileClick ? ' hidden' : '')}>
+            <div className="speechBubble">
             </div>
-            <div className="profile-menu">
-              <ul className="profile-list bold">
+            <div className="profileMenu">
+              <ul className="profileList bold">
                 <li className="light">
                   <svg viewBox="0 0 32 32">
                     <path

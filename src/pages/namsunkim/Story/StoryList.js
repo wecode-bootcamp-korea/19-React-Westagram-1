@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import OneStory from './Components/oneStory';
-import './Story.scss';
+import Story from './Components/Story';
+import './StoryList.scss';
 
-export default class Story extends Component {
+export default class StoryList extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,7 +23,7 @@ export default class Story extends Component {
   }
 
   scroll = (direction) => {
-    const instaStoryUl = document.querySelector('.insta-story ul');
+    const instaStoryUl = document.querySelector('.storyList ul');
     let scrollAmount = 0;
 
     const slide = setInterval((e) => {
@@ -45,19 +45,19 @@ export default class Story extends Component {
     const { storyArr } = this.state;
     return (
       <>
-        <section className="insta-story">
-          <div className="scroll-btn-wrap">
-            <button className="prev-btn pointer" onClick={() => { this.scroll("left") }}>
+        <section className="storyList">
+          <div className="scrollBtnWrap">
+            <button className="prevBtn pointer" onClick={() => { this.scroll("left") }}>
               <i className="xi-angle-left-min"></i>
             </button>
-            <button className="next-btn pointer" onClick={() => { this.scroll("right") }}>
+            <button className="nextBtn pointer" onClick={() => { this.scroll("right") }}>
               <i className="xi-angle-right-min"></i>
             </button>
           </div>
           <ul>
             {storyArr.map((storyArr) => {
               return (
-                <OneStory
+                <Story
                   key={storyArr.id}
                   userName={storyArr.userName}
                   imgSrc={storyArr.imgSrc}

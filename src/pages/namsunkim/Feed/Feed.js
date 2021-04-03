@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FeedIcon from './Components/FeedIcon';
-import Reply from '../Reply/Reply';
+import CommentList from './Components/CommentList';
 import './Feed.scss';
 
 const profileUrlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/';
@@ -61,29 +61,29 @@ export default class Feed extends Component {
           feedArr.map((feedArr) => {
             return (
               <article className="feed" key={feedArr.id}>
-                <div className="feed-nav">
-                  <img alt={feedArr.userName + '님의 profile'} className="profile-img"
+                <div className="feedNav">
+                  <img alt={feedArr.userName + '님의 profile'} className="profileImg"
                     src={profileUrlPrefix + feedArr.profileImg} />
-                  <div className="id-wrap bold">
+                  <div className="idWrap bold">
                     <a href="#!" className="black">{feedArr.userName}</a>
                     <i className="xi-ellipsis-h"></i>
                   </div>
                 </div>
-                <img alt="feed-img" className="feed-img"
+                <img alt={feedArr.userName + '님의 feed image'} className="feedImg"
                   src={feedUrlPrefix + feedArr.feedImg}
                 />
-                <div className="feed-content">
+                <div className="feedContent">
                   <FeedIcon />
-                  <section className="like-list">
-                    <img className="profile-img"
+                  <section className="likeList">
+                    <img className="profileImg"
                       src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/18947565_448326618857685_8479464545633435648_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=m4X1SMYXvpMAX8nMy7e&ccb=7-4&oh=edf81851a6509c867b388fd009961a28&oe=60810516"
-                      alt="profile" />
+                      alt={feedArr.likeList[0] + '님의 profile'} />
                     <span>
                       <a href="#!" className="bold black">{feedArr.likeList[0]}</a>님
                       <a href="#!" className="bold black">외 {feedArr.likeList.length - 1}명</a>이 좋아합니다
                     </span>
                   </section>
-                  <section className="feed-article">
+                  <section className="feedArticle">
                     <span>
                       <a href="#!" className="bold black">{feedArr.userName}</a>
                       <span>{feedArr.content}</span>
@@ -92,7 +92,7 @@ export default class Feed extends Component {
                       <span>댓글 {feedArr.commentArr.length}개 모두 보기</span>
                     </p>
                   </section>
-                  <Reply commentArr={feedArr.commentArr} />
+                  <CommentList commentArr={feedArr.commentArr} />
                   {/* <Reply commentArr={feedArr.commentArr} addComment={this.addComment} id={feedArr.id} /> */}
                 </div>
               </article>

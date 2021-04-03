@@ -8,19 +8,19 @@ export default class Nav extends Component {
     return (
       <>
         <nav>
-          <div className="nav-bar">
-            <div className="navbar-wrap">
+          <div className="navBar">
+            <div className="navWrap">
               <Link to="/mainns">
                 <h1 className="logo">Westagram</h1>
               </Link>
-              <div className="search-wrap">
-                <input type="text" className="search-input" placeholder="검색" />
-                <button className="keyword-delete-btn hidden">x</button>
-                <div className="search-result-wrap hidden">
-                  <div className="speech-bubble">
+              <div className="searchWrap">
+                <input type="text" className="searchInput" placeholder="검색" />
+                <button className="keywordDelBtn hidden">x</button>
+                <div className="searchResultWrap hidden">
+                  <div className="speechBubble">
                   </div>
-                  <div className="search-result">
-                    <ul className="search-list bold">
+                  <div className="searchResult">
+                    <ul className="searchList bold">
                       <li>
                       </li>
                     </ul>

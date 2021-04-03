@@ -16,14 +16,14 @@
         text-decoration: none;
     }
 
-    .login-logo {
+    .logo {
         font-family: cursive, 'Lobster';
         font-weight: 600;
         margin: 2.5rem 0;
         font-size: 2.5rem;
     }
 
-    .login-wrap {
+    .loginWrap {
         width: 75%;
         display: flex;
         flex-direction: column;
@@ -32,7 +32,7 @@
         form {
             display: grid;
 
-            .login-btn {
+            .loginBtn {
                 height: 2.5rem;
                 margin: 0.5rem 0;
                 border: 0;
@@ -43,12 +43,12 @@
                 font-size: 0.9375rem;
             }
 
-            .enabled-login-btn {
+            .enabledBtn {
                 background-color: $enabled;
                 cursor: pointer;
             }
             
-            .disabled-login-btn {
+            .disabledBtn {
                 background-color: $disabled;
                 cursor: default;
             }
@@ -71,7 +71,7 @@
             }
         }
 
-        .find-password {
+        .findPassword {
             margin: 3.75rem 0 1.25rem 0;
             color: #00376b;
             text-align: center;

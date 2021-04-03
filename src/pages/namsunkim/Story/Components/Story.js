@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './oneStory.scss';
+import './Story.scss';
 
 const urlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/';
 

@@ -1,10 +1,10 @@
-@import '../styles/variable.scss';
+@import '../../styles/variable.scss';
 
-.reply-list{
+.commentList{
     padding: 0 1rem 0.75rem 1rem;
 }
 
-.add-comment {
+.addComment {
     height: 3.125rem;
     display: flex;
     padding: 0 0.9375rem;
@@ -22,12 +22,12 @@
         border: 0;
     }
 
-    .enabled-add-comment-btn {
+    .enabledBtn {
         border: 0;
         background-color: $white;
         color: $enabled;
     }
-    .disabled-add-comment-btn {
+    .disabledBtn {
         border: 0;
         background-color: $white;
         color: $disabled;

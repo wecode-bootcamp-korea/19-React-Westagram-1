@@ -1,6 +1,6 @@
 @import '../styles/variable.scss';
 
-.main-right {
+.mainRight {
     width: 18.31rem;
     position: fixed;
     left: 55.44rem;
@@ -23,7 +23,7 @@
             border-radius: 50%;
         }
 
-        .id-wrap {
+        .idWrap {
             width: 100%;
 
             span{
@@ -36,7 +36,7 @@
         }
     }
 
-    .recommend-list {
+    .recommendList {
 
         span {
             display: flex;
@@ -47,7 +47,7 @@
             }
         }
 
-        .recommend-for-user {
+        .recommendForUser {
             padding-bottom: 0.625rem;
 
             a {
@@ -64,7 +64,7 @@
 }
 
 @media (max-width: 1078px) {
-    .main-right {
+    .mainRight {
         display: none;
     }
 }

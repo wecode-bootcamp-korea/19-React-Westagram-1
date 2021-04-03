@@ -1,21 +1,21 @@
 @import '../../../styles/variable.scss';
 
-.profile-wrap {
+.profileWrap {
   padding-top: 0.3125rem;
   
-  .profile-img {
+  .profileImg {
       width: 1.375rem;
       border-radius: 50%;
   }
 
-  .profile-menu-wrap {
+  .profileMenuWrap {
       width: 14.38rem;
       position: absolute;
       margin: 1rem 0;
       right: 15%;
       z-index: 2;
 
-      .speech-bubble {
+      .speechBubble {
         position: absolute;
         right: 15%;
         width: 0.9375rem;
@@ -28,14 +28,14 @@
                     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     }
 
-      .profile-menu {
+      .profileMenu {
           position: relative;
           background-color: $white;
           border-radius: 0.3125rem;
           box-shadow: rgba(50, 50, 93, 0.25) 0 0.8125rem 1.688rem -0.3125rem, 
                       rgba(0, 0, 0, 0.3) 0 0.5rem 1rem -0.5rem;
 
-          .profile-list {
+          .profileList {
 
               svg {
                   width: 1rem;
