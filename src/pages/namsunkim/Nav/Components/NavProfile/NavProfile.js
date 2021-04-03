@@ -72,7 +72,9 @@ export default class NavProfile extends Component {
                     </path>
                   </svg>
                   <div>
-                    <a href="login.html" className="black">계정전환</a>
+                    <Link to="/loginns" className="black">
+                      계정전환
+                    </Link>
                   </div>
                 </li>
                 <Link to="/loginns" className="black">

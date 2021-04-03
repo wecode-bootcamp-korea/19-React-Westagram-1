@@ -9,7 +9,7 @@ export default class oneStory extends Component {
     return (
       <>
         <li>
-          <div className="gradient-wrap">
+          <div className="gradientWrap">
             <img src={urlPrefix + imgSrc}
               alt={userName + '님의 profile'} />
           </div>

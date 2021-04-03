@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import NavIcon from './Components/NavIcon/NavIcon';
+import Search from './Components/Search/Search';
 import './Nav.scss';
 
 export default class Nav extends Component {
@@ -13,20 +14,7 @@ export default class Nav extends Component {
               <Link to="/mainns">
                 <h1 className="logo">Westagram</h1>
               </Link>
-              <div className="searchWrap">
-                <input type="text" className="searchInput" placeholder="검색" />
-                <button className="keywordDelBtn hidden">x</button>
-                <div className="searchResultWrap hidden">
-                  <div className="speechBubble">
-                  </div>
-                  <div className="searchResult">
-                    <ul className="searchList bold">
-                      <li>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <Search />
               <NavIcon />
             </div>
           </div>
