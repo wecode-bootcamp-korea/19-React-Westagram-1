@@ -4,6 +4,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 1.5rem 0 1.5rem 0;
     border: 1px solid $border;
     border-radius: 0.1875rem;
 
@@ -16,6 +17,8 @@
 
         .profile-img {
             width: 2rem;
+            border-radius: 50%;
+            border: 1px solid $border;
         }
 
         .id-wrap {
@@ -32,6 +35,7 @@
     .feed-img {
         width: 38.31rem;
         height: 38.31rem;
+        object-fit: cover;
     }
 
     .feed-content {
@@ -41,23 +45,6 @@
             margin: 0;
             padding: 0;
             color: $gray;
-        }
-
-        .feed-icon {
-            padding: 0.3125rem 0.5rem;
-
-            svg {
-                margin: 0.5rem;
-
-                &:last-child {
-                    float: right;
-                }
-            }
-
-            .nav-icon {
-                width: 1.375rem;
-                height: 1.375rem;
-            }
         }
 
         .like-list {

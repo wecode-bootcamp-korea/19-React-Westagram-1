@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "userName": "dhdhdhtattoo",
+    "profileImg": "18947565_448326618857685_8479464545633435648_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=-JDsYIOOu_YAX-f6dhB&edm=ALlQn9MAAAAA&ccb=7-4&oh=a782b0a306650da44c4a50874ab381f8&oe=608BB2D6&_nc_sid=48a2a6",
+    "feedImg": "166777053_206041684187336_4989223059912724737_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=108&_nc_ohc=yfbpO0XekP0AX8Ucb-p&edm=AIQHJ4wAAAAA&ccb=7-4&oh=f370764c5b518fc7de28f5b0b5defed3&oe=608C4581&_nc_sid=7b02f1",
+    "content": "예약 가능합니다!",
+    "likeList": [
+      "lalalalala",
+      "djsafld",
+      "123123",
+      "dsafdas",
+      "idididididdd"
+    ],
+    "commentArr": [
+      {
+        "id": 1,
+        "userName": "ovenlee.tattoo",
+        "content": "도안 예뻐요!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "mealpoke",
+        "content": "짱귀욤",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "yeoni_drawing",
+        "content": "헐 ㅠㅠㅠㅠ",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "nshuushsh",
+    "profileImg": "137569325_262224128607980_7761895211496939916_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=BsB-i3NlwyQAX-sYUKa&edm=AIQHJ4wAAAAA&ccb=7-4&oh=bdedf735a0e96cbb5136178ac81219e6&oe=608AE377&_nc_sid=7b02f1",
+    "feedImg": "166753064_261086892340876_1057934777020654346_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=104&_nc_ohc=Wganc1Zx338AX8zzsfv&edm=AIQHJ4wAAAAA&ccb=7-4&oh=b84dbf2b576f0a9a076e21f3b2a67a8a&oe=608B103A&_nc_sid=7b02f1",
+    "content": "여행가고싶다",
+    "likeList": [
+      "hiwecode",
+      "wecode19",
+      "19wecode",
+      "wework",
+      "codingzzang",
+      "codingzzang",
+      "codingzzang",
+      "codingzzang"
+    ],
+    "commentArr": [
+      {
+        "id": 1,
+        "userName": "dksajfldka",
+        "content": "저도요ㅠ",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "userName": "nsunny0908",
+        "content": "코로나 언제 끝나..",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "alalalalalal",
+        "content": "여긴 어딘가용",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "sun__ny__",
+    "profileImg": "75595220_449911212597964_51984368595369984_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=dHO1JPtrPAcAX_eepgg&edm=AAeKFY8AAAAA&ccb=7-4&oh=145b450b012b9f881d26f3d71ab8dfc8&oe=608B87A3&_nc_sid=c982ba",
+    "feedImg": "166790139_744750786234310_6655608575455742728_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=u1rhGeTeA2cAX_aCbJ6&edm=AAeKFY8AAAAA&ccb=7-4&oh=1d5b724c6923ba12977c1e91d445c185&oe=608A701A&_nc_sid=c982ba",
+    "content": "Pink Gold💖",
+    "likeList": [
+      "babo",
+      "hiwework",
+      "kokoko2123"
+    ],
+    "commentArr": [
+      {
+        "id": 1,
+        "userName": "milktee",
+        "content": "우와아아앙",
+        "isLiked": true
+      }
+    ]
+  }
+]

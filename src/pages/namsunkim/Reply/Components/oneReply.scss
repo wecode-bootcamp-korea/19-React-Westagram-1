@@ -1,16 +1,20 @@
 li {
   span {
     margin: 0 0.3125rem;
-}
+  }
 
-.like-heart {
-    margin: 0.15rem 0.2rem 0.15rem 0rem;
-    float: right;
-    font-size: 0.85rem;
-}
+  .like-heart {
+      margin: 0.15rem 0.2rem 0.15rem 0rem;
+      float: right;
+      font-size: 0.85rem;
+  }
 
-.delete-reply {
-    float: right;
-    font-size: 1rem;
-}
+  .delete-reply {
+      float: right;
+      font-size: 1rem;
+  }
+
+  .reply-like {
+    color: #ed4956;
+  }
 }

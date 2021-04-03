@@ -28,7 +28,6 @@ export default class reply extends Component {
   }
 
   changeValue = (e) => {
-
     const { value } = e.target;
     this.setState(
       {
@@ -53,7 +52,6 @@ export default class reply extends Component {
   }
 
   addComment = (e) => {
-
     const { comment, commentArr } = this.state;
 
     if (comment) {
@@ -86,13 +84,16 @@ export default class reply extends Component {
     if (window.confirm('댓글을 삭제하시겠습니까?')) {
       this.setState({
         commentArr: commentArr.filter((comment) => comment.id !== id)
-      })
+      },
+        // () => { console.log(this.state.commentArr) }
+      )
     }
   }
 
 
   render() {
     const { comment, isEnable, commentArr } = this.state;
+    // const { commentArr, addComment, id } = this.props;
 
     return (
       <>
@@ -110,7 +111,6 @@ export default class reply extends Component {
               />
             )
           })}
-
         </ul>
         <section className="add-comment">
           <svg viewBox="0 0 48 48">
@@ -124,6 +124,7 @@ export default class reply extends Component {
           <input type="text" className="input-comment" placeholder="댓글 달기..." onChange={this.changeValue} value={comment} onKeyUp={this.changeValue} />
           <button className={isEnable ? 'enabled-add-comment-btn' : 'disabled-add-comment-btn'}
             disabled={!isEnable} onClick={this.addComment}>게시</button>
+          {/* disabled={!isEnable} onClick={() => { addComment(comment, id) }}>게시</button> */}
         </section>
       </>
     );

@@ -22,16 +22,35 @@ export default class Story extends Component {
       });
   }
 
+  scroll = (direction) => {
+    const instaStoryUl = document.querySelector('.insta-story ul');
+    let scrollAmount = 0;
+
+    const slide = setInterval((e) => {
+
+      if (direction === 'left') {
+        instaStoryUl.scrollLeft -= 15;
+      } else {
+        instaStoryUl.scrollLeft += 15;
+      }
+
+      scrollAmount += 5;
+      if (scrollAmount >= 100) {
+        window.clearInterval(slide);
+      }
+    }, 20);
+  }
+
   render() {
     const { storyArr } = this.state;
     return (
       <>
         <section className="insta-story">
           <div className="scroll-btn-wrap">
-            <button className="prev-btn pointer">
+            <button className="prev-btn pointer" onClick={() => { this.scroll("left") }}>
               <i className="xi-angle-left-min"></i>
             </button>
-            <button className="next-btn pointer">
+            <button className="next-btn pointer" onClick={() => { this.scroll("right") }}>
               <i className="xi-angle-right-min"></i>
             </button>
           </div>

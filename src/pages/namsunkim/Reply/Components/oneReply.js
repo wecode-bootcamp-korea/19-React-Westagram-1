@@ -13,9 +13,8 @@ export default class OneReply extends Component {
           <span>{comment}</span>
           <i className="xi-close-min delete-reply pointer"
             onClick={() => deleteFnc(id)}></i>
-          <i className={'xi-heart' + (!isLiked ? '-o' : '') + ' like-heart pointer'}
+          <i className={'xi-heart' + (!isLiked ? '-o' : ' reply-like') + ' like-heart pointer'}
             onClick={() => likeFnc(id)}></i>
-          {/* <i className="xi-heart-o like-heart pointer"></i> */}
         </li>
       </>
     );

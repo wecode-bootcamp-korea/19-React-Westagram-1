@@ -29,24 +29,19 @@ export default class Login extends Component {
     const { text, password, isEnable } = this.state;
     this.setState(
       {
-        isEnable: ((text && text.includes('@')) && password.length >= 5)
-          ? true
-          : false
+        isEnable: (text && text.includes('@')) && password.length >= 5
       }
     )
   }
 
   goToMain = () => {
-    // console.log('여기 들어오나');
     const { text, password, isEnable } = this.state;
 
-    if (text && password) {
-      this.props.history.push('/mainns');
-    }
+    (text && password) && this.props.history.push('/mainns');
 
-    // (text && password)
-    //     ? this.props.history.push('/main')
-    //     : alert('아이디와 비밀번호를 입력해주세요.');
+    // if (text && password) {
+    //   this.props.history.push('/mainns');
+    // }
   }
 
   render() {
@@ -59,10 +54,6 @@ export default class Login extends Component {
             <form action="#!" onKeyUp={this.changeValue}>
               <input className="id-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
               <input className="pw-input" type="password" placeholder="비밀번호" />
-              {/* <Link to="/main" className="goto-main">
-                            <button className="login-btn enabled-login-btn">로그인</button>
-                        </Link> */}
-              {/* <button className="login-btn disabled-login-btn" disabled>로그인</button> */}
               <button className={'login-btn ' + (isEnable ? 'enabled-login-btn' : 'disabled-login-btn')}
                 onClick={this.goToMain}
                 readOnly>로그인</button>
