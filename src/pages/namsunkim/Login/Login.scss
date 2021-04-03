@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import "../styles/common.scss";
+@import "../styles/variable.scss";
+@import "../../../styles/common.scss";
 
 .login {
-    @extend %flex-center;
+    // @extend %flex-center;
+    @extend %flexCenter;
     width: 21.88rem;
     margin: 3.125rem auto;
+    padding: 1.5rem 0 1.5rem 0;
     flex-direction: column;
     border: 1px solid $border;
     background-color: $white;
@@ -15,6 +18,7 @@
 
     .login-logo {
         font-family: cursive, 'Lobster';
+        font-weight: 600;
         margin: 2.5rem 0;
         font-size: 2.5rem;
     }

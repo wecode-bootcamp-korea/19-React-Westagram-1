@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import NavIcon from './Components/NavIcon';
+import NavIcon from './Components/NavIcon/NavIcon';
 import './Nav.scss';
 
 export default class Nav extends Component {

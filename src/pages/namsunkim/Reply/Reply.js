@@ -29,15 +29,16 @@ export default class reply extends Component {
 
   changeValue = (e) => {
     const { value } = e.target;
+    const { validation, addComment } = this;
     this.setState(
       {
         comment: value.trim()
       },
-      this.validation
+      validation
     );
 
     if (e.key === 'Enter') {
-      this.addComment();
+      addComment();
       e.target.value = '';
     }
   };
@@ -69,7 +70,7 @@ export default class reply extends Component {
     }
   }
 
-  like = (id) => {
+  likeFnc = (id) => {
     const { commentArr } = this.state;
 
     this.setState(
@@ -78,7 +79,7 @@ export default class reply extends Component {
     );
   }
 
-  delete = (id) => {
+  deleteFnc = (id) => {
     const { commentArr } = this.state;
 
     if (window.confirm('댓글을 삭제하시겠습니까?')) {
@@ -93,6 +94,7 @@ export default class reply extends Component {
 
   render() {
     const { comment, isEnable, commentArr } = this.state;
+    const { likeFnc, deleteFnc, addComment, changeValue } = this;
     // const { commentArr, addComment, id } = this.props;
 
     return (
@@ -106,8 +108,8 @@ export default class reply extends Component {
                 userName={commentArr.userName}
                 comment={commentArr.content}
                 isLiked={commentArr.isLiked}
-                likeFnc={this.like}
-                deleteFnc={this.delete}
+                likeFnc={likeFnc}
+                deleteFnc={deleteFnc}
               />
             )
           })}
@@ -121,9 +123,9 @@ export default class reply extends Component {
               d="M34.9 24c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5zm-21.8 0c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5zM24 37.3c-5.2 0-8-3.5-8.2-3.7-.5-.6-.4-1.6.2-2.1.6-.5 1.6-.4 2.1.2.1.1 2.1 2.5 5.8 2.5 3.7 0 5.8-2.5 5.8-2.5.5-.6 1.5-.7 2.1-.2.6.5.7 1.5.2 2.1 0 .2-2.8 3.7-8 3.7z">
             </path>
           </svg>
-          <input type="text" className="input-comment" placeholder="댓글 달기..." onChange={this.changeValue} value={comment} onKeyUp={this.changeValue} />
+          <input type="text" className="input-comment" placeholder="댓글 달기..." onChange={changeValue} value={comment} onKeyUp={changeValue} />
           <button className={isEnable ? 'enabled-add-comment-btn' : 'disabled-add-comment-btn'}
-            disabled={!isEnable} onClick={this.addComment}>게시</button>
+            disabled={!isEnable} onClick={addComment}>게시</button>
           {/* disabled={!isEnable} onClick={() => { addComment(comment, id) }}>게시</button> */}
         </section>
       </>

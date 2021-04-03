@@ -16,11 +16,12 @@ export default class Login extends Component {
   //input태그가 변할때마다 state저장
   changeValue = (e) => {
     const { value, type } = e.target;
+    const { validation } = this;
     this.setState(
       {
         [type]: value
       },
-      this.validation
+      validation
     );
   };
 
@@ -46,16 +47,17 @@ export default class Login extends Component {
 
   render() {
     const { isEnable } = this.state;
+    const { changeValue, goToMain } = this;
     return (
       <>
         <section className="login">
           <h1 className="login-logo">Westagram</h1>
           <div className="login-wrap">
-            <form action="#!" onKeyUp={this.changeValue}>
+            <form action="#!" onKeyUp={changeValue}>
               <input className="id-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
               <input className="pw-input" type="password" placeholder="비밀번호" />
               <button className={'login-btn ' + (isEnable ? 'enabled-login-btn' : 'disabled-login-btn')}
-                onClick={this.goToMain}
+                onClick={goToMain}
                 readOnly>로그인</button>
             </form>
             <a href="#!" className="find-password">비밀번호를 잊으셨나요?</a>

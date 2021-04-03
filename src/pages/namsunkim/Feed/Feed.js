@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Reply from '../Reply/Reply';
-import FeedNav from './Components/FeedNav';
 import FeedIcon from './Components/FeedIcon';
+import Reply from '../Reply/Reply';
 import './Feed.scss';
 
 const profileUrlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/';

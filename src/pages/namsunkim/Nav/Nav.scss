@@ -1,5 +1,4 @@
-// @import "../../styles/common.scss";
-@import "../styles/common.scss";
+@import '../styles/variable.scss';
 
 nav {
     position: fixed;
@@ -35,6 +34,7 @@ nav {
             margin-right: 5rem;
             color: $black;
             font-size: 1.5rem;
+            font-weight: 600;
         }
 
         .search-wrap {

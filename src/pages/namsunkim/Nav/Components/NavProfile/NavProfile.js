@@ -22,10 +22,11 @@ export default class NavProfile extends Component {
 
   render() {
     const { isProfileClick } = this.state;
+    const { profileClick } = this;
     return (
       <>
         <div className="profile-wrap">
-          <a href="#!" onClick={this.profileClick}>
+          <a href="#!" onClick={profileClick}>
             <img alt="profile" className="profile-img"
               src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/21042108_123408488308642_162793317946359808_a.jpg?tp=1&amp;_nc_ht=scontent-ssn1-1.cdninstagram.com&amp;_nc_ohc=dNYrSrarQiIAX-G37Vy&amp;ccb=7-4&amp;oh=11f32acd151a8b5da3c7d685ea00c444&amp;oe=607FAF16" />
           </a>
@@ -74,11 +75,11 @@ export default class NavProfile extends Component {
                     <a href="login.html" className="black">계정전환</a>
                   </div>
                 </li>
-                <li className="logout pointer">
-                  <Link to="/loginns" className="black">
+                <Link to="/loginns" className="black">
+                  <li className="logout pointer">
                     로그아웃
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>

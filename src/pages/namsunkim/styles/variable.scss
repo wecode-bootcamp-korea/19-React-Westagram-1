@@ -6,20 +6,8 @@ $disabled: #B9DFFC;
 $border: #DBDBDB;
 $gray: #8e8e8e;
 
-%flex-center {
-	display: flex;
-	justify-content: center;
-    align-items: center
-}
-
-* {
-    box-sizing: border-box;
-}
-
 body {
     background-color: $background;
-    margin: 0;
-    padding: 0;
 }
 
 a {

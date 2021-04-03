@@ -1,8 +1,8 @@
-// @import "../../styles/common.scss";
-@import "../styles/common.scss";
+@import '../../../styles/common.scss';
+@import '../styles/variable.scss';
 
 .insta-story {
-  @extend %flex-center;
+  @extend %flexCenter;
     padding: 1rem 0;
     margin-bottom: 1.875rem;
     border: 1px solid $border;
@@ -32,35 +32,6 @@
     ul {
         display: flex;
         overflow: auto;
-
-        li {
-            margin: 0 0.625rem;
-
-            .gradient-wrap {
-              @extend %flex-center;
-                width: 3.75rem;
-                height: 3.75rem;
-                margin-bottom: 0.3125rem;
-                border-radius: 100%;
-                background: radial-gradient(circle at bottom left, #F58529 20%, #C42D91);
-
-                img {
-                    border-radius: 50%;
-                    width: 3.5rem;
-                    border: 2px solid $white;
-                }
-            }
-
-            p {
-                text-overflow: ellipsis;
-                max-width: 3.75rem;
-                overflow: hidden;
-                margin: 0;
-                font-size: 0.75rem;
-                letter-spacing: 0.1px;
-                text-align: center;
-            }
-        }
 
         &::-webkit-scrollbar {
             display: none;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavProfile from './NavProfile';
+import NavProfile from '../NavProfile/NavProfile';
 import './NavIcon.scss';
 
 export default class NavIcon extends Component {
