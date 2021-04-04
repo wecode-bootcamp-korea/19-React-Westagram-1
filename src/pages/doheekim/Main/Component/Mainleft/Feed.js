@@ -20,13 +20,13 @@ class Feed extends React.Component {
     };
   }
 
-  textChange = (e) => {
+  commentValue = (e) => {
     this.setState({
       newComment: e.target.value,
     });
   };
 
-  add = () => {
+  addComment = () => {
     // Button 요소의 onClick 이벤트 핸들러
     let arr = this.state.comments;
     arr.push({
@@ -41,7 +41,7 @@ class Feed extends React.Component {
 
   pressEnter = (e) => {
     if (e.key === "Enter" && this.state.newComment) {
-      this.add();
+      this.addComment();
       e.target.value = "";
     }
   };
@@ -125,7 +125,7 @@ class Feed extends React.Component {
             <li>
               <input
                 className="comment-inner"
-                onChange={this.textChange}
+                onChange={this.commentValue}
                 onKeyPress={this.pressEnter}
                 value={this.state.newComment}
                 type="text"
@@ -135,7 +135,7 @@ class Feed extends React.Component {
             <li>
               <button
                 className="submit"
-                onClick={this.add}
+                onClick={this.addComment}
                 style={{
                   color:
                     this.state.newComment.length > 0
