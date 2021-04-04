@@ -10,9 +10,13 @@ class LoginJW extends Component {
       //key : value
       inputId: "",
       inputPw: "",
-      disabled: true, //"#0094f6" : "#0094f64b";
+      disabled: true,
     };
   }
+
+  goToMain = () => {
+    this.props.history.push("/Mainjw");
+  };
 
   handleInput = (e) => {
     // console.log(event);
@@ -55,9 +59,10 @@ class LoginJW extends Component {
             // }
             disabled={
               this.state.inputId.includes("@") && this.state.inputPw.length >= 5
-                ? true
-                : false
+                ? false
+                : true
             }
+            onClick={this.goToMain}
           >
             로그인
           </button>

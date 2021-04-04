@@ -45,7 +45,7 @@
       font-size: 15px;
       font-weight: bolder;
       background-color: #0094f6;
-      &disabled {
+      &:disabled {
         background-color: #0094f64b;
       }
     }
