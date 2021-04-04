@@ -3,86 +3,85 @@
 @import "../../../styles/common.scss";
 
 .login {
-    // @extend %flex-center;
-    @extend %flexCenter;
-    width: 21.88rem;
-    margin: 3.125rem auto;
-    padding: 1.5rem 0 1.5rem 0;
+  @extend %flexCenter;
+  flex-direction: column;
+  width: 21.88rem;
+  margin: 3.125rem auto;
+  padding: 1.5rem 0 1.5rem 0;
+  background-color: $white;
+  border: 1px solid $border;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .logo {
+    margin: 2.5rem 0;
+    font-family: cursive, 'Lobster';
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+
+  .loginWrap {
+    display: flex;
     flex-direction: column;
-    border: 1px solid $border;
-    background-color: $white;
+    justify-content: center;
+    width: 75%;
 
-    a:hover {
-        text-decoration: none;
+    form {
+      display: grid;
+
+      .loginBtn {
+        height: 2.5rem;
+        margin: 0.5rem 0;
+        color: $white;
+        background-color: $disabled;
+        border: 0;
+        border-radius: 0.3125rem;
+        font-weight: 700;
+        font-size: 0.9375rem;
+      }
+
+      .enabledBtn {
+        background-color: $enabled;
+        cursor: pointer;
+      }
+      
+      .disabledBtn {
+        background-color: $disabled;
+        cursor: default;
+      }
     }
 
-    .logo {
-        font-family: cursive, 'Lobster';
-        font-weight: 600;
-        margin: 2.5rem 0;
-        font-size: 2.5rem;
+    input {
+      height: 2.5rem;
+      margin: 0.1875rem 0px;
+      padding: 0.875rem 0.625rem 0.875rem 0.625rem;
+      background: $background;
+      border: 1px solid $border;
+      border-radius: 0.1875rem;
+
+      &:focus {
+        border: 1px solid #a8a8a8;
+      }
+
+      &::placeholder {
+        color: #ACACAC;
+      }
     }
 
-    .loginWrap {
-        width: 75%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        form {
-            display: grid;
-
-            .loginBtn {
-                height: 2.5rem;
-                margin: 0.5rem 0;
-                border: 0;
-                border-radius: 0.3125rem;
-                background-color: $disabled;
-                color: $white;
-                font-weight: 700;
-                font-size: 0.9375rem;
-            }
-
-            .enabledBtn {
-                background-color: $enabled;
-                cursor: pointer;
-            }
-            
-            .disabledBtn {
-                background-color: $disabled;
-                cursor: default;
-            }
-        }
-
-        input {
-            height: 2.5rem;
-            margin: 0.1875rem 0px;
-            padding: 0.875rem 0.625rem 0.875rem 0.625rem;
-            background: $background;
-            border: 1px solid $border;
-            border-radius: 0.1875rem;
-
-            &:focus {
-                border: 1px solid #a8a8a8;
-            }
-
-            &::placeholder {
-                color: #ACACAC;
-            }
-        }
-
-        .findPassword {
-            margin: 3.75rem 0 1.25rem 0;
-            color: #00376b;
-            text-align: center;
-            font-size: 12px;
-        }
+    .findPassword {
+      margin: 3.75rem 0 1.25rem 0;
+      color: #00376b;
+      text-align: center;
+      font-size: 12px;
     }
+  }
 }
 
 @media (max-width: 450px) {
-    .login {
-        background-color: $background;
-        border: 0;
-    }
+  .login {
+    background-color: $background;
+    border: 0;
+  }
 }

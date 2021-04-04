@@ -7,51 +7,51 @@ $border: #DBDBDB;
 $gray: #8e8e8e;
 
 body {
-    background-color: $background;
+  background-color: $background;
 }
 
 a {
+  text-decoration: none;
+
+  &:link{
     text-decoration: none;
+  }
+  
+  &:visited{
+    text-decoration: none;
+  }
 
-    &:link{
-        text-decoration: none;
-    }
-    
-    &:visited{
-        text-decoration: none;
-    }
-
-    &:hover{
-        text-decoration: none;
-    }
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 input {
-    outline: none;
+  outline: none;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .bold {
-    font-weight: 800;
+  font-weight: 700;
 }
 
 .light {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .black {
-    color: $black;
+  color: $black;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }

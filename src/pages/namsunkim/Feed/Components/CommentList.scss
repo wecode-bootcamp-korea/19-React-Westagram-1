@@ -1,40 +1,39 @@
 @import '../../styles/variable.scss';
 
 .commentList{
-    padding: 0 1rem 0.75rem 1rem;
-    
-    li {
-      margin: 0.2rem 0;
-    }
+  padding: 0 1rem 0.75rem 1rem;
+  
+  li {
+    margin: 0.2rem 0;
+  }
 }
 
-
 .addComment {
-    height: 3.125rem;
-    display: flex;
-    padding: 0 0.9375rem;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid $border;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 3.125rem;
+  padding: 0 0.9375rem;
+  border-top: 1px solid $border;
 
-    svg {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-    input {
-        width: 85%;
-        border: 0;
-    }
+  input {
+    width: 85%;
+    border: 0;
+  }
 
-    .enabledBtn {
-        border: 0;
-        background-color: $white;
-        color: $enabled;
-    }
-    .disabledBtn {
-        border: 0;
-        background-color: $white;
-        color: $disabled;
-    }
+  .enabledBtn {
+    background-color: $white;
+    color: $enabled;
+    border: 0;
+  }
+  .disabledBtn {
+    background-color: $white;
+    color: $disabled;
+    border: 0;
+  }
 }

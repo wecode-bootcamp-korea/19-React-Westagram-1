@@ -26,9 +26,9 @@ export default class StoryList extends Component {
   scroll = (direction) => {
     const instaStoryUl = document.querySelector('.storyList ul');
     const prevBtn = document.querySelector('.prevBtn');
+    let scrollAmount = 0;
 
     const slide = setInterval((e) => {
-      let scrollAmount = 0;
 
       (instaStoryUl.scrollLeft)
         ? prevBtn.classList.remove('hidden')

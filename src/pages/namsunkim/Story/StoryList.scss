@@ -3,38 +3,38 @@
 
 .storyList {
   @extend %flexCenter;
-    padding: 1rem 0;
-    margin-bottom: 1.875rem;
-    border: 1px solid $border;
-    border-radius: 0.1875rem;
+  margin-bottom: 1.875rem;
+  padding: 1rem 0;
+  border: 1px solid $border;
+  border-radius: 0.1875rem;
 
-    .scrollBtnWrap {
-        width: 38.38rem;
-        position: absolute;
+  .scrollBtnWrap {
+    position: absolute;
+    width: 38.38rem;
 
-        button {
-            width: 1.563rem;
-            height: 1.563rem;
-            margin: 0.3125rem;
-            background-color: $white;
-            outline: none;
-            border: 0;
-            border-radius: 50%;
-            mix-blend-mode: screen;
-            box-shadow: rgba(100, 100, 111, 0.5) 0 0.4375rem 1.813rem 0;
-        }
-
-        .nextBtn {
-            float: right;
-        }
+    button {
+      width: 1.563rem;
+      height: 1.563rem;
+      margin: 0.3125rem;
+      background-color: $white;
+      border: 0;
+      border-radius: 50%;
+      box-shadow: rgba(100, 100, 111, 0.5) 0 0.4375rem 1.813rem 0;
+      mix-blend-mode: screen;
+      outline: none;
     }
 
-    ul {
-        display: flex;
-        overflow: auto;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
+    .nextBtn {
+      float: right;
     }
+  }
+
+  ul {
+    display: flex;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }

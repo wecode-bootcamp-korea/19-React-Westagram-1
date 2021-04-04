@@ -3,34 +3,33 @@
 @import '../styles/variable.scss';
 
 a, span {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .main {
-    width: 58.44rem;
-    display: flex;
-    margin: 0 auto;
-    padding: 5rem 0;
+  display: flex;
+  width: 58.44rem;
+  margin: 0 auto;
+  padding: 5rem 0;
 }
 
 .feeds {
-    width: 38.38rem;
-    justify-content: center;
+  justify-content: center;
+  width: 38.38rem;
 }
 
 .enabledBtn {
-    color: $enabled;
-    cursor: pointer;
+  color: $enabled;
+  cursor: pointer;
 }
 
 .disabledBtn {
-    color: $disabled;
-    cursor: default;
+  color: $disabled;
+  cursor: default;
 }
 
 @media (max-width: 1078px) {
-    .main {
-        justify-content: center;
-    }
-
+  .main {
+    justify-content: center;
+  }
 }
