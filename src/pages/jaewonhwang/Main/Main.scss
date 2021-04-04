@@ -182,16 +182,20 @@ main {
 
 .post_review {
   width: 95%;
-  height: 30px;
   margin: 0 auto;
   margin-bottom: 15px;
   color: #999;
-  border: 1px solid #999;
+  ul {
+    border: 0;
+    li {
+      border: 0;
+    }
+  }
   input {
     width: 100%;
     height: 28px;
     margin: 0 auto;
-    border: 0;
+    border: 1px solid #999;
   }
 }
 

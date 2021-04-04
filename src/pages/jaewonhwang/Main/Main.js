@@ -2,9 +2,38 @@ import { Component } from "react"; // named export vs. default export
 import "./Main.scss";
 
 class MainJW extends Component {
-  goToMain = () => {
-    this.props.history.push("/Main");
+  constructor() {
+    super();
+    this.state = {
+      content: "",
+      commentList: [],
+    };
+  }
+
+  contentChange = (e) => {
+    this.setState({
+      content: e.target.value,
+    });
   };
+
+  addContent = () => {
+    this.setState({
+      commentList: this.state.commentList.concat([
+        {
+          userId: this.userId,
+          content: this.state.content,
+        },
+      ]),
+      content: "", //새롭게 받아올 property
+    });
+  };
+
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.addContent();
+    }
+  };
+
   // state = {  }
   render() {
     return (
@@ -163,10 +192,22 @@ class MainJW extends Component {
                   </p>
                 </div>
                 <div className="post_review">
+                  <ul>
+                    {this.state.commentList.map((commentText) => {
+                      return (
+                        <li className="commentLi" key={commentText.userId}>
+                          {commentText.content}
+                        </li>
+                      );
+                    })}
+                  </ul>
                   <input
                     className="post_review_input"
                     type="text"
                     placeholder="댓글 달기 ..."
+                    value={this.state.content}
+                    onChange={this.contentChange}
+                    onKeyPress={this.handleKeyPress}
                   />
                 </div>
               </section>
