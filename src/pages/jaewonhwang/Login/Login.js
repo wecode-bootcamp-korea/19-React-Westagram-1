@@ -28,6 +28,9 @@ class LoginJW extends Component {
 
   render() {
     // console.log(this.state.inputId);
+    const { inputId } = this.state;
+    const { inputPw } = this.state;
+
     return (
       <div className="loginJW">
         <div className="main_box">
@@ -37,7 +40,7 @@ class LoginJW extends Component {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               name="inputId"
-              value={this.state.inputId}
+              value={inputId}
               onChange={this.handleInput}
             />
           </div>
@@ -46,7 +49,7 @@ class LoginJW extends Component {
               type="password"
               placeholder="비밀번호"
               name="inputPw"
-              value={this.state.inputPw}
+              value={inputPw}
               onChange={this.handleInput}
             />
           </div>
@@ -58,9 +61,7 @@ class LoginJW extends Component {
             //     : "btnDisabled"
             // }
             disabled={
-              this.state.inputId.includes("@") && this.state.inputPw.length >= 5
-                ? false
-                : true
+              inputId.includes("@") && inputPw.length >= 5 ? false : true
             }
             onClick={this.goToMain}
           >
