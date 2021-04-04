@@ -5,14 +5,14 @@ import Feed from '../Feed/Feed';
 import MainRight from '../MainRight/MainRight';
 import './Main.scss';
 
-const userId = localStorage.getItem('userId');
+const userName = localStorage.getItem('userName');
 
 export default class Main extends Component {
 
   constructor() {
     super();
     this.state = {
-      userId: userId
+      userName: userName
     }
   }
 
@@ -23,9 +23,9 @@ export default class Main extends Component {
         <section className="main">
           <section className="feeds">
             <StoryList />
-            <Feed />
+            <Feed userName={userName} />
           </section>
-          <MainRight userId={userId} />
+          <MainRight userName={userName} />
         </section>
       </>
     )

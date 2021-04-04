@@ -55,6 +55,7 @@ export default class Feed extends Component {
 
   render() {
     const { feedArr } = this.state;
+    const { userName } = this.props;
     return (
       <>
         {
@@ -92,7 +93,7 @@ export default class Feed extends Component {
                       <span>댓글 {feedArr.commentArr.length}개 모두 보기</span>
                     </p>
                   </section>
-                  <CommentList commentArr={feedArr.commentArr} />
+                  <CommentList commentArr={feedArr.commentArr} userName={userName} />
                   {/* <Reply commentArr={feedArr.commentArr} addComment={this.addComment} id={feedArr.id} /> */}
                 </div>
               </article>

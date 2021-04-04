@@ -3,7 +3,7 @@ import Comment from './Comment';
 import './CommentList.scss';
 
 //userid
-const USER_ID = 'usnuuh';
+const defaultUser = 'usnuuh';
 
 export default class CommentList extends Component {
   constructor() {
@@ -54,12 +54,13 @@ export default class CommentList extends Component {
 
   addComment = (e) => {
     const { comment, commentArr } = this.state;
+    const { userName } = this.props;
 
     if (comment) {
       this.setState({
         commentArr: [...commentArr, {
           id: commentArr.length + 1,
-          userName: USER_ID,
+          userName: userName ? userName : defaultUser,
           content: comment,
           isLiked: false,
         }],

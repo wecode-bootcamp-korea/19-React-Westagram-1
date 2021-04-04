@@ -27,16 +27,16 @@ export default class MainRight extends Component {
 
   render() {
     const { recommendAccount } = this.state;
-    const { userId } = this.props;
+    const { userName } = this.props;
 
     return (
       <>
         <aside className="mainRight">
           <div className="account">
             <img src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/21042108_123408488308642_162793317946359808_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Ucb42Uat1L4AX_hM_9c&ccb=7-4&oh=2e9b3750947301d942c84e83c0de7421&oe=6083A396"
-              alt={userId + "님의 profile"} />
+              alt={userName + "님의 profile"} />
             <div className="idWrap bold">
-              <span>{userId ? userId : defaultUser}</span>
+              <span>{userName ? userName : defaultUser}</span>
               <a href="#!">전환</a>
             </div>
           </div>
