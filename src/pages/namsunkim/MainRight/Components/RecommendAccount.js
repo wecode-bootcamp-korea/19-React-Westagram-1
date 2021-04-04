@@ -14,7 +14,7 @@ export default class RecommendAccount extends Component {
             alt={userName + '님의 profile'} />
           <div>
             <a href="#!" className="black">{userName}</a>
-            <span className="light">회원님을 팔로우합니다</span>
+            <span>회원님을 팔로우합니다</span>
           </div>
           <a href="#!" className="follow">팔로우</a>
         </li>

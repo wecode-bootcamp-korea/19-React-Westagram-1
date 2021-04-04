@@ -7,7 +7,7 @@ class Search extends Component {
       <>
         <div className="searchWrap">
           <input type="text" className="searchInput" placeholder="검색" />
-          <button className="keywordDelBtn hidden">x</button>
+          <button className="keywordDelBtn">x</button>
           <div className="searchResultWrap hidden">
             <div className="speechBubble">
             </div>

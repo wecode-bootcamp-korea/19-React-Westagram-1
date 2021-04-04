@@ -2,12 +2,14 @@
 
 .recommendAccount {
   display: flex;
+  margin: 0;
   padding: 0.5rem 0;
   justify-content: space-between;
   align-items: center;
 
   span {
     margin: 0;
+    font-weight: 600;
   }
 
   div {

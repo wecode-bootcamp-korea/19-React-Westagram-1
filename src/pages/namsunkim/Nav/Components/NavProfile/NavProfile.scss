@@ -43,11 +43,12 @@
 
               li {
                   display: flex;
-                  padding: 0.625rem 0.9375rem;
+                  padding: 0.8rem 1rem;
+                  margin: 0;
                   align-items: center;
 
                   div {
-                      margin: 0 0.625rem;
+                      margin: 0.1rem 0.625rem 0 0.625rem;
                   }
 
                   &:hover {
@@ -60,6 +61,7 @@
 
                   a {
                       padding-top: 0.0625rem;
+                      font-weight: 500;
                   }
               }
           }

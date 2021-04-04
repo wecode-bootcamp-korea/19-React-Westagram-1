@@ -3,6 +3,10 @@
 .searchWrap {
   position: relative;
 
+  .searchInput:focus + .keywordDelBtn {
+    display: block;
+  }
+
   .searchInput {
       flex: 0 1 auto;
       min-width: 7.813rem;
@@ -37,6 +41,7 @@
   }
 
   .keywordDelBtn {
+      display: none;
       position: absolute;
       right: 0.3125rem;
       bottom: 0.3rem;

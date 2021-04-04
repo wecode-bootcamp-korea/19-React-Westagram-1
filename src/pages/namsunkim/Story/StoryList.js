@@ -24,20 +24,15 @@ export default class StoryList extends Component {
 
   scroll = (direction) => {
     const instaStoryUl = document.querySelector('.storyList ul');
+    const prevBtn = document.querySelector('.prevBtn');
     let scrollAmount = 0;
 
     const slide = setInterval((e) => {
 
-      if (direction === 'left') {
-        instaStoryUl.scrollLeft -= 15;
-      } else {
-        instaStoryUl.scrollLeft += 15;
-      }
-
+      (instaStoryUl.scrollLeft) ? prevBtn.classList.remove('hidden') : prevBtn.classList.add('hidden');
+      (direction === 'left') ? instaStoryUl.scrollLeft -= 15 : instaStoryUl.scrollLeft += 15;
       scrollAmount += 5;
-      if (scrollAmount >= 100) {
-        window.clearInterval(slide);
-      }
+      (scrollAmount >= 100) && window.clearInterval(slide);
     }, 20);
   }
 
@@ -47,11 +42,11 @@ export default class StoryList extends Component {
       <>
         <section className="storyList">
           <div className="scrollBtnWrap">
-            <button className="prevBtn pointer" onClick={() => { this.scroll("left") }}>
-              <i className="xi-angle-left-min"></i>
+            <button className="prevBtn pointer hidden" onClick={() => { this.scroll("left") }}>
+              <i className="xi-angle-left"></i>
             </button>
             <button className="nextBtn pointer" onClick={() => { this.scroll("right") }}>
-              <i className="xi-angle-right-min"></i>
+              <i className="xi-angle-right"></i>
             </button>
           </div>
           <ul>

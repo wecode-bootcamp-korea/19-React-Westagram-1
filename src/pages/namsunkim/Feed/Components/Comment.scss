@@ -3,15 +3,17 @@ li {
     margin: 0 0.3125rem;
   }
 
+  i {
+    font-size: 1rem;
+  }
+
   .likeHeart {
-      margin: 0.15rem 0.2rem 0.15rem 0rem;
       float: right;
-      font-size: 0.85rem;
   }
 
   .deleteComment {
+      width: 14px;
       float: right;
-      font-size: 1rem;
   }
 
   .likeComment {
