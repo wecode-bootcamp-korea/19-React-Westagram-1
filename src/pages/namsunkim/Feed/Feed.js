@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
+import { defaultUser, apiPrefix, feedUrlPrefix, profileUrlPrefix } from '../config';
 import FeedIcon from './Components/FeedIcon';
 import CommentList from './Components/CommentList';
 import './Feed.scss';
-
-const profileUrlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/';
-const feedUrlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/';
-const USER_ID = 'usnuuh';
 
 export default class Feed extends Component {
 
@@ -17,7 +14,7 @@ export default class Feed extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/namsunkim/feedData.json', {
+    fetch(`${apiPrefix}feedData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -41,7 +38,7 @@ export default class Feed extends Component {
         feedArr: [
           feedArr[id - 1].commentArr = [...feedArr[id - 1].commentArr, {
             id: feedArr[id - 1].commentArr.length + 1,
-            userName: USER_ID,
+            userName: defaultUser.userName,
             content: comment,
             isLiked: false,
           }]
@@ -77,10 +74,10 @@ export default class Feed extends Component {
                   <FeedIcon />
                   <section className="likeList">
                     <img className="profileImg"
-                      src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/18947565_448326618857685_8479464545633435648_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=m4X1SMYXvpMAX8nMy7e&ccb=7-4&oh=edf81851a6509c867b388fd009961a28&oe=60810516"
-                      alt={feedArr.likeList[0] + '님의 profile'} />
+                      src={profileUrlPrefix + feedArr.likeList[0].profile}
+                      alt={feedArr.likeList[0].userName + '님의 profile'} />
                     <span>
-                      <a href="#!" className="bold black">{feedArr.likeList[0]}</a>님
+                      <a href="#!" className="bold black">{feedArr.likeList[0].userName}</a>님
                       <a href="#!" className="bold black">외 {feedArr.likeList.length - 1}명</a>이 좋아합니다
                     </span>
                   </section>

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import { defaultUser, apiPrefix, addCommentIcon } from '../../config';
 import Comment from './Comment';
 import './CommentList.scss';
-
-//userid
-const defaultUser = 'usnuuh';
 
 export default class CommentList extends Component {
   constructor() {
@@ -16,7 +14,7 @@ export default class CommentList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/namsunkim/commentData.json', {
+    fetch(`${apiPrefix}commentData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -60,7 +58,7 @@ export default class CommentList extends Component {
       this.setState({
         commentArr: [...commentArr, {
           id: commentArr.length + 1,
-          userName: userName ? userName : defaultUser,
+          userName: userName ? userName : defaultUser.userName,
           content: comment,
           isLiked: false,
         }],
@@ -118,10 +116,10 @@ export default class CommentList extends Component {
         <section className="addComment">
           <svg viewBox="0 0 48 48">
             <path
-              d="M24 48C10.8 48 0 37.2 0 24S10.8 0 24 0s24 10.8 24 24-10.8 24-24 24zm0-45C12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21S35.6 3 24 3z">
+              d={addCommentIcon.border}>
             </path>
             <path
-              d="M34.9 24c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5zm-21.8 0c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5zM24 37.3c-5.2 0-8-3.5-8.2-3.7-.5-.6-.4-1.6.2-2.1.6-.5 1.6-.4 2.1.2.1.1 2.1 2.5 5.8 2.5 3.7 0 5.8-2.5 5.8-2.5.5-.6 1.5-.7 2.1-.2.6.5.7 1.5.2 2.1 0 .2-2.8 3.7-8 3.7z">
+              d={addCommentIcon.smile}>
             </path>
           </svg>
           <input type="text" placeholder="댓글 달기..." onChange={changeValue} value={comment} onKeyUp={changeValue} />

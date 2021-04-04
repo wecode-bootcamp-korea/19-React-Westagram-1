@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { apiPrefix } from '../config';
 import Story from './Components/Story';
 import './StoryList.scss';
 
@@ -11,7 +12,7 @@ export default class StoryList extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/namsunkim/storyData.json', {
+    fetch(`${apiPrefix}storyData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -25,13 +26,20 @@ export default class StoryList extends Component {
   scroll = (direction) => {
     const instaStoryUl = document.querySelector('.storyList ul');
     const prevBtn = document.querySelector('.prevBtn');
-    let scrollAmount = 0;
 
     const slide = setInterval((e) => {
+      let scrollAmount = 0;
 
-      (instaStoryUl.scrollLeft) ? prevBtn.classList.remove('hidden') : prevBtn.classList.add('hidden');
-      (direction === 'left') ? instaStoryUl.scrollLeft -= 15 : instaStoryUl.scrollLeft += 15;
+      (instaStoryUl.scrollLeft)
+        ? prevBtn.classList.remove('hidden')
+        : prevBtn.classList.add('hidden');
+
+      (direction === 'left')
+        ? instaStoryUl.scrollLeft -= 15
+        : instaStoryUl.scrollLeft += 15;
+
       scrollAmount += 5;
+
       (scrollAmount >= 100) && window.clearInterval(slide);
     }, 20);
   }

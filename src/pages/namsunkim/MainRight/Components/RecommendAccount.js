@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import { profileUrlPrefix } from '../../config';
 import './RecommendAccount.scss';
-
-const urlPrefix = 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/';
 
 export default class RecommendAccount extends Component {
   render() {
@@ -10,7 +9,7 @@ export default class RecommendAccount extends Component {
     return (
       <>
         <li className="recommendAccount">
-          <img src={urlPrefix + imgSrc}
+          <img src={profileUrlPrefix + imgSrc}
             alt={userName + '님의 profile'} />
           <div>
             <a href="#!" className="black">{userName}</a>

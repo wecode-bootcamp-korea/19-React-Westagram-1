@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import { defaultUser, apiPrefix, profileUrlPrefix } from '../config';
 import RecommendAccount from './Components/RecommendAccount';
 import './MainRight.scss';
-
-const defaultUser = 'usnuuh';
 
 export default class MainRight extends Component {
 
@@ -14,7 +13,7 @@ export default class MainRight extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/namsunkim/recommendAccountData.json', {
+    fetch(`${apiPrefix}recommendAccountData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -33,10 +32,10 @@ export default class MainRight extends Component {
       <>
         <aside className="mainRight">
           <div className="account">
-            <img src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/21042108_123408488308642_162793317946359808_a.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Ucb42Uat1L4AX_hM_9c&ccb=7-4&oh=2e9b3750947301d942c84e83c0de7421&oe=6083A396"
+            <img src={profileUrlPrefix + defaultUser.profile}
               alt={userName + "님의 profile"} />
             <div className="idWrap bold">
-              <span>{userName ? userName : defaultUser}</span>
+              <span>{userName ? userName : defaultUser.userName}</span>
               <a href="#!">전환</a>
             </div>
           </div>
