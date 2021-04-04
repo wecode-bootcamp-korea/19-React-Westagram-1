@@ -44,12 +44,20 @@
       color: #fff;
       font-size: 15px;
       font-weight: bolder;
-      background-color: rgba(var(--d69, 0, 149, 246), 0.3);
+      background-color: #0094f6;
+      &disabled {
+        background-color: #0094f64b;
+      }
     }
-
-    .btn_p {
-      margin-top: 80px;
-    }
+    // .btnActive {
+    //   background-color: #0094f6;
+    // }
+    // .btnDisabled {
+    //   background-color: #0094f64b;
+    // }
+  }
+  .btn_p {
+    margin-top: 80px;
   }
 }
 

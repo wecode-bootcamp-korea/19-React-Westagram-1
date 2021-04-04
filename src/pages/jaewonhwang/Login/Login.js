@@ -6,28 +6,19 @@ import { Link, withRouter } from "react-router-dom";
 class LoginJW extends Component {
   constructor() {
     super();
-
     this.state = {
+      //key : value
       inputId: "",
       inputPw: "",
+      disabled: true, //"#0094f6" : "#0094f64b";
     };
   }
 
-  goToMain = () => {
-    this.props.history.push("/MainJW");
-  };
-
-  handleIdInput = (event) => {
+  handleInput = (e) => {
     // console.log(event);
     // console.log(event.target);
     this.setState({
-      inputId: event.target.value,
-    });
-  };
-
-  handlePwInput = (event) => {
-    this.setState({
-      inputPw: event.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -41,17 +32,33 @@ class LoginJW extends Component {
             <input
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              name="inputId"
+              value={this.state.inputId}
+              onChange={this.handleInput}
             />
           </div>
           <div className="login_pw">
             <input
               type="password"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              name="inputPw"
+              value={this.state.inputPw}
+              onChange={this.handleInput}
             />
           </div>
-          <button className="loginBtn" onClick={this.goToMain}>
+          <button
+            className="loginBtn"
+            // className={
+            //   this.state.inputId.includes("@") && this.state.inputPw.length >= 5
+            //     ? "btnActive"
+            //     : "btnDisabled"
+            // }
+            disabled={
+              this.state.inputId.includes("@") && this.state.inputPw.length >= 5
+                ? true
+                : false
+            }
+          >
             로그인
           </button>
           <p className="btn_p">
@@ -64,12 +71,3 @@ class LoginJW extends Component {
 }
 
 export default withRouter(LoginJW);
-
-// handleColor = () => {
-//   this.setState({
-//     color: 'blue'
-//   })
-// }
-
-// <h1 style={{ color: this.state.color }}>Class Component | State</h1>
-//         <button onClick={this.handleColor}>Click</button>
