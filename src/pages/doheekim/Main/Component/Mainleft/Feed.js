@@ -38,6 +38,7 @@ class Feed extends React.Component {
       newComment: "",
     });
   };
+
   pressEnter = (e) => {
     if (e.key === "Enter" && this.state.newComment) {
       this.add();
