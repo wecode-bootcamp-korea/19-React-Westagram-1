@@ -4,17 +4,18 @@ import './Comment.scss';
 export default class Comment extends Component {
 
   render() {
-    const { userName, comment, isLiked, likeFnc, deleteFnc, id } = this.props;
+    const { commentArr, likeComment, deleteComment } = this.props;
+    const { id, isLiked, content, userName } = commentArr;
 
     return (
       <>
         <li>
           <a href="#!" className="bold black">{userName}</a>
-          <span>{comment}</span>
+          <span>{content}</span>
           <i className="xi-close-min deleteComment pointer"
-            onClick={() => deleteFnc(id)}></i>
+            onClick={() => deleteComment(id)}></i>
           <i className={'xi-heart' + (!isLiked ? '-o' : ' likeComment') + ' likeHeart pointer'}
-            onClick={() => likeFnc(id)}></i>
+            onClick={() => likeComment(id)}></i>
         </li>
       </>
     );

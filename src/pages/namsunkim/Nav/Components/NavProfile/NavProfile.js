@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { defaultUser, profileUrlPrefix } from '../../../config';
+import { defaultUser, prefix } from '../../../config';
 import { icons } from '../../../icons';
 import { Link } from 'react-router-dom';
 import './NavProfile.scss';
@@ -8,31 +8,20 @@ export default class NavProfile extends Component {
 
   constructor() {
     super();
+    const { createMenuCategory } = this;
     this.state = {
       isProfileClick: false,
       menuCategory: [
-        {
-          id: 1,
-          categoryName: '프로필',
-          pathUrl: icons.profile
-        },
-        {
-          id: 2,
-          categoryName: '저장됨',
-          pathUrl: icons.profileSave
-        },
-        {
-          id: 3,
-          categoryName: '설정',
-          pathUrl: icons.setting
-        },
-        {
-          id: 4,
-          categoryName: '계정전환',
-          pathUrl: icons.change
-        },
+        createMenuCategory(1, '프로필', icons.profile),
+        createMenuCategory(2, '저장됨', icons.profileSave),
+        createMenuCategory(3, '설정', icons.setting),
+        createMenuCategory(4, '게정전환', icons.change),
       ]
     }
+  }
+
+  createMenuCategory = (id, categoryName, pathUrl) => {
+    return { id, categoryName, pathUrl };
   }
 
   profileClick = () => {
@@ -47,12 +36,13 @@ export default class NavProfile extends Component {
   render() {
     const { isProfileClick, menuCategory } = this.state;
     const { profileClick } = this;
+    const { profile } = prefix;
     return (
       <>
         <div className="profileWrap">
           <a href="#!" onClick={profileClick}>
             <img alt={defaultUser.userName + `님의 profile`} className="profileImg"
-              src={profileUrlPrefix + defaultUser.profile} />
+              src={profile + defaultUser.profile} />
           </a>
           <div className={'profileMenuWrap' + (!isProfileClick ? ' hidden' : '')}>
             <div className="speechBubble">

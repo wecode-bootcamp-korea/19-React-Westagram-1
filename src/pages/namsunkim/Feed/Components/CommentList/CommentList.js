@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { defaultUser, apiPrefix } from '../../../config';
-import { icons } from '../../../icons';
-import AddComment from '../AddComment/AddComment';
+import { defaultUser, prefix } from '../../../config';
 import Comment from '../Comment/Comment';
+import AddComment from '../AddComment/AddComment';
 import './CommentList.scss';
 
 export default class CommentList extends Component {
@@ -16,7 +15,8 @@ export default class CommentList extends Component {
   }
 
   componentDidMount() {
-    fetch(`${apiPrefix}commentData.json`, {
+    const { api } = prefix;
+    fetch(`${api}commentData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -71,16 +71,17 @@ export default class CommentList extends Component {
     }
   }
 
-  likeFnc = (id) => {
+  likeComment = (id) => {
     const { commentArr } = this.state;
 
     this.setState(
       ({ prevState }) =>
         commentArr[id - 1].isLiked = (!commentArr[id - 1].isLiked)
     );
+
   }
 
-  deleteFnc = (id) => {
+  deleteComment = (id) => {
     const { commentArr } = this.state;
 
     if (window.confirm('댓글을 삭제하시겠습니까?')) {
@@ -92,26 +93,21 @@ export default class CommentList extends Component {
     }
   }
 
-
   render() {
     const { comment, isEnable, commentArr } = this.state;
-    const { likeFnc, deleteFnc, addComment, changeValue } = this;
-    // const { commentArr, addComment, id } = this.props;
+    const { likeComment, deleteComment, addComment, changeValue } = this;
 
     return (
       <>
         <ul className="commentList">
           {commentArr.map((commentArr) => {
-            const { id, userName, content, isLiked } = commentArr;
+            const { id } = commentArr;
             return (
               <Comment
                 key={id}
-                id={id}
-                userName={userName}
-                comment={content}
-                isLiked={isLiked}
-                likeFnc={likeFnc}
-                deleteFnc={deleteFnc}
+                commentArr={commentArr}
+                likeComment={likeComment}
+                deleteComment={deleteComment}
               />
             )
           })}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { defaultUser, apiPrefix, profileUrlPrefix } from '../config';
+import { defaultUser, prefix } from '../config';
 import RecommendAccount from './Components/RecommendAccount';
 import './MainRight.scss';
 
@@ -13,7 +13,8 @@ export default class MainRight extends Component {
   }
 
   componentDidMount() {
-    fetch(`${apiPrefix}recommendAccountData.json`, {
+    const { api } = prefix;
+    fetch(`${api}recommendAccountData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -27,12 +28,13 @@ export default class MainRight extends Component {
   render() {
     const { recommendAccount } = this.state;
     const { userName } = this.props;
+    const { profile } = prefix;
 
     return (
       <>
         <aside className="mainRight">
           <div className="account">
-            <img src={profileUrlPrefix + defaultUser.profile}
+            <img src={profile + defaultUser.profile}
               alt={userName + "님의 profile"} />
             <div className="idWrap bold">
               <span>{userName ? userName : defaultUser.userName}</span>

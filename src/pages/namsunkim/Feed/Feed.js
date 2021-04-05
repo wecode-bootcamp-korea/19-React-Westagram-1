@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { defaultUser, apiPrefix, feedUrlPrefix, profileUrlPrefix } from '../config';
+import { prefix } from '../config';
 import FeedIcon from './Components/FeedIcon/FeedIcon';
 import CommentList from './Components/CommentList/CommentList';
 import './Feed.scss';
@@ -14,7 +14,9 @@ export default class Feed extends Component {
   }
 
   componentDidMount() {
-    fetch(`${apiPrefix}feedData.json`, {
+    const { api } = prefix;
+
+    fetch(`${api}feedData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -25,34 +27,9 @@ export default class Feed extends Component {
       });
   }
 
-  //TODO!!!!!!!!!!!!!!!!!!!!!!!!!!
-  addComment = (comment, id) => {
-
-    console.log(`comment: ${comment}`);
-    console.log(`id: ${id}`);
-    const { feedArr } = this.state;
-
-    if (comment) {
-      this.setState({
-
-        feedArr: [
-          feedArr[id - 1].commentArr = [...feedArr[id - 1].commentArr, {
-            id: feedArr[id - 1].commentArr.length + 1,
-            userName: defaultUser.userName,
-            content: comment,
-            isLiked: false,
-          }]
-        ],
-        comment: ''
-      },
-        // () => { console.log(feedArr.commentArr) }
-      );
-    }
-  }
-
   render() {
     const { feedArr } = this.state;
-    // const { userName } = this.props;
+    const { feed, profile } = prefix;
     return (
       <>
         {
@@ -62,20 +39,20 @@ export default class Feed extends Component {
               <article className="feed" key={id}>
                 <div className="feedNav">
                   <img alt={userName + '님의 profile'} className="profileImg"
-                    src={profileUrlPrefix + profileImg} />
+                    src={profile + profileImg} />
                   <div className="idWrap bold">
                     <a href="#!" className="black">{userName}</a>
                     <i className="xi-ellipsis-h"></i>
                   </div>
                 </div>
                 <img alt={userName + '님의 feed image'} className="feedImg"
-                  src={feedUrlPrefix + feedImg}
+                  src={feed + feedImg}
                 />
                 <div className="feedContent">
                   <FeedIcon />
                   <section className="likeList">
                     <img className="profileImg"
-                      src={profileUrlPrefix + likeList[0].profile}
+                      src={profile + likeList[0].profile}
                       alt={likeList[0].userName + '님의 profile'} />
                     <span>
                       <a href="#!" className="bold black">{likeList[0].userName}</a>님

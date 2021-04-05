@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { apiPrefix } from '../config';
+import { prefix } from '../config';
 import Story from './Components/Story';
 import './StoryList.scss';
 
@@ -12,7 +12,8 @@ export default class StoryList extends Component {
   }
 
   componentDidMount() {
-    fetch(`${apiPrefix}storyData.json`, {
+    const { api } = prefix;
+    fetch(`${api}storyData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -46,14 +47,15 @@ export default class StoryList extends Component {
 
   render() {
     const { storyArr } = this.state;
+    const { scroll } = this;
     return (
       <>
         <section className="storyList">
           <div className="scrollBtnWrap">
-            <button className="prevBtn pointer hidden" onClick={() => { this.scroll("left") }}>
+            <button className="prevBtn pointer hidden" onClick={() => { scroll("left") }}>
               <i className="xi-angle-left"></i>
             </button>
-            <button className="nextBtn pointer" onClick={() => { this.scroll("right") }}>
+            <button className="nextBtn pointer" onClick={() => { scroll("right") }}>
               <i className="xi-angle-right"></i>
             </button>
           </div>

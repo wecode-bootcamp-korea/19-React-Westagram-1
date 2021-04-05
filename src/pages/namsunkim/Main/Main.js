@@ -12,7 +12,7 @@ export default class Main extends Component {
   constructor() {
     super();
     this.state = {
-      userName: userName
+      userName
     }
   }
 

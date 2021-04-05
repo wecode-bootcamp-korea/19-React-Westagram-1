@@ -6,27 +6,21 @@ export default class FeedIcon extends Component {
 
   constructor() {
     super();
+    const { createIconMenu } = this;
     this.state = {
       icons: [
-        {
-          id: 1,
-          pathUrl: icons.like
-        },
-        {
-          id: 2,
-          pathUrl: icons.comment
-        },
-        {
-          id: 3,
-          pathUrl: icons.share
-        },
-        {
-          id: 4,
-          pathUrl: icons.save
-        },
+        createIconMenu(1, icons.like),
+        createIconMenu(2, icons.comment),
+        createIconMenu(3, icons.share),
+        createIconMenu(4, icons.save),
       ]
     }
   }
+
+  createIconMenu = (id, pathUrl) => {
+    return { id, pathUrl };
+  }
+
   render() {
     const { icons } = this.state;
     return (
@@ -36,9 +30,7 @@ export default class FeedIcon extends Component {
             const { id, pathUrl } = icon;
             return (
               <svg viewBox="0 0 48 48" className="navIcon pointer" key={id}>
-                <path
-                  d={pathUrl}>
-                </path>
+                <path d={pathUrl}></path>
               </svg>
             )
           })}
