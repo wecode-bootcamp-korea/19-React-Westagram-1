@@ -1,4 +1,5 @@
 import { Component } from "react"; // named export vs. default export
+import Content from "./Content";
 import "./Main.scss";
 
 class MainJW extends Component {
@@ -17,10 +18,40 @@ class MainJW extends Component {
   };
 
   addContent = () => {
+    const { commentList } = this.state;
+    const newCommentList = [
+      ...commentList,
+      {
+        userId: this.userId,
+        content: this.state.content,
+      },
+    ];
+
+    this.setState({
+      commentList: newCommentList,
+      content: "", //새롭게 받아올 property
+    });
+  };
+
+  // addContent = () => {
+  //   const { commentList } = this.state;
+  //   this.setState({
+  //     commentList: [
+  //       ...commentList,
+  //       {
+  //         userId: this.userId,
+  //         content: this.state.content,
+  //       },
+  //     ],
+  //     content: "", //새롭게 받아올 property
+  //   });
+  // };
+
+  addContent = () => {
     this.setState({
       commentList: this.state.commentList.concat([
         {
-          userId: this.userId,
+          userId: "dodo",
           content: this.state.content,
         },
       ]),
@@ -37,7 +68,7 @@ class MainJW extends Component {
   // state = {  }
   render() {
     return (
-      <div>
+      <div className="mainJW">
         <nav className="nav">
           <h4>Westagram</h4>
           <div className="main_search">
@@ -58,7 +89,7 @@ class MainJW extends Component {
             </span>
           </div>
         </nav>
-        <main>
+        <div className="main_all">
           <div className="main_feed">
             <article className="feeds">
               <section className="story">
@@ -195,11 +226,21 @@ class MainJW extends Component {
                   <ul>
                     {this.state.commentList.map((commentText) => {
                       return (
-                        <li className="commentLi" key={commentText.userId}>
-                          {commentText.content}
-                        </li>
+                        <Content
+                          userId={commentText.userId}
+                          content={commentText.content}
+                        />
                       );
                     })}
+
+                    {/* {this.state.commentList.map((commentText) => {
+                      return <Content contentValue={commentText} />;
+                    })} */}
+
+                    {/* //리턴없이 로직
+                    {this.state.commentList.map((commentText) => (
+                      <li>{commentText.content}</li>
+                    ))}   */}
                   </ul>
                   <input
                     className="post_review_input"
@@ -290,7 +331,7 @@ class MainJW extends Component {
               </section>
             </article>
           </div>
-        </main>
+        </div>
       </div>
     );
   }
