@@ -75,7 +75,7 @@ export default class Feed extends Component {
                   <FeedIcon />
                   <section className="likeList">
                     <img className="profileImg"
-                      src={profileUrlPrefix + feedArr.likeList[0].profile}
+                      src={profileUrlPrefix + likeList[0].profile}
                       alt={likeList[0].userName + '님의 profile'} />
                     <span>
                       <a href="#!" className="bold black">{likeList[0].userName}</a>님
