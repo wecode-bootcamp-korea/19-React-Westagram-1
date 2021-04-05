@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { defaultUser, profileIcon, profileUrlPrefix } from '../../../config';
+import { defaultUser, profileUrlPrefix } from '../../../config';
+import { icons } from '../../../icons';
 import { Link } from 'react-router-dom';
 import './NavProfile.scss';
 
@@ -13,22 +14,22 @@ export default class NavProfile extends Component {
         {
           id: 1,
           categoryName: '프로필',
-          pathUrl: profileIcon.profile
+          pathUrl: icons.profile
         },
         {
           id: 2,
           categoryName: '저장됨',
-          pathUrl: profileIcon.save
+          pathUrl: icons.profileSave
         },
         {
           id: 3,
           categoryName: '설정',
-          pathUrl: profileIcon.setting
+          pathUrl: icons.setting
         },
         {
           id: 4,
           categoryName: '계정전환',
-          pathUrl: profileIcon.change
+          pathUrl: icons.change
         },
       ]
     }

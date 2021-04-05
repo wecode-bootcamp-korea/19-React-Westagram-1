@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { icons } from '../../../config';
+import { icons } from '../../../icons';
 import NavProfile from '../NavProfile/NavProfile';
 import './NavIcon.scss';
 

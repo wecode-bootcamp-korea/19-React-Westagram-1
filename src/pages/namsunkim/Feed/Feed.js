@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { defaultUser, apiPrefix, feedUrlPrefix, profileUrlPrefix } from '../config';
-import FeedIcon from './Components/FeedIcon';
-import CommentList from './Components/CommentList';
+import FeedIcon from './Components/FeedIcon/FeedIcon';
+import CommentList from './Components/CommentList/CommentList';
 import './Feed.scss';
 
 export default class Feed extends Component {
@@ -52,7 +52,7 @@ export default class Feed extends Component {
 
   render() {
     const { feedArr } = this.state;
-    const { userName } = this.props;
+    // const { userName } = this.props;
     return (
       <>
         {
@@ -91,8 +91,7 @@ export default class Feed extends Component {
                       <span>댓글 {commentArr.length}개 모두 보기</span>
                     </p>
                   </section>
-                  <CommentList commentArr={commentArr} userName={userName} />
-                  {/* <Reply commentArr={feedArr.commentArr} addComment={this.addComment} id={feedArr.id} /> */}
+                  <CommentList commentArr={commentArr} userName={this.props.userName} />
                 </div>
               </article>
             )

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { defaultUser, apiPrefix, addCommentIcon } from '../../config';
-import Comment from './Comment';
+import { defaultUser, apiPrefix } from '../../../config';
+import { icons } from '../../../icons';
+import AddComment from '../AddComment/AddComment';
+import Comment from '../Comment/Comment';
 import './CommentList.scss';
 
 export default class CommentList extends Component {
@@ -114,20 +116,12 @@ export default class CommentList extends Component {
             )
           })}
         </ul>
-        <section className="addComment">
-          <svg viewBox="0 0 48 48">
-            <path
-              d={addCommentIcon.border}>
-            </path>
-            <path
-              d={addCommentIcon.smile}>
-            </path>
-          </svg>
-          <input type="text" placeholder="댓글 달기..." onChange={changeValue} value={comment} onKeyUp={changeValue} />
-          <button className={isEnable ? 'enabledBtn' : 'disabledBtn'}
-            disabled={!isEnable} onClick={addComment}>게시</button>
-          {/* disabled={!isEnable} onClick={() => { addComment(comment, id) }}>게시</button> */}
-        </section>
+        <AddComment
+          changeValue={changeValue}
+          isEnable={isEnable}
+          comment={comment}
+          addComment={addComment}
+        />
       </>
     );
   }
