@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { profileUrlPrefix } from '../../config';
 import './Story.scss';
 
-export default class oneStory extends Component {
+export default class Story extends Component {
   render() {
     const { userName, imgSrc } = this.props;
     return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Search.scss';
 
-class Search extends Component {
+export default class Search extends Component {
   render() {
     return (
       <>
@@ -23,5 +23,3 @@ class Search extends Component {
     );
   }
 }
-
-export default Search;

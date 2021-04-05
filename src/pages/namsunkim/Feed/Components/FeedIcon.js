@@ -33,10 +33,11 @@ export default class FeedIcon extends Component {
       <>
         <section className="feedIcon">
           {icons.map((icon) => {
+            const { id, pathUrl } = icon;
             return (
-              <svg viewBox="0 0 48 48" className="navIcon pointer" key={icon.id}>
+              <svg viewBox="0 0 48 48" className="navIcon pointer" key={id}>
                 <path
-                  d={icon.pathUrl}>
+                  d={pathUrl}>
                 </path>
               </svg>
             )

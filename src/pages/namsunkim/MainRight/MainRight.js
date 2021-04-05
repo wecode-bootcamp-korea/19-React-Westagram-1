@@ -45,11 +45,12 @@ export default class MainRight extends Component {
               <a href="#!" className="black">모두 보기</a>
             </span>
             {recommendAccount.map((recommendAccount) => {
+              const { id, userName, imgSrc } = recommendAccount;
               return (
                 <RecommendAccount
-                  key={recommendAccount.id}
-                  userName={recommendAccount.userName}
-                  imgSrc={recommendAccount.imgSrc}
+                  key={id}
+                  userName={userName}
+                  imgSrc={imgSrc}
                 />
               )
             })}

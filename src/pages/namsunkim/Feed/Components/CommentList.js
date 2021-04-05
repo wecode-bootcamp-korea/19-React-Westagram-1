@@ -100,13 +100,14 @@ export default class CommentList extends Component {
       <>
         <ul className="commentList">
           {commentArr.map((commentArr) => {
+            const { id, userName, content, isLiked } = commentArr;
             return (
               <Comment
-                key={commentArr.id}
-                id={commentArr.id}
-                userName={commentArr.userName}
-                comment={commentArr.content}
-                isLiked={commentArr.isLiked}
+                key={id}
+                id={id}
+                userName={userName}
+                comment={content}
+                isLiked={isLiked}
                 likeFnc={likeFnc}
                 deleteFnc={deleteFnc}
               />

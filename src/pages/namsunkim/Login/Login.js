@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Login.scss';
 
 export default class Login extends Component {
@@ -13,7 +12,6 @@ export default class Login extends Component {
     }
   }
 
-  //input태그가 변할때마다 state저장
   changeValue = (e) => {
     const { value, type } = e.target;
     const { validation } = this;
@@ -25,7 +23,6 @@ export default class Login extends Component {
     );
   };
 
-  //유효성검사
   validation = () => {
     const { text, password, isEnable } = this.state;
     this.setState(
@@ -37,7 +34,8 @@ export default class Login extends Component {
 
   goToMain = () => {
     const { text, password, isEnable } = this.state;
-    (text && password) && this.props.history.push('/mainns');
+    const { history } = this.props;
+    (text && password) && history.push('/mainns');
   }
 
   render() {

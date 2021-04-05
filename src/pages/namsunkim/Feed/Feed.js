@@ -57,40 +57,41 @@ export default class Feed extends Component {
       <>
         {
           feedArr.map((feedArr) => {
+            const { id, userName, profileImg, feedImg, content, likeList, commentArr } = feedArr;
             return (
-              <article className="feed" key={feedArr.id}>
+              <article className="feed" key={id}>
                 <div className="feedNav">
-                  <img alt={feedArr.userName + '님의 profile'} className="profileImg"
-                    src={profileUrlPrefix + feedArr.profileImg} />
+                  <img alt={userName + '님의 profile'} className="profileImg"
+                    src={profileUrlPrefix + profileImg} />
                   <div className="idWrap bold">
-                    <a href="#!" className="black">{feedArr.userName}</a>
+                    <a href="#!" className="black">{userName}</a>
                     <i className="xi-ellipsis-h"></i>
                   </div>
                 </div>
-                <img alt={feedArr.userName + '님의 feed image'} className="feedImg"
-                  src={feedUrlPrefix + feedArr.feedImg}
+                <img alt={userName + '님의 feed image'} className="feedImg"
+                  src={feedUrlPrefix + feedImg}
                 />
                 <div className="feedContent">
                   <FeedIcon />
                   <section className="likeList">
                     <img className="profileImg"
                       src={profileUrlPrefix + feedArr.likeList[0].profile}
-                      alt={feedArr.likeList[0].userName + '님의 profile'} />
+                      alt={likeList[0].userName + '님의 profile'} />
                     <span>
-                      <a href="#!" className="bold black">{feedArr.likeList[0].userName}</a>님
-                      <a href="#!" className="bold black">외 {feedArr.likeList.length - 1}명</a>이 좋아합니다
+                      <a href="#!" className="bold black">{likeList[0].userName}</a>님
+                      <a href="#!" className="bold black">외 {likeList.length - 1}명</a>이 좋아합니다
                     </span>
                   </section>
                   <section className="feedArticle">
                     <span>
-                      <a href="#!" className="bold black">{feedArr.userName}</a>
-                      <span>{feedArr.content}</span>
+                      <a href="#!" className="bold black">{userName}</a>
+                      <span>{content}</span>
                     </span>
                     <p>
-                      <span>댓글 {feedArr.commentArr.length}개 모두 보기</span>
+                      <span>댓글 {commentArr.length}개 모두 보기</span>
                     </p>
                   </section>
-                  <CommentList commentArr={feedArr.commentArr} userName={userName} />
+                  <CommentList commentArr={commentArr} userName={userName} />
                   {/* <Reply commentArr={feedArr.commentArr} addComment={this.addComment} id={feedArr.id} /> */}
                 </div>
               </article>

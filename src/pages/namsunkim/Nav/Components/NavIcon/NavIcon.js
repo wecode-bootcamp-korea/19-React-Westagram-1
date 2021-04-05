@@ -34,11 +34,12 @@ export default class NavIcon extends Component {
       <>
         <div className="iconWrap">
           {icons.map((icon) => {
+            const { id, pathUrl } = icon;
             return (
-              <a href="#!" key={icon.id}>
+              <a href="#!" key={id}>
                 <svg className="navIcon" viewBox="0 0 48 48">
                   <path
-                    d={icon.pathUrl}>
+                    d={pathUrl}>
                   </path>
                 </svg>
               </a>

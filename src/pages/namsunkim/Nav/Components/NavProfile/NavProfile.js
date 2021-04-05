@@ -59,15 +59,16 @@ export default class NavProfile extends Component {
             <div className="profileMenu">
               <ul className="profileList bold">
                 {menuCategory.map((category) => {
+                  const { id, pathUrl, categoryName } = category;
                   return (
-                    <li className="light" key={category.id}>
+                    <li className="light" key={id}>
                       <svg viewBox="0 0 32 32">
                         <path
-                          d={category.pathUrl}>
+                          d={pathUrl}>
                         </path>
                       </svg>
                       <div>
-                        <a href="#!" className="black">{category.categoryName}</a>
+                        <a href="#!" className="black">{categoryName}</a>
                       </div>
                     </li>
                   )
@@ -92,7 +93,7 @@ export default class NavProfile extends Component {
               </ul>
             </div>
           </div>
-        </div >
+        </div>
       </>
     );
   }

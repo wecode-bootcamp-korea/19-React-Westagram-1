@@ -59,11 +59,12 @@ export default class StoryList extends Component {
           </div>
           <ul>
             {storyArr.map((storyArr) => {
+              const { id, userName, imgSrc } = storyArr;
               return (
                 <Story
-                  key={storyArr.id}
-                  userName={storyArr.userName}
-                  imgSrc={storyArr.imgSrc}
+                  key={id}
+                  userName={userName}
+                  imgSrc={imgSrc}
                 />
               )
             })}
