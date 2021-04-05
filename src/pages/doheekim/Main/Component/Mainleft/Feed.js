@@ -1,4 +1,5 @@
 import React from "react";
+import Comments from "./Comments";
 import "./Feed.scss";
 import { FaEllipsisH } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -11,12 +12,9 @@ class Feed extends React.Component {
     super();
     this.state = {
       color: "#0094f64b",
+      key: 1,
       newComment: "",
-      comments: [
-        {
-          text: "",
-        },
-      ],
+      comments: [[{ userId: "_ggul_dodo", comment: "나도 먹고싶어" }]],
     };
   }
 
@@ -27,14 +25,14 @@ class Feed extends React.Component {
   };
 
   addComment = () => {
-    // Button 요소의 onClick 이벤트 핸들러
-    let arr = this.state.comments;
-    arr.push({
-      text: this.state.newComment,
-    });
-
     this.setState({
-      comments: arr,
+      comments: [
+        ...this.state.comments,
+        {
+          userId: "_ggul_dodo",
+          comment: this.state.newComment,
+        },
+      ],
       newComment: "",
     });
   };
@@ -112,8 +110,11 @@ class Feed extends React.Component {
                 <span className="chat-id">_dodo_hee</span>
                 <span className="chat-content">까눌레 엉엉😭</span>
               </li>
-              {this.state.comments.map((el) => (
-                <li>{el.text}</li>
+              {this.state.comments.map((item) => (
+                <Comments
+                  userId={item.userId}
+                  comment={item.comment}
+                ></Comments>
               ))}
             </ul>
             <p className="time">7시간 전</p>
