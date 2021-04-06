@@ -1,20 +1,21 @@
 import React from "react";
 import Comments from "./Comments";
+import COMMENT from "./CommentData";
 import "./Feed.scss";
 import { FaEllipsisH } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa";
 import { FaRegShareSquare } from "react-icons/fa";
 import { FaRegBookmark } from "react-icons/fa";
+import { FaRegSmile } from "react-icons/fa";
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
       color: "#0094f64b",
-      key: 1,
       newComment: "",
-      comments: [[{ userId: "_ggul_dodo", comment: "나도 먹고싶어" }]],
+      comments: [[{ id: 0, userId: "", comment: "" }]],
     };
   }
 
@@ -24,6 +25,12 @@ class Feed extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.setState({
+      comments: COMMENT,
+    });
+  }
+
   addComment = () => {
     this.setState({
       comments: [
@@ -31,6 +38,7 @@ class Feed extends React.Component {
         {
           userId: "_ggul_dodo",
           comment: this.state.newComment,
+          key: this.state.comments.length,
         },
       ],
       newComment: "",
@@ -112,6 +120,7 @@ class Feed extends React.Component {
               </li>
               {this.state.comments.map((item) => (
                 <Comments
+                  key={item.length}
                   userId={item.userId}
                   comment={item.comment}
                 ></Comments>
@@ -120,9 +129,7 @@ class Feed extends React.Component {
             <p className="time">7시간 전</p>
           </div>
           <ul className="comment-write">
-            <li>
-              <i className="fa fa-smile-o" aria-hidden="true"></i>
-            </li>
+            <li>{FaRegSmile}</li>
             <li>
               <input
                 className="comment-inner"
