@@ -25,12 +25,6 @@ class Feed extends React.Component {
     });
   };
 
-  componentDidMount() {
-    this.setState({
-      comments: COMMENT,
-    });
-  }
-
   addComment = () => {
     this.setState({
       comments: [
@@ -45,6 +39,12 @@ class Feed extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.setState({
+      comments: COMMENT,
+    });
+  }
+
   pressEnter = (e) => {
     if (e.key === "Enter" && this.state.newComment) {
       this.addComment();
@@ -53,6 +53,7 @@ class Feed extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="feeds">
         <article>
@@ -65,17 +66,14 @@ class Feed extends React.Component {
                     alt="도희미니프로필"
                   />
                 </li>
-                <li className="mini-id">_dodo_hee</li>
+                <li className="mini-id">{this.props.name}</li>
               </ul>
             </li>
             <li className="more">
               <FaEllipsisH />
             </li>
           </ul>
-          <img
-            src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/147433190_1080989829067597_3410425774798521157_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=101&_nc_ohc=4eaa4k_pRbMAX-6ykCQ&edm=AP_V10EAAAAA&ccb=7-4&oh=3488aecc9c05d6f705bbb3877660aaf6&oe=6088F135&_nc_sid=4f375e"
-            alt="피드사진"
-          />
+          <img src={this.props.img} alt="피드사진" />
           <div className="feeds-bottom">
             <ul className="feeds-bottom-flex">
               <li className="feeds-icon">
@@ -109,14 +107,14 @@ class Feed extends React.Component {
                 alt="좋아요누른사람사진"
               />
               <p>
-                <span className="bold">j_vely_s2</span>님 <span>외 121명</span>
-                이 좋아합니다
+                <span className="bold">j_vely_s2</span>님{" "}
+                <span>외 {this.props.count}명</span>이 좋아합니다
               </p>
             </div>
             <ul className="content-write">
               <li>
-                <span className="chat-id">_dodo_hee</span>
-                <span className="chat-content">까눌레 엉엉😭</span>
+                <span className="chat-id">{this.props.name}</span>
+                <span className="chat-content">{this.props.title}</span>
               </li>
               {this.state.comments.map((item) => (
                 <Comments

@@ -13,10 +13,10 @@ class Main extends Component {
   render() {
     return (
       <body>
-        <Nav></Nav>
+        <Nav />
         <main>
-          <MainLeft></MainLeft>
-          <MainRight></MainRight>
+          <MainLeft />
+          <MainRight />
         </main>
       </body>
     );

@@ -1,17 +1,12 @@
 import React from "react";
+import COMMENT from "./CommentData";
 //import { IoMdCloseCircleOutline } from "react-icons/io";
 // import { FiHeart } from "react-icons/fi";
 class Comments extends React.Component {
   componentDidMount() {
-    fetch("http://localhost:3000/data/CommentData.json", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({
-          comment: data,
-        });
-      });
+    this.setState({
+      comments: COMMENT,
+    });
   }
 
   render() {
