@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './Search.scss';
 
 export default class Search extends Component {
+
   render() {
     return (
       <>
         <div className="searchWrap">
           <input type="text" className="searchInput" placeholder="검색" />
-          <button className="keywordDelBtn">x</button>
+          <button className="keywordDelBtn pointer">x</button>
           <div className="searchResultWrap hidden">
             <div className="speechBubble">
             </div>
