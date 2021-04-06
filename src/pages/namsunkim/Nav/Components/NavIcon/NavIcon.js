@@ -8,12 +8,13 @@ export default class NavIcon extends Component {
   constructor() {
     super();
     const { createIconMenu } = this;
+    const { home, share, find, like } = icons;
     this.state = {
       icons: [
-        createIconMenu(1, icons.home),
-        createIconMenu(2, icons.share),
-        createIconMenu(3, icons.find),
-        createIconMenu(4, icons.like),
+        createIconMenu(1, home),
+        createIconMenu(2, share),
+        createIconMenu(3, find),
+        createIconMenu(4, like),
       ]
     }
   }

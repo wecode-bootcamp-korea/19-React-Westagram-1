@@ -7,12 +7,13 @@ export default class FeedIcon extends Component {
   constructor() {
     super();
     const { createIconMenu } = this;
+    const { like, comment, share, save } = icons;
     this.state = {
       icons: [
-        createIconMenu(1, icons.like),
-        createIconMenu(2, icons.comment),
-        createIconMenu(3, icons.share),
-        createIconMenu(4, icons.save),
+        createIconMenu(1, like),
+        createIconMenu(2, comment),
+        createIconMenu(3, share),
+        createIconMenu(4, save),
       ]
     }
   }

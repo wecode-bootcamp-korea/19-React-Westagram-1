@@ -78,11 +78,10 @@ export default class CommentList extends Component {
       ({ prevState }) =>
         commentArr[id - 1].isLiked = (!commentArr[id - 1].isLiked)
     );
-
   }
 
   deleteComment = (id) => {
-    const { commentArr } = this.state;
+    let { commentArr } = this.state;
 
     if (window.confirm('댓글을 삭제하시겠습니까?')) {
       this.setState({

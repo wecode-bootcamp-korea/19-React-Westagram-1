@@ -35,7 +35,7 @@ export default class MainRight extends Component {
         <aside className="mainRight">
           <div className="account">
             <img src={profile + defaultUser.profile}
-              alt={userName + "님의 profile"} />
+              alt={`${userName}님의 profile`} />
             <div className="idWrap bold">
               <span>{userName ? userName : defaultUser.userName}</span>
               <a href="#!">전환</a>

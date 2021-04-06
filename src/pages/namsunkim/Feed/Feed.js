@@ -38,22 +38,21 @@ export default class Feed extends Component {
             return (
               <article className="feed" key={id}>
                 <div className="feedNav">
-                  <img alt={userName + '님의 profile'} className="profileImg"
+                  <img alt={`${userName}님의 profile`} className="profileImg"
                     src={profile + profileImg} />
                   <div className="idWrap bold">
                     <a href="#!" className="black">{userName}</a>
                     <i className="xi-ellipsis-h"></i>
                   </div>
                 </div>
-                <img alt={userName + '님의 feed image'} className="feedImg"
-                  src={feed + feedImg}
-                />
+                <img alt={`${userName}님의 feedImage`} className="feedImg"
+                  src={feed + feedImg} />
                 <div className="feedContent">
                   <FeedIcon />
                   <section className="likeList">
                     <img className="profileImg"
                       src={profile + likeList[0].profile}
-                      alt={likeList[0].userName + '님의 profile'} />
+                      alt={`${likeList[0].userName}님의 profile`} />
                     <span>
                       <a href="#!" className="bold black">{likeList[0].userName}</a>님
                       <a href="#!" className="bold black">외 {likeList.length - 1}명</a>이 좋아합니다

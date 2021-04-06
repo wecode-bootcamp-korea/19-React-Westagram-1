@@ -14,7 +14,7 @@ export default class Comment extends Component {
           <span>{content}</span>
           <i className="xi-close-min deleteComment pointer"
             onClick={() => deleteComment(id)}></i>
-          <i className={'xi-heart' + (!isLiked ? '-o' : ' likeComment') + ' likeHeart pointer'}
+          <i className={`xi-heart${(!isLiked ? `-o` : ` likeComment`)} likeHeart pointer`}
             onClick={() => likeComment(id)}></i>
         </li>
       </>

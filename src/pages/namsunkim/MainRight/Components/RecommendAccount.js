@@ -10,7 +10,7 @@ export default class RecommendAccount extends Component {
       <>
         <li className="recommendAccount">
           <img src={profile + imgSrc}
-            alt={userName + '님의 profile'} />
+            alt={`${userName}님의 profile`} />
           <div>
             <a href="#!" className="black">{userName}</a>
             <span>회원님을 팔로우합니다</span>

@@ -11,7 +11,7 @@ export default class Story extends Component {
         <li>
           <div className="gradientWrap">
             <img src={profile + imgSrc}
-              alt={userName + '님의 profile'} />
+              alt={`${userName}님의 profile`} />
           </div>
           <p>{userName}</p>
         </li>
