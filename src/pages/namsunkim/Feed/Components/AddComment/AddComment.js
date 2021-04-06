@@ -16,7 +16,6 @@ export default class AddComment extends Component {
           <input type="text" placeholder="댓글 달기..." onChange={changeValue} onKeyUp={changeValue} value={comment} />
           <button className={isEnable ? 'enabledBtn' : 'disabledBtn'}
             disabled={!isEnable} onClick={addComment}>게시</button>
-          {/* disabled={!isEnable} onClick={() => { addComment(comment, id) }}>게시</button> */}
         </section>
       </>
     );

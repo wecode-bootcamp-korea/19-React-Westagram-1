@@ -66,7 +66,6 @@ export default class CommentList extends Component {
         }],
         comment: ''
       },
-        // () => { console.log(commentArr) }
       );
     }
   }
@@ -87,7 +86,6 @@ export default class CommentList extends Component {
       this.setState({
         commentArr: commentArr.filter((comment) => comment.id !== id)
       },
-        // () => { console.log(this.state.commentArr) }
       )
     }
   }
