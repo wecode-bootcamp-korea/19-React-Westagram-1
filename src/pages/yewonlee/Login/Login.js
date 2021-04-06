@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 class Login extends Component {
 
     goToMain = () => {
-        this.props.history.push('/main');
+        this.props.history.push('/mainyw');
     }
 
     constructor(){

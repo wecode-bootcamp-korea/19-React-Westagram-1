@@ -1,0 +1,30 @@
+[
+    {
+        "commentId": 1,
+        "accountName": "wecode_bootcamp",
+        "text": "Hello React!",
+        "commentIcon": "initial",
+        "likeIcon": false
+    },
+    {
+        "commentId": 2,
+        "accountName": "jessywlee",
+        "text": "안뇽~~~~",
+        "commentIcon": "initial",
+        "likeIcon": false
+    },
+    {
+        "commentId": 3,
+        "accountName": "eezy.silver",
+        "text": "배고파",
+        "commentIcon": "initial",
+        "likeIcon": false
+    },
+    {
+        "commentId": 4,
+        "accountName": "1smin",
+        "text": "좋아요!",
+        "commentIcon": "initial",
+        "likeIcon": false
+    }
+]

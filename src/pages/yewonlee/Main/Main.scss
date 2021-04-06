@@ -1,10 +1,5 @@
 @import "../index.scss";
 
-%flex-space-between-center {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
 
 .Main {
 	padding: 0px 240px;
@@ -107,7 +102,7 @@
 
 	/* main */
 
-	.main-middle {
+	.main-middle-right {
 		display: flex;
 		margin-top: 60px;
 
@@ -156,7 +151,7 @@
 		.article-icons {
 			position: relative;
 			padding: 5px;
-			
+
 			.article-icon {
 				height: 25px;
 				width: 25px;
@@ -174,12 +169,12 @@
 			margin-bottom: 5px;
 			font-size: $main-font-size;
 
-			.number-of-likes
-			{
+			.number-of-likes {
 				margin-bottom: 10px;
 			}
 
-			#who-liked, #others {
+			#who-liked,
+			#others {
 				font-weight: bold;
 			}
 
@@ -197,8 +192,6 @@
 				color: $gray-text-color;
 			}
 		}
-
-		
 	}
 
 	/*main-right*/
