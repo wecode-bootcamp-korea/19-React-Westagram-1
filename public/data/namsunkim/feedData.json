@@ -37,19 +37,25 @@
         "id": 1,
         "userName": "ovenlee.tattoo",
         "content": "도안 예뻐요!",
-        "isLiked": true
+        "isLiked": true,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       },
       {
         "id": 2,
         "userName": "mealpoke",
         "content": "짱귀욤",
-        "isLiked": false
+        "isLiked": false,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       },
       {
         "id": 3,
         "userName": "yeoni_drawing",
         "content": "헐 ㅠㅠㅠㅠ",
-        "isLiked": false
+        "isLiked": false,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       }
     ]
   },
@@ -106,19 +112,25 @@
         "id": 1,
         "userName": "dksajfldka",
         "content": "저도요ㅠ",
-        "isLiked": false
+        "isLiked": false,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       },
       {
         "id": 2,
         "userName": "nsunny0908",
         "content": "코로나 언제 끝나..",
-        "isLiked": false
+        "isLiked": false,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       },
       {
         "id": 3,
         "userName": "alalalalalal",
         "content": "여긴 어딘가용",
-        "isLiked": false
+        "isLiked": false,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       }
     ]
   },
@@ -150,7 +162,9 @@
         "id": 1,
         "userName": "milktee",
         "content": "우와아아앙",
-        "isLiked": true
+        "isLiked": true,
+        "likeAmount": 0,
+        "registerDate": "1617688133"
       }
     ]
   }

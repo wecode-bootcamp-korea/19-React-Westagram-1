@@ -3,18 +3,24 @@
     "id": 1,
     "userName": "ovenlee.tattoo",
     "content": "예뻐요!",
-    "isLiked": true
+    "isLiked": true,
+    "likeAmount": 0,
+    "registerDate": "1617688133"
   },
   {
     "id": 2,
     "userName": "mealpoke",
     "content": "💚💙💛🧡🤍💕💞💓💗💖💘💝",
-    "isLiked": false
+    "isLiked": false,
+    "likeAmount": 0,
+    "registerDate": "1617695333"
   },
   {
     "id": 3,
     "userName": "yeoni_drawing",
     "content": "헐 ㅠㅠㅠㅠ",
-    "isLiked": false
+    "isLiked": false,
+    "likeAmount": 0,
+    "registerDate": "1617696333"
   }
 ]
