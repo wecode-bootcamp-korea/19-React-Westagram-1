@@ -32,10 +32,38 @@ export default class Login extends Component {
     )
   }
 
-  goToMain = () => {
+  goToMain = (e) => {
+    e.preventDefault();
     const { id, password, isEnable } = this.state;
     const { history } = this.props;
     (id && password) && history.push('/mainns');
+    // this.login();
+  }
+
+  login = () => {
+    const { id, password } = this.state;
+    const { history } = this.props;
+
+    fetch('http://10.58.4.176:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: password
+      })
+
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const { message, token, user_email } = data;
+
+        if (message === 'SUCCESS') {
+          history.push('/mainns');
+          localStorage.setItem('token', token);
+          localStorage.setItem('userName', user_email);
+        } else {
+          alert('로그인 실패');
+        }
+      })
   }
 
   render() {
@@ -46,7 +74,7 @@ export default class Login extends Component {
         <section className="login">
           <h1 className="logo">Westagram</h1>
           <div className="loginWrap">
-            <form action="#!" onKeyUp={changeValue}>
+            <form onKeyUp={changeValue}>
               <input className="idInput" type="text" name="id" placeholder="전화번호, 사용자 이름 또는 이메일" />
               <input className="pwInput" type="password" name="password" placeholder="비밀번호" />
               <button className={'loginBtn ' + (isEnable ? 'enabledBtn' : 'disabledBtn')}
