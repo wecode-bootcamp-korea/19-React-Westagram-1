@@ -4,7 +4,7 @@ export const defaultUser = {
 }
 
 export const prefix = {
-  api: 'http://localhost:3000/data/namsunkim/',
+  api: 'http://localhost:3000/data/namsunkim',
   feed: 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/',
   profile: 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/',
 }

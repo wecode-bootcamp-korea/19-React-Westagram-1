@@ -16,7 +16,7 @@ export default class CommentList extends Component {
 
   componentDidMount() {
     const { api } = prefix;
-    fetch(`${api}commentData.json`, {
+    fetch(`${api}/commentData.json`, {
       method: 'GET'
     })
       .then(res => res.json())

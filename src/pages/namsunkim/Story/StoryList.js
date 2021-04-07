@@ -13,7 +13,7 @@ export default class StoryList extends Component {
 
   componentDidMount() {
     const { api } = prefix;
-    fetch(`${api}storyData.json`, {
+    fetch(`${api}/storyData.json`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -61,14 +61,16 @@ export default class StoryList extends Component {
           </div>
           <ul>
             {storyArr.map((storyArr) => {
-              const { id, userName, imgSrc } = storyArr;
-              return (
-                <Story
-                  key={id}
-                  userName={userName}
-                  imgSrc={imgSrc}
-                />
-              )
+              const { id, userName, imgSrc, isClicked } = storyArr;
+              if (!isClicked) {
+                return (
+                  <Story
+                    key={id}
+                    userName={userName}
+                    imgSrc={imgSrc}
+                  />
+                )
+              }
             })}
           </ul>
         </section>

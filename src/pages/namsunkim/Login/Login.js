@@ -6,36 +6,36 @@ export default class Login extends Component {
   constructor() {
     super();
     this.state = {
-      text: '',
+      id: '',
       password: '',
       isEnable: false,
     }
   }
 
   changeValue = (e) => {
-    const { value, type } = e.target;
+    const { value, name } = e.target;
     const { validation } = this;
     this.setState(
       {
-        [type]: value
+        [name]: value
       },
       validation
     );
   };
 
   validation = () => {
-    const { text, password, isEnable } = this.state;
+    const { id, password, isEnable } = this.state;
     this.setState(
       {
-        isEnable: (text && text.includes('@')) && password.length >= 5
+        isEnable: (id && id.includes('@')) && password.length >= 5
       }
     )
   }
 
   goToMain = () => {
-    const { text, password, isEnable } = this.state;
+    const { id, password, isEnable } = this.state;
     const { history } = this.props;
-    (text && password) && history.push('/mainns');
+    (id && password) && history.push('/mainns');
   }
 
   render() {
@@ -47,8 +47,8 @@ export default class Login extends Component {
           <h1 className="logo">Westagram</h1>
           <div className="loginWrap">
             <form action="#!" onKeyUp={changeValue}>
-              <input className="idInput" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-              <input className="pwInput" type="password" placeholder="비밀번호" />
+              <input className="idInput" type="text" name="id" placeholder="전화번호, 사용자 이름 또는 이메일" />
+              <input className="pwInput" type="password" name="password" placeholder="비밀번호" />
               <button className={'loginBtn ' + (isEnable ? 'enabledBtn' : 'disabledBtn')}
                 onClick={goToMain}
                 readOnly>로그인</button>
