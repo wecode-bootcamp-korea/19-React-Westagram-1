@@ -13,7 +13,27 @@ class Login extends Component {
   }
 
   goToMain = () => {
-    this.props.history.push("/maindh");
+    //this.props.history.push("/maindh");
+    fetch("http://10.58.3.73:8000/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        account: this.state.id,
+        password: this.state.pw,
+        // phone_number: "01034358181",
+        // name: "김도히",
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        if (result.MESSAGE === "SUCCESS") {
+          alert("로그인성공");
+
+          //this.props.history.push("/maindh");
+        } else {
+          alert("🤬IT'S YOUR FAULT!🤬");
+        }
+      });
   };
 
   handleIdInput = (event) => {
