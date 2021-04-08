@@ -1,11 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 .body {
   background-color: rgb(250, 250, 250);
-
+  // background-color: red;
+  // height: 100vh;
   article {
     position: relative;
     width: 590px;
-    height: 713px;
+    height: auto;
     margin-left: 40px;
     background-color: white;
   }
@@ -92,7 +93,7 @@
   }
   .main {
     width: 900px;
-    height: 100vh;
+    // height: 100vh;
     margin: auto;
     padding-top: 100px;
     display: flex;
@@ -137,19 +138,15 @@
     height: 50px;
     overflow: hidden;
   }
-
   .feed_img {
-    position: absolute;
-    width: 590px;
-    height: 413px;
-    margin: auto;
-    top: 59px;
     overflow: hidden;
+    height: 420px;
   }
 
   .feed {
     display: flex;
     align-items: center;
+    height: 50px;
   }
   .feed_left {
     display: flex;
@@ -184,9 +181,6 @@
   .comment {
     padding-left: 10px;
     background-color: white;
-    .repliy li {
-      display: block;
-    }
   }
   button {
     border: none;
@@ -218,7 +212,7 @@
     width: 590px;
     height: 56px;
     padding: 10px;
-    border-top: rgb(219, 219, 219) solid 0.5px;
+    border: rgb(219, 219, 219) solid 0.5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -272,5 +266,14 @@
   .hicat {
     width: 20px;
     height: 20px;
+  }
+  .term {
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 250, 250);
+  }
+  .repliy li {
+    display: block;
   }
 }

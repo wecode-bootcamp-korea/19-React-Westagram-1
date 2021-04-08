@@ -11,8 +11,27 @@ class LoginMJ extends Component {
       color: 'black',
     };
   }
+  CheakData = () => {
+    // fetch('http://10.58.5.21:8000/users/sign_in', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: this.state.targetId,
+    //     password: this.state.targetPw,
+    //     name: '이땡댕',
+    //     phone_number: '0104563698',
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log(result);
+    //     if (result.MESSAGE === 'SUCCESS') {
+    //       alert('환영합니다');
+    //       this.props.history.push('/mainmj');
+    //     }
+    //   });
+  };
   goToMain = () => {
-    this.props.history.push('/main');
+    this.props.history.push('/mainmj');
   };
   handleIdInput = async (e) => {
     // 객체 비구조화할당
