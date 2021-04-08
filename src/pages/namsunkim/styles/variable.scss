@@ -5,6 +5,8 @@ $enabled: #0095F6;
 $disabled: #B9DFFC;
 $border: #DBDBDB;
 $gray: #8e8e8e;
+$phone: "(max-width: 768px)"; 
+$tablet: "(max-width: 1078px)";
 
 body {
   background-color: $background;

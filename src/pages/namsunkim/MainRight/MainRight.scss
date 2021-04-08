@@ -60,10 +60,7 @@
       font-size: 0.75rem;
     }
   }
-}
-
-@media (max-width: 1078px) {
-  .mainRight {
+  @media #{$tablet} {
     display: none;
   }
 }

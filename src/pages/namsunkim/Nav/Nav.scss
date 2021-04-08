@@ -25,6 +25,11 @@ nav {
 
       a {
         text-decoration: none;
+        font-size: 0.9rem;
+      }
+      
+      span {
+        font-size: 0.9rem;
       }
 
       .logo {
@@ -35,15 +40,13 @@ nav {
         font-size: 1.5rem;
         font-weight: 600;
       }
-    }
 
-    @media (max-width: 1078px) {
-      .navWrap {
+      @media #{$tablet} {
         justify-content: space-evenly;
       }
     }
 
-    @media (max-width: 768px) {
+    @media #{$phone} {
       .searchWrap {
         display: none;
       }

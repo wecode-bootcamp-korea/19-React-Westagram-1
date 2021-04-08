@@ -77,10 +77,8 @@
       font-size: 12px;
     }
   }
-}
 
-@media (max-width: 450px) {
-  .login {
+  @media (max-width: 450px) {
     background-color: $background;
     border: 0;
   }
