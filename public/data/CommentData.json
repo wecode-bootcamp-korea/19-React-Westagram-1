@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userId": "wecode",
+    "content": "Welcome to world best coding bootcamp!",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userId": "summer_summer",
+    "content": "💟hi NEW NYC",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userId": "02__9",
+    "content": "Hey",
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "userId": "yemyum",
+    "content": "Hi🌎 there",
+    "isLiked": false
+  },
+  {
+    "id": 5,
+    "userId": "miniPark",
+    "content": "♕ oh ♔",
+    "isLiked": false
+  }
+]
