@@ -1,94 +1,97 @@
 @import "../index.scss";
-    
-    /* main */
-	.main-middle-right {
-		display: flex;
-		margin-top: 60px;
 
-		.feeds {
-			border: $main-border;
-			.feeds-header {
-				@extend %flex-space-between-center;
-				width: 100%;
-				padding: 10px;
-			}
+/* main */
+.main-middle-right {
+	.feeds {
+		display: flex;
+		flex-direction: column;
+	}
+	.feed {
+		border: $main-border;
+		margin-bottom: 60px;
+
+		.feeds-header {
+			@extend %flex-space-between-center;
+			width: 100%;
+			padding: 10px;
 		}
-		/*class shared w. main-middle and main-right*/
-		.profile-info-description {
+	}
+	/*class shared w. main-middle and main-right*/
+	.profile-info-description {
+		display: flex;
+		position: relative;
+		align-items: center;
+		.profile-info-img {
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+		}
+		.profile-info-texts {
 			display: flex;
-			position: relative;
-			align-items: center;
-			.profile-info-img {
-				width: 35px;
-				height: 35px;
-				border-radius: 50%;
-			}
-			.profile-info-texts {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				margin-left: 10px;
-				font-size: $main-font-size;
-				.user-id {
-					font-weight: bold;
-					margin-bottom: 5px;
-				}
+			flex-direction: column;
+			justify-content: center;
+			margin-left: 10px;
+			font-size: $main-font-size;
+			.user-id {
+				font-weight: bold;
+				margin-bottom: 5px;
 			}
 		}
 	}
+}
 
-	/*feeds - article */
+/*feeds - article */
 
 article {
-    background-color: white;
+	background-color: white;
 
-    .article-img {
-        width: 615px;
-        height: 610px;
-    }
+	.article-img {
+		width: 615px;
+		height: 610px;
+	}
 
-    .article-icons {
-        position: relative;
-        padding: 5px;
+	.article-icons {
+		position: relative;
+		padding: 5px;
 
-        .article-icon {
-            height: 25px;
-            width: 25px;
-            margin: 5px 10px 5px 5px;
-        }
+		.article-icon {
+			height: 25px;
+			width: 25px;
+			margin: 5px 10px 5px 5px;
+		}
 
-        .article-icon:last-child {
-            position: absolute;
-            right: 5px;
-        }
-    }
+		.article-icon:last-child {
+			position: absolute;
+			right: 5px;
+		}
+	}
 
-    .article-contents {
-        padding: 0px 10px;
-        margin-bottom: 5px;
-        font-size: $main-font-size;
+	.article-contents {
+		padding: 0px 10px;
+		margin-bottom: 5px;
+		font-size: $main-font-size;
 
-        .number-of-likes {
-            margin-bottom: 10px;
-        }
+		.number-of-likes {
+			margin-bottom: 10px;
+		}
 
-        #who-liked,
-        #others {
-            font-weight: bold;
-        }
+		#who-liked,
+		#others {
+			font-weight: bold;
+		}
 
-        .caption {
-            margin-bottom: 5px;
-        }
+		.caption {
+			margin-bottom: 5px;
+		}
 
-        #caption-more {
-            border-style: none;
-            background-color: transparent;
-            font-size: $main-font-size;
-        }
-        #caption-more,
-        #time {
-            color: $gray-text-color;
-        }
-    }
+		#caption-more {
+			border-style: none;
+			background-color: transparent;
+			font-size: $main-font-size;
+		}
+		#caption-more,
+		#time {
+			color: $gray-text-color;
+		}
+	}
 }

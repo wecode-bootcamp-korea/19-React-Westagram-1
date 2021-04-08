@@ -25,7 +25,6 @@ class CommentBox extends Component {
 				<input
 					onKeyPress={enterCommentLine}
 					value={commentValue}
-					id="comments-input"
 					onChange={handleCommentValue}
 					type="text"
 					placeholder="댓글 달기..."

@@ -1,118 +1,21 @@
 @import "../Main/index.scss";
 
 .Main {
-	padding: 0px 240px;
+	@extend %flex-space-between-center;
+	flex-direction: column;
+	position: relative;
 	background-color: #fafafa;
 
 	button {
 		cursor: pointer;
 	}
-	/* header on the left */
-
-	.header {
-		@extend %flex-space-between-center;
-		width: 959px;
-		height: 50px;
-
-		#header-main {
-			@extend %flex-space-between-center;
-			color: #262626;
-
-			.separator {
-				display: inline-block;
-				width: 2px;
-				height: 24px;
-				margin: 0 15px;
-				background-color: #262626;
-			}
-
-			.title {
-				font-size: 24px;
-			}
-		}
-
-		.search {
-			display: flex;
-			position: relative;
-
-			#search-input {
-				width: 290px;
-				height: 30px;
-				background-color: white;
-				color: $light-gray-color;
-				border-style: none;
-				border: 1px solid $light-gray-color;
-				text-align: center;
-			}
-
-			#search-placeholder-moved {
-				width: 290px;
-				height: 30px;
-				padding-left: 30px;
-				background-color: white;
-				color: $light-gray-color;
-				border-style: none;
-				border: 1px solid $light-gray-color;
-				text-align: left;
-			}
-
-			#search-input::placeholder,
-			#search-placeholder-moved::placeholder {
-				color: $light-gray-color;
-			}
-
-			#search-icon {
-				position: absolute;
-				top: 8px;
-				left: 110px;
-				color: $light-gray-color;
-			}
-
-			#search-icon-moved {
-				position: absolute;
-				top: 8px;
-				left: 10px;
-				color: $light-gray-color;
-			}
-
-			#cancel-icon {
-				display: none;
-				position: absolute;
-				right: 10px;
-				top: 8px;
-				color: $light-gray-color;
-			}
-
-			#cancel-icon-enabled {
-				position: absolute;
-				right: 10px;
-				top: 8px;
-				color: $light-gray-color;
-			}
-		}
-
-		.nav-right {
-			i {
-				margin: 10px;
-				color: #262626;
-			}
-		}
-	}
-
-	/* main */
 
 	.main-middle-right {
-		display: flex;
+		padding: 30px 60px 0px 60px;
 		margin-top: 60px;
+		display: flex;
+		justify-content: space-around;
 
-		.feeds {
-			border: $main-border;
-			.feeds-header {
-				@extend %flex-space-between-center;
-				width: 100%;
-				padding: 10px;
-			}
-		}
 		/*class shared w. main-middle and main-right*/
 		.profile-info-description {
 			display: flex;
@@ -137,156 +40,107 @@
 		}
 	}
 
-	/*feeds - article */
-
-	article {
-		background-color: white;
-
-		.article-img {
-			width: 615px;
-			height: 610px;
-		}
-
-		.article-icons {
-			position: relative;
-			padding: 5px;
-
-			.article-icon {
-				height: 25px;
-				width: 25px;
-				margin: 5px 10px 5px 5px;
-			}
-
-			.article-icon:last-child {
-				position: absolute;
-				right: 5px;
-			}
-		}
-
-		.article-contents {
-			padding: 0px 10px;
-			margin-bottom: 5px;
-			font-size: $main-font-size;
-
-			.number-of-likes {
-				margin-bottom: 10px;
-			}
-
-			#who-liked,
-			#others {
-				font-weight: bold;
-			}
-
-			.caption {
-				margin-bottom: 5px;
-			}
-
-			#caption-more {
-				border-style: none;
-				background-color: transparent;
-				font-size: $main-font-size;
-			}
-			#caption-more,
-			#time {
-				color: $gray-text-color;
-			}
-		}
-	}
-
 	/*main-right*/
-	.main-right {
-		margin-left: 40px;
-		min-width: 263px;
-		.profile-info-img-big {
-			width: 55px;
-			height: 55px;
-			border-radius: 50%;
-		}
+	.main-right-container {
+		display: flex;
+		justify-content: flex-end;
+		width: 420px;
 
-		.profile-list {
-			padding: 0;
-			list-style-type: none;
-		}
+		.main-right {
+			position: fixed;
+			width: 340px;
 
-		.profile-list {
-			li {
-				width: 100%;
-				margin-top: 15px;
+			.profile-info-img-big {
+				width: 55px;
+				height: 55px;
+				border-radius: 50%;
+			}
+
+			.profile-list {
 				padding: 0;
-			}
-		}
-
-		/*new stories border*/
-
-		.profile-info-img-wrap {
-			position: flex;
-			padding: 2px;
-			width: 43px;
-			height: 43px;
-			border-radius: 50%;
-			background: linear-gradient(45deg, #f99b4b, #da2f77);
-		}
-
-		.stories-profile {
-			box-sizing: initial;
-			border: 2px solid white;
-		}
-
-		/* stories & follow suggestions */
-		.stories-suggestions,
-		.follow-suggestions {
-			margin-top: 25px;
-			padding: 10px;
-			border: $main-border;
-			background-color: white;
-		}
-
-		.stories-title,
-		.suggestions-title {
-			display: flex;
-			justify-content: space-between;
-			font-size: $main-font-size;
-			font-weight: bold;
-			span:first-child {
-				color: $gray-text-color;
-			}
-		}
-
-		.follow-button {
-			position: absolute;
-			right: 0;
-			background-color: white;
-			color: $main-button-color;
-			border-style: none;
-		}
-
-		.user-description {
-			color: $gray-text-color;
-		}
-
-		#footer {
-			margin-top: 25px;
-			font-size: 10px;
-
-			a,
-			div,
-			span {
-				text-decoration: none;
-				color: #c7c7c7;
-			}
-
-			ul {
-				display: flex;
-				flex-flow: wrap;
-				padding: 0;
-				margin-bottom: 10px;
 				list-style-type: none;
 			}
 
-			li + li:before {
-				content: "•";
-				padding: 0px 2px;
+			.profile-list {
+				li {
+					width: 100%;
+					margin-top: 15px;
+					padding: 0;
+				}
+			}
+
+			/*new stories border*/
+
+			.profile-info-img-wrap {
+				position: flex;
+				padding: 2px;
+				width: 43px;
+				height: 43px;
+				border-radius: 50%;
+				background: linear-gradient(45deg, #f99b4b, #da2f77);
+			}
+
+			.stories-profile {
+				box-sizing: initial;
+				border: 2px solid white;
+			}
+
+			/* stories & follow suggestions */
+			.stories-suggestions,
+			.follow-suggestions {
+				margin-top: 25px;
+				padding: 10px;
+				border: $main-border;
+				background-color: white;
+			}
+
+			.stories-title,
+			.suggestions-title {
+				display: flex;
+				justify-content: space-between;
+				font-size: $main-font-size;
+				font-weight: bold;
+				span:first-child {
+					color: $gray-text-color;
+				}
+			}
+
+			.follow-button {
+				position: absolute;
+				right: 0;
+				background-color: white;
+				color: $main-button-color;
+				border-style: none;
+			}
+
+			.user-description {
 				color: $gray-text-color;
+			}
+
+			#footer {
+				margin-top: 15px;
+				font-size: 10px;
+
+				a,
+				div,
+				span {
+					text-decoration: none;
+					color: #c7c7c7;
+				}
+
+				ul {
+					display: flex;
+					flex-flow: wrap;
+					padding: 0;
+					margin-bottom: 10px;
+					list-style-type: none;
+				}
+
+				li + li:before {
+					content: "•";
+					padding: 0px 2px;
+					color: $gray-text-color;
+				}
 			}
 		}
 	}

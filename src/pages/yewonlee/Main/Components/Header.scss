@@ -1,0 +1,102 @@
+@import "../index.scss";
+
+.header-container {
+	position: fixed;
+	top: 0;
+	padding: 10px 80px;
+	width: 100%;
+	z-index: 1;
+	border-bottom: $main-border;
+	background-color: white;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 50px;
+
+		#header-main {
+			@extend %flex-space-between-center;
+			color: #262626;
+
+			.separator {
+				display: inline-block;
+				width: 2px;
+				height: 24px;
+				margin: 0 15px;
+				background-color: #262626;
+			}
+
+			.title {
+				font-size: 24px;
+			}
+		}
+
+		.search {
+			display: flex;
+			position: relative;
+
+			#search-input {
+				width: 215px;
+				height: 30px;
+				background-color: white;
+				color: $light-gray-color;
+				border-style: none;
+				border: 1px solid $light-gray-color;
+				text-align: center;
+			}
+
+			#search-placeholder-moved {
+				width: 290px;
+				height: 30px;
+				padding-left: 30px;
+				background-color: white;
+				color: $light-gray-color;
+				border-style: none;
+				border: 1px solid $light-gray-color;
+				text-align: left;
+			}
+
+			#search-input::placeholder,
+			#search-placeholder-moved::placeholder {
+				color: $light-gray-color;
+			}
+
+			#search-icon {
+				position: absolute;
+				top: 8px;
+				left: 75px;
+				color: $light-gray-color;
+			}
+
+			#search-icon-moved {
+				position: absolute;
+				top: 8px;
+				left: 10px;
+				color: $light-gray-color;
+			}
+
+			#cancel-icon {
+				display: none;
+				position: absolute;
+				right: 10px;
+				top: 8px;
+				color: $light-gray-color;
+			}
+
+			#cancel-icon-enabled {
+				position: absolute;
+				right: 10px;
+				top: 8px;
+				color: $light-gray-color;
+			}
+		}
+
+		.header-right {
+			i {
+				margin: 10px;
+				color: #262626;
+			}
+		}
+	}
+}
