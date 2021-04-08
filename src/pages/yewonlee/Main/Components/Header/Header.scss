@@ -47,7 +47,7 @@
 			}
 
 			#search-placeholder-moved {
-				width: 290px;
+				width: 215px;
 				height: 30px;
 				padding-left: 30px;
 				background-color: white;
@@ -78,10 +78,6 @@
 
 			#cancel-icon {
 				display: none;
-				position: absolute;
-				right: 10px;
-				top: 8px;
-				color: $light-gray-color;
 			}
 
 			#cancel-icon-enabled {
