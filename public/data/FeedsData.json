@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "header_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "name": "sonMij",
+    "city": "서울시",
+    "main_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "like_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "header_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "name": "sonMij",
+    "city": "서울시",
+    "main_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "like_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "header_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "name": "sonMij",
+    "city": "서울시",
+    "main_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "like_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "header_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "name": "sonMij",
+    "city": "서울시",
+    "main_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "like_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "isLiked": false
+  },
+  {
+    "id": 5,
+    "header_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "name": "sonMij",
+    "city": "서울시",
+    "main_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "like_img": "https://lh3.googleusercontent.com/ogw/ADGmqu-5wYZxIpZOgJh5ZS4YIj9YtBMhSA1hn7578X5A=s64-c-mo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    "isLiked": false
+  }
+]

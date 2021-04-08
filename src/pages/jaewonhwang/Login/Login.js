@@ -1,13 +1,11 @@
 import { Component } from "react"; // named export vs. default export
-import "./Login.js";
-import "./Login.scss";
 import { Link, withRouter } from "react-router-dom";
+import "./Login.scss";
 
 class LoginJW extends Component {
   constructor() {
     super();
     this.state = {
-      //key : value
       inputId: "",
       inputPw: "",
       disabled: true,
@@ -15,21 +13,46 @@ class LoginJW extends Component {
   }
 
   goToMain = () => {
-    this.props.history.push("/Mainjw");
+    fetch("http://10.58.4.109:8000/accounts/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        user: this.state.inputId,
+        password: this.state.inputPw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Check your password") {
+          alert("비밀번호");
+        }
+        if (data.message === "Check your ID") {
+          alert("아이디");
+        }
+        if (data.message === "Success!") {
+          console.log(data.message);
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user_id", data.user_id); //토큰값을 localStorage에 저장
+          alert("맞당");
+          this.props.history.push("/mainjw");
+        }
+      });
   };
 
   handleInput = (e) => {
-    // console.log(event);
-    // console.log(event.target);
-    // console.log(e.target.name);
-    // console.log(e.target.value);
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
+  //구조분해할당 전
+  // handleInput = (e) => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+
   render() {
-    // console.log(this.state.inputId);
     const { inputId } = this.state;
     const { inputPw } = this.state;
     return (
@@ -58,6 +81,7 @@ class LoginJW extends Component {
           </div>
           <button
             className="loginBtn"
+            // 클래스명으로 함수의 결과 표현
             // className={
             //   this.state.inputId.includes("@") && this.state.inputPw.length >= 5
             //     ? "btnActive"
@@ -65,6 +89,7 @@ class LoginJW extends Component {
             // }
             disabled={
               inputId.includes("@") && inputPw.length >= 5 ? false : true
+              //구조분해 할당 전
               //this.state.inputId.includes("@") && this.state.inputPw.length >= 5
             }
             onClick={this.goToMain}

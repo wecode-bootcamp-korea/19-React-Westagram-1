@@ -6,8 +6,8 @@ class Content extends Component {
     return (
       <>
         <li>
-          {userId}
-          {content}
+          <span className="userid">{userId}</span>
+          <span className="content">{content}</span>
         </li>
       </>
     );
