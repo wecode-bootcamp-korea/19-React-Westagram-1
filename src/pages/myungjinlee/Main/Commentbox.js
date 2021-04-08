@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 
 class Commentbox extends Component {
   render() {
+    const { name, comment } = this.props;
     return (
       <>
         <p>
-          {this.props.name}
+          {name}
           <a href="www.google.com" className="nickname">
             @cat
           </a>
-          {this.props.comment}
+          {comment}
         </p>
       </>
     );

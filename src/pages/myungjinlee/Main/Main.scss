@@ -1,8 +1,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import '../Login/Login.scss';
 .body {
-  background-color: rgb(250, 250, 250);
-  // background-color: red;
-  // height: 100vh;
+  background-color: $background-color;
+
   article {
     position: relative;
     width: 590px;
@@ -37,7 +37,7 @@
     height: 50px;
     margin: 0;
     background-color: white;
-    border-bottom: solid rgb(219, 219, 219) 1px;
+    border-bottom: $main-border;
     .left {
       display: flex;
       align-items: center;
@@ -64,7 +64,7 @@
         width: 200px;
         height: 20px;
         margin-top: 15px;
-        background-color: rgb(250, 250, 250);
+        background-color: $background-color;
       }
     }
     .right {
@@ -93,7 +93,6 @@
   }
   .main {
     width: 900px;
-    // height: 100vh;
     margin: auto;
     padding-top: 100px;
     display: flex;
@@ -101,13 +100,13 @@
     .feed_top {
       width: 100%;
       height: 470px;
-      border: rgb(219, 219, 219) solid 0.5px;
+      border: $main-border;
     }
 
     .feed_comment {
       width: 100%;
       height: auto;
-      border: rgb(219, 219, 219) solid 0.5px;
+      border: $main-border;
     }
   }
 
@@ -153,7 +152,6 @@
     width: 200px;
   }
   .feed_right {
-    // margin-right: 20px;
     position: absolute;
     right: 0;
   }
@@ -186,13 +184,13 @@
     border: none;
     background-color: white;
     padding: 0;
-    color: rgba(var(--f52, 142, 142, 142), 1);
+    color: $font-color;
     font-size: 15px;
   }
   .more {
     display: block;
     text-decoration: none;
-    color: rgba(var(--f52, 142, 142, 142), 1);
+    color: $font-color;
     font-size: 15px;
   }
   .nickname {
@@ -200,7 +198,7 @@
     margin-left: 5px;
   }
   .timeago {
-    color: rgba(var(--f52, 142, 142, 142), 1);
+    color: $font-color;
     font-size: 10px;
   }
   p {
@@ -212,7 +210,7 @@
     width: 590px;
     height: 56px;
     padding: 10px;
-    border: rgb(219, 219, 219) solid 0.5px;
+    border: $main-border;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,7 +237,7 @@
       justify-content: space-around;
 
       .subname {
-        color: rgba(var(--f52, 142, 142, 142), 1);
+        color: $font-color;
         font-size: 14px;
       }
 
@@ -271,7 +269,7 @@
     height: 50px;
     margin: 0;
     padding: 0;
-    background-color: rgb(250, 250, 250);
+    background-color: $background-color;
   }
   .repliy li {
     display: block;

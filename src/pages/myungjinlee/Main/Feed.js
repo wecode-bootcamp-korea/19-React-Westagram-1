@@ -50,10 +50,11 @@ class Feed extends Component {
     });
   };
   inputComment = () => {
-    const add = this.state.replies;
-    add.push(this.state.comment);
+    const { replies, comment } = this.state;
+    const add = replies;
+    add.push(comment);
     this.setState({
-      replies: this.state.replies,
+      replies: replies,
       comment: '',
     });
   };
@@ -66,24 +67,25 @@ class Feed extends Component {
     }
   };
   render() {
-    const { commentList, feedList } = this.state;
+    const { commentList } = this.state;
+    const { feedimg, subname, userName, img, content } = this.props;
     return (
       <>
         <div className="feed_top">
           <ul className="feed">
             <li className="profile_img">
-              <img className="cat" src={this.props.feedimg} alt="" />
+              <img className="cat" src={feedimg} alt="프로필 사진" />
             </li>
             <div className="name">
-              {this.props.userName}
-              <div className="nameSub">{this.props.subname}</div>
+              {userName}
+              <div className="nameSub">{subname}</div>
             </div>
             <li className="feed_right">
               <i className="fas fa-ellipsis-h"></i>
             </li>
           </ul>
           <div className="feed_img">
-            <img src={this.props.img} alt="" />
+            <img src={img} alt="피드 이미지" />
           </div>
         </div>
         <div className="feed_comment">
@@ -100,11 +102,11 @@ class Feed extends Component {
             </ul>
             <section className="comment">
               <div className="profile_img_small">
-                <img className="hicat" src="" alt="" />
+                <img className="hicat" src="" alt="댓글 프로필 이미지" />
               </div>
               <span className="nickname">Wecode님 외 5명이 좋아합니다.</span>
               <div className="text">
-                {this.props.content}
+                {content}
                 <button>...더 보기</button>
                 <a className="more" href="www.google.com">
                   댓글 12개 모두 더보기

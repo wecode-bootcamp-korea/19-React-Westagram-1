@@ -1,7 +1,10 @@
+$background-color: rgb(250, 250, 250);
+$font-color: rgba(var(--f52, 142, 142, 142), 1);
+$main-border: solid rgb(219, 219, 219) 1px;
 .background {
   position: relative;
   height: 100vh;
-  background-color: rgb(250, 250, 250);
+  background-color: $background-color;
 
   .login {
     position: absolute;
@@ -12,11 +15,11 @@
     border: solid rgb(230, 230, 230) 1px;
 
     .logo {
-      font-family: "Lobster", cursive;
+      font-family: 'Lobster', cursive;
       height: 20%;
 
       .name {
-        font-family: "Lobster", cursive;
+        font-family: 'Lobster', cursive;
         font-size: 50px;
         font-weight: 100;
         margin: 20px 0px 0px 70px;
@@ -28,7 +31,7 @@
       width: 258px;
       height: 36px;
       margin: 5px auto;
-      background-color: rgb(250, 250, 250);
+      background-color: $background-color;
       border: solid rgb(242, 242, 242) 1px;
       border-radius: 3px;
     }

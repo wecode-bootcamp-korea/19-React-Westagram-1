@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Recommends from '../Recommends/Recommends';
-import './Main.scss';
-
 import CoomentInfo from '../mockdata/CommentData';
 import Feed from './Feed';
 import FeedData from '../mockdata/FeedData';
+import './Main.scss';
 
 class MainMJ extends Component {
   constructor() {
@@ -26,7 +25,7 @@ class MainMJ extends Component {
   }
 
   render() {
-    const { commentList, feedList } = this.state;
+    const { feedList } = this.state;
     return (
       <>
         <div className="body">

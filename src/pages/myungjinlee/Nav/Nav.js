@@ -17,21 +17,21 @@ class Nav extends Component {
                 <img
                   className="icon"
                   src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-                  alt=""
+                  alt="나침반"
                 />
               </li>
               <li className="icon">
                 <img
                   className="icon"
                   src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                  alt=""
+                  alt="하트"
                 />
               </li>
               <li className="icon">
                 <img
                   className="icon"
                   src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-                  alt=""
+                  alt="사람"
                 />
               </li>
             </ul>

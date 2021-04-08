@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Login.scss';
 import { withRouter } from 'react-router-dom';
+import './Login.scss';
 
 class LoginMJ extends Component {
   constructor() {
@@ -11,43 +11,19 @@ class LoginMJ extends Component {
       color: 'black',
     };
   }
-  CheakData = () => {
-    // fetch('http://10.58.5.21:8000/users/sign_in', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     email: this.state.targetId,
-    //     password: this.state.targetPw,
-    //     name: '이땡댕',
-    //     phone_number: '0104563698',
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     console.log(result);
-    //     if (result.MESSAGE === 'SUCCESS') {
-    //       alert('환영합니다');
-    //       this.props.history.push('/mainmj');
-    //     }
-    //   });
-  };
+
   goToMain = () => {
     this.props.history.push('/mainmj');
   };
-  handleIdInput = async (e) => {
-    // 객체 비구조화할당
-    // const {value} = e.target;
+  handleInput = async (e) => {
+    const { name, value } = e.target;
     await this.setState({
-      targetId: e.target.value,
-    });
-  };
-  handlePwInput2 = async (e) => {
-    // let b = e.target.value
-    await this.setState({
-      targetPw: e.target.value,
+      [name]: value,
     });
   };
 
   render() {
+    const { targetId, targetPw } = this.state;
     return (
       <div>
         <div className="background">
@@ -56,18 +32,20 @@ class LoginMJ extends Component {
               <h1 className="name">westagram</h1>
             </div>
             <input
-              value={this.state.target}
-              onChange={this.handleIdInput}
+              value={targetId}
+              onChange={this.handleInput}
               className="id"
               type="text"
               placeholder=" 전화번호, 사용자 이름 또는 이메일"
+              name="targetId"
             />
             <input
-              value={this.state.targetpw}
-              onChange={this.handlePwInput2}
+              value={targetPw}
+              onChange={this.handleInput}
               className="passward"
               type="password"
               placeholder=" 비밀번호"
+              name="targetPw"
             />
             <button
               className="loginBtn"
@@ -75,16 +53,12 @@ class LoginMJ extends Component {
               // style={(this.state.checkPw && this.state.checkId)?{backgroundColor:'red'}:{backgroundColor:'black'}}>
               style={{
                 backgroundColor:
-                  this.state.targetId.includes('@') &&
-                  this.state.targetPw.length >= 5
+                  targetId.includes('@') && targetPw.length >= 5
                     ? 'red'
                     : 'black',
               }}
               disabled={
-                this.state.targetId.includes('@') &&
-                this.state.targetPw.length >= 5
-                  ? false
-                  : true
+                targetId.includes('@') && targetPw.length >= 5 ? false : true
               }
             >
               로그인
