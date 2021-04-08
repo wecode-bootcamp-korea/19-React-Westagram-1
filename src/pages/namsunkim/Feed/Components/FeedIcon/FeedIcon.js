@@ -10,16 +10,12 @@ export default class FeedIcon extends Component {
     const { like, comment, share, save } = icons;
     this.state = {
       icons: [
-        createIconMenu(1, like),
-        createIconMenu(2, comment),
-        createIconMenu(3, share),
-        createIconMenu(4, save),
+        { id: 1, pathUrl: like },
+        { id: 2, pathUrl: comment },
+        { id: 3, pathUrl: share },
+        { id: 4, pathUrl: save },
       ]
     }
-  }
-
-  createIconMenu = (id, pathUrl) => {
-    return { id, pathUrl };
   }
 
   render() {
@@ -27,7 +23,7 @@ export default class FeedIcon extends Component {
     return (
       <>
         <section className="feedIcon">
-          {icons.map((icon) => {
+          {icons.map(icon => {
             const { id, pathUrl } = icon;
             return (
               <svg viewBox="0 0 48 48" className="navIcon pointer" key={id}>

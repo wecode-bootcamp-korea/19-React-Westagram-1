@@ -11,25 +11,20 @@ export default class NavIcon extends Component {
     const { home, share, find, like } = icons;
     this.state = {
       icons: [
-        createIconMenu(1, home),
-        createIconMenu(2, share),
-        createIconMenu(3, find),
-        createIconMenu(4, like),
+        { id: 1, pathUrl: home },
+        { id: 2, pathUrl: share },
+        { id: 3, pathUrl: find },
+        { id: 4, pathUrl: like },
       ]
     }
   }
-
-  createIconMenu = (id, pathUrl) => {
-    return { id, pathUrl };
-  }
-
 
   render() {
     const { icons } = this.state;
     return (
       <>
         <div className="iconWrap">
-          {icons.map((icon) => {
+          {icons.map(icon => {
             const { id, pathUrl } = icon;
             return (
               <a href="#!" key={id}>

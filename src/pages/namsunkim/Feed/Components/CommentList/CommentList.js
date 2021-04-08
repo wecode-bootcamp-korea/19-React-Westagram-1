@@ -80,7 +80,7 @@ export default class CommentList extends Component {
   }
 
   deleteComment = (id) => {
-    let { commentArr } = this.state;
+    const { commentArr } = this.state;
 
     if (window.confirm('댓글을 삭제하시겠습니까?')) {
       this.setState({
@@ -97,7 +97,7 @@ export default class CommentList extends Component {
     return (
       <>
         <ul className="commentList">
-          {commentArr.map((commentArr) => {
+          {commentArr.map(commentArr => {
             const { id } = commentArr;
             return (
               <Comment

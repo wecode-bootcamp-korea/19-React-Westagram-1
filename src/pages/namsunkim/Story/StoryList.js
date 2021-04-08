@@ -60,7 +60,7 @@ export default class StoryList extends Component {
             </button>
           </div>
           <ul>
-            {storyArr.map((storyArr) => {
+            {storyArr.map(storyArr => {
               const { id, userName, imgSrc, isClicked } = storyArr;
               if (!isClicked) {
                 return (

@@ -46,7 +46,7 @@ export default class MainRight extends Component {
               <span>회원님을 위한 추천</span>
               <a href="#!" className="black">모두 보기</a>
             </span>
-            {recommendAccount.map((recommendAccount) => {
+            {recommendAccount.map(recommendAccount => {
               const { id, userName, imgSrc } = recommendAccount;
               return (
                 <RecommendAccount

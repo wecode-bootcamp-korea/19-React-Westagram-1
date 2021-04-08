@@ -33,7 +33,7 @@ export default class Feed extends Component {
     return (
       <>
         {
-          feedArr.map((feedArr) => {
+          feedArr.map(feedArr => {
             const { id, userName, profileImg, feedImg, content, likeList, commentArr } = feedArr;
             return (
               <article className="feed" key={id}>

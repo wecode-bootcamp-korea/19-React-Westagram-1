@@ -13,16 +13,12 @@ export default class NavProfile extends Component {
     this.state = {
       isProfileClick: false,
       menuCategory: [
-        createMenuCategory(1, '프로필', profile),
-        createMenuCategory(2, '저장됨', profileSave),
-        createMenuCategory(3, '설정', setting),
-        createMenuCategory(4, '게정전환', change),
+        { id: 1, categoryName: '프로필', pathUrl: profile },
+        { id: 2, categoryName: '저장됨', pathUrl: profileSave },
+        { id: 3, categoryName: '설정', pathUrl: setting },
+        { id: 4, categoryName: '계정전환', pathUrl: change },
       ]
     }
-  }
-
-  createMenuCategory = (id, categoryName, pathUrl) => {
-    return { id, categoryName, pathUrl };
   }
 
   profileClick = () => {
@@ -50,7 +46,7 @@ export default class NavProfile extends Component {
             </div>
             <div className="profileMenu">
               <ul className="profileList bold">
-                {menuCategory.map((category) => {
+                {menuCategory.map(category => {
                   const { id, pathUrl, categoryName } = category;
                   return (
                     <li className="light" key={id}>
