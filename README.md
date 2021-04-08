@@ -1,70 +1,45 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Westagram 1팀
+## 🖥 프로젝트 내용
+- React를 사용한 Instagram clone
+- CRA를 사용한 초기 세팅
+- 4명의 팀원들이 공동 component, scss 사용
+- git을 사용한 첫 번째 협업
+## 📅 프로젝트 기간
+2021.04.01 ~ 2021.04.08
+## 👩🏻‍💻 팀원 별 작업 현황
+### 공통
+- `Layout` 로그인, 메인 페이지 레이아웃
+- `Login` 사용자 입력 데이터 저장
+- `Main` 댓글 기능 
+- `Main` 댓글 컴포넌트화 + props로 데이터 전달
+- `Main` mock data를 활용하여 여러 개의 댓글과 피드 구현
+### 김남선
+- `Layout` 영역별 컴포넌트 분리
+- `Setting` config.js에 deaultUser, prefix 추가
+- `Main` 댓글 좋아요, 삭제 기능
+### 김도희
+- `Layout` 영역별 컴포넌트 분리 완료
+- `Main` footer,recommendFriend,story 영역부분 map이용해서 컴포넌트 반복해서 만들기 완료
+- `Main` 메인 페이지 nav&mainright 고정
+### 이명진
+- `Main` 댓글 입력시 하트 아이콘과 쓰레기통 아이콘이 생성
+- `Main` 댓글 하트 아이콘 클릭 시 하트 색이 변경 구현
+- `Main` nav,  main right - fix를 활용하여 피드를 볼때 고정
+### 이예원
+- `Layout` Header, Comment Box 컴포넌트 분리
+- `Main` 댓글 좋아요 / 삭제 기능 추가
+- `Main` 페이지 Nav & Aside 고정
+### 황재원
+- `Login` 로그인버튼 데이터 오류 시 알림창
+- `Main` 메인 페이지 sidebar고정
+## 🔧 기술스택
+- ![HTML/CSS](https://img.shields.io/badge/-HTML/CSS-E44D26)
+- ![JavaScript(ES6+)](https://img.shields.io/badge/-JavaScript(ES6%2B)-F0DB4D)
+- ![React](https://img.shields.io/badge/-React-blue)
+- ![SCSS](https://img.shields.io/badge/-SCSS-ff69b4)
+## ✏️ 팀원 블로그
+- 김남선 : https://velog.io/@nsunny0908
+- 김도희 : https://velog.io/@_dodo_hee
+- 이명진 : https://velog.io/@ljo094822
+- 이예원 : jessywlee.medium.com
+- 황재원 : https://velog.io/@jaewon97
