@@ -9,9 +9,7 @@ class MainLeft extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/FeedData.json", {
-      method: "GET",
-    })
+    fetch("/data/FeedData.json")
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -24,7 +22,7 @@ class MainLeft extends React.Component {
     const { feedList } = this.state;
     return (
       <div className="main-left">
-        <Story></Story>
+        <Story />
         {feedList.map((element) => {
           return (
             <Feed

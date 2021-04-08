@@ -28,23 +28,17 @@ class Login extends Component {
         console.log(result);
         if (result.MESSAGE === "SUCCESS") {
           alert("로그인성공");
-
-          //this.props.history.push("/maindh");
+          this.props.history.push("/maindh");
         } else {
           alert("🤬IT'S YOUR FAULT!🤬");
         }
       });
   };
 
-  handleIdInput = (event) => {
+  handleInput = (event) => {
+    const { name, value } = event.target;
     this.setState({
-      id: event.target.value,
-    });
-  };
-
-  handlePwInput = (event) => {
-    this.setState({
-      pw: event.target.value,
+      [name]: value,
     });
   };
 
@@ -64,15 +58,17 @@ class Login extends Component {
               className="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
               value={this.state.id}
+              name="id"
             />
             <input
               className="password"
               type="password"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              onChange={this.handleInput}
               value={this.state.pw}
+              name="pw"
             />
             <button className={this.btnChangeColor()} onClick={this.goToMain}>
               로그인

@@ -6,17 +6,9 @@ class Footer extends React.Component {
     return (
       <footer>
         <ul>
-          <li>소개</li>
-          <li>도움말</li>
-          <li>홍보 센터</li>
-          <li>API</li>
-          <li>채용 정보</li>
-          <li className="after-none">개인정보처리방침</li>
-          <li>약관</li>
-          <li>위치</li>
-          <li>인기 계정</li>
-          <li>해쉬태그</li>
-          <li className="after-none">언어</li>
+          {RIGHT_FOOTER.map((element, index) => {
+            return <li key={index}>{element}</li>;
+          })}
         </ul>
         <p className="made">© 2021 INSTAGRAM FROM doheekim</p>
       </footer>
@@ -25,3 +17,16 @@ class Footer extends React.Component {
 }
 
 export default Footer;
+
+const RIGHT_FOOTER = [
+  "소개",
+  "도움말",
+  "홍보 센터",
+  "API",
+  "채용정보",
+  "개인정보처라방침",
+  "약관",
+  "위치",
+  "인기 계정",
+  "해쉬태그",
+];
