@@ -16,9 +16,7 @@ export default class Feed extends Component {
   componentDidMount() {
     const { api } = prefix;
 
-    fetch(`${api}/feedData.json`, {
-      method: 'GET'
-    })
+    fetch(`${api}/feedData.json`)
       .then(res => res.json())
       .then(data => {
         this.setState({

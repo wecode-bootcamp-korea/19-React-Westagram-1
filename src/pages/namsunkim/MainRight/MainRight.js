@@ -14,9 +14,7 @@ export default class MainRight extends Component {
 
   componentDidMount() {
     const { api } = prefix;
-    fetch(`${api}/recommendAccountData.json`, {
-      method: 'GET'
-    })
+    fetch(`${api}/recommendAccountData.json`)
       .then(res => res.json())
       .then(data => {
         this.setState({
