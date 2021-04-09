@@ -5,13 +5,13 @@ class Nav extends Component {
     return (
       <div>
         <nav className="nav">
-          <div className="left">
+          <div className="NavLeft">
             <i className="fab fa-instagram"></i>instargram
           </div>
-          <div className="mid">
+          <div className="NavMid">
             <input type="text" placeholder="검색" />
           </div>
-          <div className="right">
+          <div className="NavRight">
             <ul>
               <li className="icon">
                 <img

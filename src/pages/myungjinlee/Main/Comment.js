@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Comment.scss';
+
 class Comment extends Component {
   constructor() {
     super();
@@ -7,11 +8,13 @@ class Comment extends Component {
       color: true,
     };
   }
+
   colorChange = () => {
     this.setState({
       color: !this.state.color,
     });
   };
+
   render() {
     return (
       <>

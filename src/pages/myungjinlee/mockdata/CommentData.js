@@ -1,4 +1,4 @@
-const CoomentInfo = [
+const COMMENT_INFO = [
   {
     id: 1,
     userName: 'wecode',
@@ -15,4 +15,4 @@ const CoomentInfo = [
     content: 'it sunny day!',
   },
 ];
-export default CoomentInfo;
+export default COMMENT_INFO;

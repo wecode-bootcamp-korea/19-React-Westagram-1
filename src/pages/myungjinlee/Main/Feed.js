@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import Commentbox from './Commentbox';
-import CoomentInfo from '../mockdata/CommentData';
-import FeedData from '../mockdata/FeedData';
+import COMMENT_INFO from '../mockdata/CommentData';
+import FEED_DATA from '../mockdata/FeedData';
 import './Main.scss';
+
 class Feed extends Component {
   constructor() {
     super();
@@ -16,12 +17,14 @@ class Feed extends Component {
       userName: 'wecode',
     };
   }
+
   componentDidMount() {
     this.setState({
-      commentList: CoomentInfo,
-      feedList: FeedData,
+      commentList: COMMENT_INFO,
+      feedList: FEED_DATA,
     });
   }
+
   handleCommentValue = (e) => {
     this.setState({
       commentValue: e.target.value,
@@ -49,23 +52,27 @@ class Feed extends Component {
       comment: e.target.value,
     });
   };
+
   inputComment = () => {
     const { replies, comment } = this.state;
-    const add = replies;
-    add.push(comment);
+    const ADD = replies;
+    ADD.push(comment);
     this.setState({
       replies: replies,
       comment: '',
     });
   };
+
   PressClick = (e) => {
     this.inputComment();
   };
+
   pressEnter = (e) => {
     if (e.key === 'Enter') {
       this.inputComment();
     }
   };
+
   render() {
     const { commentList } = this.state;
     const { feedimg, subname, userName, img, content } = this.props;
@@ -114,15 +121,13 @@ class Feed extends Component {
               </div>
             </section>
           </section>
-          {commentList.map((comment) => {
-            return (
-              <Commentbox
-                key={comment.id}
-                name={comment.userName}
-                comment={comment.content}
-              />
-            );
-          })}
+          {commentList.map((comment) => (
+            <Commentbox
+              key={comment.id}
+              name={comment.userName}
+              comment={comment.content}
+            />
+          ))}
           <p className="timeago">3일 전</p>
           <ul className="repliy">
             {this.state.replies.map((replie) => (

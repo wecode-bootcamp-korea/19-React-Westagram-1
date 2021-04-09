@@ -1,4 +1,4 @@
-const FeedData = [
+const FEED_DATA = [
   {
     id: 1,
     userName: 'kimmina23',
@@ -31,4 +31,4 @@ const FeedData = [
   },
 ];
 
-export default FeedData;
+export default FEED_DATA;

@@ -1,13 +1,14 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 @import '../Login/Login.scss';
+
 .body {
   background-color: $background-color;
 
   article {
     position: relative;
+    margin-left: 40px;
     width: 590px;
     height: auto;
-    margin-left: 40px;
     background-color: white;
   }
 
@@ -16,8 +17,8 @@
     padding: 0;
     li {
       display: inline-block;
-      list-style: none;
       margin: 10px 10px;
+      list-style: none;
 
       li img {
         display: inline-block;
@@ -32,16 +33,16 @@
     display: flex;
     justify-content: space-evenly;
     top: 0;
-    z-index: 1;
     width: 100%;
     height: 50px;
     margin: 0;
     background-color: white;
     border-bottom: $main-border;
-    .left {
+    z-index: 1;
+    .NavLeft {
       display: flex;
-      align-items: center;
       margin: 10px 0px 0px 40px;
+      align-items: center;
       width: 30px;
       height: 30px;
       font-family: 'Lobster', cursive;
@@ -50,24 +51,24 @@
         content: '\f16d';
         margin-right: 5px;
       }
-      .left i {
+      .NavLeft i {
         margin-top: 5px;
         margin-right: 10px;
       }
     }
-    .mid {
+    .NavMid {
       display: flex;
       align-items: center;
       width: 50px;
 
-      .mid input {
+      .NavMid input {
         width: 200px;
         height: 20px;
         margin-top: 15px;
         background-color: $background-color;
       }
     }
-    .right {
+    .NavRight {
       ul {
         margin: 0;
         padding: 0;
@@ -92,10 +93,10 @@
     }
   }
   .main {
+    display: flex;
     width: 900px;
     margin: auto;
     padding-top: 100px;
-    display: flex;
 
     .feed_top {
       width: 100%;
@@ -132,9 +133,9 @@
     }
   }
   .profile_img_big {
-    border-radius: 100px;
     width: 50px;
     height: 50px;
+    border-radius: 100px;
     overflow: hidden;
   }
   .feed_img {
@@ -189,13 +190,13 @@
   }
   .more {
     display: block;
-    text-decoration: none;
     color: $font-color;
+    text-decoration: none;
     font-size: 15px;
   }
   .nickname {
-    text-decoration: none;
     margin-left: 5px;
+    text-decoration: none;
   }
   .timeago {
     color: $font-color;
@@ -205,13 +206,13 @@
     margin: 5px;
   }
   .input {
-    background-color: white;
-    box-sizing: border-box;
+    display: flex;
     width: 590px;
     height: 56px;
     padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
     border: $main-border;
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }

@@ -5,6 +5,7 @@ class Recommends extends Component {
   state = {
     friendList: [],
   };
+
   componentDidMount() {
     fetch('/data/friendData.json', {
       method: 'GET',
@@ -16,6 +17,7 @@ class Recommends extends Component {
         });
       });
   }
+
   render() {
     return (
       <div className="recommends">
@@ -42,15 +44,13 @@ class Recommends extends Component {
           </section>
           <section>
             <div className="frend">
-              {this.state.friendList.map((elm) => {
-                return (
-                  <Friend
-                    id={elm.id}
-                    image={elm.image}
-                    nickname={elm.nickname}
-                  ></Friend>
-                );
-              })}
+              {this.state.friendList.map((elm) => (
+                <Friend
+                  id={elm.id}
+                  image={elm.image}
+                  nickname={elm.nickname}
+                ></Friend>
+              ))}
             </div>
           </section>
         </section>
