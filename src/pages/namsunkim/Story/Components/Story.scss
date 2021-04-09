@@ -1,0 +1,31 @@
+@import '../../styles/variable.scss';
+@import '../../../../styles/common.scss';
+
+li {
+  margin: 0 0.625rem;
+
+  .gradientWrap {
+    @extend %flexCenter;
+      width: 3.75rem;
+      height: 3.75rem;
+      margin-bottom: 0.3125rem;
+      background: radial-gradient(circle at bottom left, #F58529 20%, #C42D91);
+      border-radius: 100%;
+
+      img {
+        width: 3.5rem;
+        border: 2px solid $white;
+        border-radius: 50%;
+      }
+  }
+
+  p {
+    max-width: 3.75rem;
+    margin: 0;
+    font-size: 0.75rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    letter-spacing: 0.1px;
+    overflow: hidden;
+  }
+}

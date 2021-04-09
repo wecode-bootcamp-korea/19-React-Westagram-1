@@ -1,0 +1,56 @@
+@import '../styles/variable.scss';
+
+nav {
+  position: fixed;
+  width: 100%;
+
+  button:focus{ 	
+    border: none;
+    outline:none;
+  }
+  
+  .navBar {
+    height: 3.375rem;
+    background-color: $white;
+    border-bottom: 1px solid $border;
+
+    .navWrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 58.44rem;
+      height: 100%;
+      margin: 0 auto;
+
+      a {
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      
+      span {
+        font-size: 0.9rem;
+      }
+
+      .logo {
+        margin: auto 0;
+        margin-right: 5rem;
+        color: $black;
+        font-family: cursive, 'Lobster';
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      @media #{$tablet} {
+        justify-content: space-evenly;
+      }
+    }
+
+    @media #{$phone} {
+      .searchWrap {
+        display: none;
+      }
+    }
+  }
+}
+

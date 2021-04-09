@@ -1,0 +1,22 @@
+@import url('//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import '../styles/variable.scss';
+
+.main {
+  display: flex;
+  width: 58.44rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+  
+  a, span {
+    font-size: 0.9rem;
+  }
+
+  .feeds {
+    justify-content: center;
+    width: 38.38rem;
+  }
+
+  @media #{$tablet} {
+    justify-content: center;
+  }
+}

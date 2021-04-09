@@ -1,0 +1,33 @@
+
+@import '../../../styles/variable.scss';
+
+.addComment {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 3.125rem;
+  padding: 0 0.9375rem;
+  border-top: 1px solid $border;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  input {
+    width: 85%;
+    border: 0;
+  }
+
+  .enabledBtn {
+    background-color: $white;
+    color: $enabled;
+    border: 0;
+  }
+  
+  .disabledBtn {
+    background-color: $white;
+    color: $disabled;
+    border: 0;
+  }
+}

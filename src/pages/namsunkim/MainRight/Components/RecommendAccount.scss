@@ -1,0 +1,27 @@
+@import '../../styles/variable.scss';
+
+.recommendAccount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+
+  span {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  div {
+    width: 70%;
+    span:last-child {
+      color: $gray;
+      font-size: 0.75rem;
+    }
+  }
+
+  img {
+    width: 2rem;
+    border-radius: 50%;
+  }
+}

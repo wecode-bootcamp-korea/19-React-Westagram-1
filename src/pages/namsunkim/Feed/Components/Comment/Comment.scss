@@ -1,0 +1,22 @@
+li {
+  span {
+    margin: 0 0.3125rem;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+
+  .likeHeart {
+    float: right;
+  }
+
+  .deleteComment {
+    width: 1rem;
+    float: right;
+  }
+
+  .likeComment {
+    color: #ed4956;
+  }
+}

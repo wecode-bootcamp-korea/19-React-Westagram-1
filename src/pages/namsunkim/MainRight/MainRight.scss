@@ -1,0 +1,66 @@
+@import '../styles/variable.scss';
+
+.sideBar {
+  position: fixed;
+  top: 5.5rem;
+  left: 55.44rem;
+  width: 18.31rem;
+  padding-left: 0.3125rem;
+  z-index: -1;
+
+  .account {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 0;
+
+    a {
+      color: $enabled;
+      font-size: 0.75rem;
+    }
+
+    img {
+      width: 3.5rem;
+      border-radius: 50%;
+    }
+
+    .idWrap {
+      width: 100%;
+
+      span {
+        margin: 0 1rem;
+      }
+
+      a {
+        float: right;
+      }
+    }
+  }
+
+  .recommendList {
+    span {
+      display: flex;
+      justify-content: space-between;
+
+      span:first-child {
+        color: $gray;
+      }
+    }
+
+    .recommendForUser {
+      padding-bottom: 0.625rem;
+
+      a {
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    }
+
+    .follow {
+      color: $enabled;
+      font-size: 0.75rem;
+    }
+  }
+  @media #{$tablet} {
+    display: none;
+  }
+}
