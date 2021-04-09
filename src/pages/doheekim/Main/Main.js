@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./Main.scss";
-import "./common.css";
 import Nav from "./Component/Nav";
 import MainLeft from "./Component/MainLeft";
 import MainRight from "./Component/MainRight";
+import "./Main.scss";
+import "./common.scss";
 
 //레이아웃 컴포넌트 끝
 

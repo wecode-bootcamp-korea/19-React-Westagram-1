@@ -1,7 +1,7 @@
 import React from "react";
-import "./MainLeft.scss";
 import Story from "./Mainleft/Story";
 import Feed from "./Mainleft/Feed";
+import "./MainLeft.scss";
 
 class MainLeft extends React.Component {
   state = {

@@ -1,6 +1,5 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Login.scss";
 
 class Login extends Component {
@@ -13,7 +12,6 @@ class Login extends Component {
   }
 
   goToMain = () => {
-    //this.props.history.push("/maindh");
     fetch("http://10.58.3.73:8000/users/login", {
       method: "POST",
       body: JSON.stringify({
@@ -42,13 +40,8 @@ class Login extends Component {
     });
   };
 
-  btnChangeColor = () => {
-    return this.state.id.includes("@") && this.state.pw.length >= 5
-      ? "on"
-      : "off";
-  };
-
   render() {
+    const { id, pw } = this.state;
     return (
       <>
         <div className="login-wrap">
@@ -59,7 +52,7 @@ class Login extends Component {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleInput}
-              value={this.state.id}
+              value={id}
               name="id"
             />
             <input
@@ -67,10 +60,13 @@ class Login extends Component {
               type="password"
               placeholder="비밀번호"
               onChange={this.handleInput}
-              value={this.state.pw}
+              value={pw}
               name="pw"
             />
-            <button className={this.btnChangeColor()} onClick={this.goToMain}>
+            <button
+              className={id.includes("@") && pw.length >= 5 ? "on" : "off"}
+              onClick={this.goToMain}
+            >
               로그인
             </button>
             <p>

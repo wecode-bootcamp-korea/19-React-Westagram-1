@@ -26,13 +26,14 @@ class Feed extends React.Component {
   };
 
   addComment = () => {
+    const { comments, newComment } = this.state;
     this.setState({
       comments: [
-        ...this.state.comments,
+        ...comments,
         {
           userId: "_ggul_dodo",
-          comment: this.state.newComment,
-          key: this.state.comments.length,
+          comment: newComment,
+          key: comments.length,
         },
       ],
       newComment: "",
@@ -53,7 +54,7 @@ class Feed extends React.Component {
   };
 
   render() {
-    console.log(this.props);
+    console.log(this.props); //데이터 프롭스 받아오는지
     return (
       <div className="feeds">
         <article>

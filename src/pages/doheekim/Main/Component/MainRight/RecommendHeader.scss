@@ -1,10 +1,10 @@
+@import "../../common.scss";
+
 .recommend-header {
-    margin-top:5px;
     width:100%;
     height:100px;
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
+    @extend %flexbetween;
+    margin-top:5px;
 
     li {
         position:relative;
