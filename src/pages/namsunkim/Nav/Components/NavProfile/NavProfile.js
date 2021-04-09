@@ -35,42 +35,40 @@ export default class NavProfile extends Component {
     const { profileClick } = this;
     const { profile } = prefix;
     return (
-      <>
-        <div className="profileWrap">
-          <a href="#!" onClick={profileClick}>
-            <img alt={`${defaultUser.userName}님의 profile`} className="profileImg"
-              src={profile + defaultUser.profile} />
-          </a>
-          <div className={`profileMenuWrap${!isProfileClick ? ' hidden' : ''}`}>
-            <div className="speechBubble">
-            </div>
-            <div className="profileMenu">
-              <ul className="profileList bold">
-                {MENU_CATEGORY.map((category, index) => {
-                  const { name, pathUrl } = category;
-                  return (
-                    <li className="light" key={index}>
-                      <svg viewBox="0 0 32 32">
-                        <path
-                          d={pathUrl}>
-                        </path>
-                      </svg>
-                      <div>
-                        <a href="#!" className="black">{name}</a>
-                      </div>
-                    </li>
-                  )
-                })}
-                <Link to="/loginns" className="black">
-                  <li className="logout pointer">
-                    로그아웃
+      <div className="profileWrap">
+        <a href="#!" onClick={profileClick}>
+          <img alt={`${defaultUser.userName}님의 profile`} className="profileImg"
+            src={profile + defaultUser.profile} />
+        </a>
+        <div className={`profileMenuWrap${!isProfileClick ? ' hidden' : ''}`}>
+          <div className="speechBubble">
+          </div>
+          <div className="profileMenu">
+            <ul className="profileList bold">
+              {MENU_CATEGORY.map((category, index) => {
+                const { name, pathUrl } = category;
+                return (
+                  <li className="light" key={index}>
+                    <svg viewBox="0 0 32 32">
+                      <path
+                        d={pathUrl}>
+                      </path>
+                    </svg>
+                    <div>
+                      <a href="#!" className="black">{name}</a>
+                    </div>
                   </li>
-                </Link>
-              </ul>
-            </div>
+                )
+              })}
+              <Link to="/loginns" className="black">
+                <li className="logout pointer">
+                  로그아웃
+                  </li>
+              </Link>
+            </ul>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

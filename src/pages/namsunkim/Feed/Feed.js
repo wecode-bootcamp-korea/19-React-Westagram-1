@@ -23,6 +23,22 @@ export default class Feed extends Component {
           feedArr: feedData,
         });
       });
+
+    //백이랑 토큰 주고 받아서 업로드처리하는 코드
+    // fetch('http://10.58.2.138:8000/feed/postfeed', {
+    //   method: "POST",
+    //   headers: {
+    //     'Authorization': localStorage.getItem('token')
+    //   },
+    //   body: JSON.stringify({
+    //     // user: 'namsun@naver.com',
+    //     images: 'https://media.vlpt.us/images/nsunny0908/post/692247c4-168f-46b3-8a3f-a7f6d2574762/%F0%9F%92%BB_Algorithm.png?w=768'
+    //   })
+    // }).then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //   }
+    //   )
   }
 
   render() {

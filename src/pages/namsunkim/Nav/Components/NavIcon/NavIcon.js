@@ -10,22 +10,20 @@ export default class NavIcon extends Component {
 
   render() {
     return (
-      <>
-        <div className="iconWrap">
-          {ICONS.map((pathUrl, index) => {
-            return (
-              <a href="#!" key={index}>
-                <svg className="navIcon" viewBox="0 0 48 48">
-                  <path
-                    d={pathUrl}>
-                  </path>
-                </svg>
-              </a>
-            )
-          })}
-          <NavProfile />
-        </div>
-      </>
+      <div className="iconWrap">
+        {ICONS.map((pathUrl, index) => {
+          return (
+            <a href="#!" key={index}>
+              <svg className="navIcon" viewBox="0 0 48 48">
+                <path
+                  d={pathUrl}>
+                </path>
+              </svg>
+            </a>
+          )
+        })}
+        <NavProfile />
+      </div>
     );
   }
 }

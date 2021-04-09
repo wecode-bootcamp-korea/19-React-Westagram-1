@@ -47,32 +47,30 @@ export default class StoryList extends Component {
     const { storyArr } = this.state;
     const { scroll } = this;
     return (
-      <>
-        <section className="storyList">
-          <div className="scrollBtnWrap">
-            <button className="prevBtn pointer hidden" onClick={() => { scroll("left") }}>
-              <i className="xi-angle-left"></i>
-            </button>
-            <button className="nextBtn pointer" onClick={() => { scroll("right") }}>
-              <i className="xi-angle-right"></i>
-            </button>
-          </div>
-          <ul>
-            {storyArr.map(storyArr => {
-              const { id, userName, imgSrc, isClicked } = storyArr;
-              if (!isClicked) {
-                return (
-                  <Story
-                    key={id}
-                    userName={userName}
-                    imgSrc={imgSrc}
-                  />
-                )
-              }
-            })}
-          </ul>
-        </section>
-      </>
+      <section className="storyList">
+        <div className="scrollBtnWrap">
+          <button className="prevBtn pointer hidden" onClick={() => { scroll("left") }}>
+            <i className="xi-angle-left"></i>
+          </button>
+          <button className="nextBtn pointer" onClick={() => { scroll("right") }}>
+            <i className="xi-angle-right"></i>
+          </button>
+        </div>
+        <ul>
+          {storyArr.map(storyArr => {
+            const { id, userName, imgSrc, isClicked } = storyArr;
+            if (!isClicked) {
+              return (
+                <Story
+                  key={id}
+                  userName={userName}
+                  imgSrc={imgSrc}
+                />
+              )
+            }
+          })}
+        </ul>
+      </section>
     );
   }
 }

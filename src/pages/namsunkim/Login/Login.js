@@ -44,21 +44,24 @@ export default class Login extends Component {
     const { id, password } = this.state;
     const { history } = this.props;
 
-    fetch('http://10.58.4.109:8000/accounts/signin', {
+    fetch('http://10.58.2.138:8000/user/login', {
       method: 'POST',
       body: JSON.stringify({
-        user: id,
+        email: id,
         password: password,
+        // name: '김남선',
+        // phone_number: '01045049209',
       })
-
     })
       .then((res) => res.json())
       .then((data) => {
-        const { message, token, user_email } = data;
+        // console.log(data);
+        const { MESSAGE, access_token, user_email } = data;
 
-        if (message === 'Success!') {
+        if (MESSAGE === 'SUCCESS') {
+          console.log(access_token);
           history.push('/mainns');
-          localStorage.setItem('token', token);
+          localStorage.setItem('token', access_token);
           // localStorage.setItem('userName', user_email);
         } else {
           alert('로그인 실패');
@@ -70,21 +73,19 @@ export default class Login extends Component {
     const { isEnable } = this.state;
     const { changeValue, goToMain } = this;
     return (
-      <>
-        <section className="login">
-          <h1 className="logo">Westagram</h1>
-          <div className="loginWrap">
-            <form onKeyUp={changeValue}>
-              <input className="idInput" type="text" name="id" placeholder="전화번호, 사용자 이름 또는 이메일" />
-              <input className="pwInput" type="password" name="password" placeholder="비밀번호" />
-              <button className={'loginBtn ' + (isEnable ? 'enabledBtn' : 'disabledBtn')}
-                onClick={goToMain}
-                readOnly>로그인</button>
-            </form>
-            <a href="#!" className="findPassword">비밀번호를 잊으셨나요?</a>
-          </div>
-        </section>
-      </>
+      <section className="login">
+        <h1 className="logo">Westagram</h1>
+        <div className="loginWrap">
+          <form onKeyUp={changeValue}>
+            <input className="idInput" type="text" name="id" placeholder="전화번호, 사용자 이름 또는 이메일" />
+            <input className="pwInput" type="password" name="password" placeholder="비밀번호" />
+            <button className={'loginBtn ' + (isEnable ? 'enabledBtn' : 'disabledBtn')}
+              onClick={goToMain}
+              readOnly>로그인</button>
+          </form>
+          <a href="#!" className="findPassword">비밀번호를 잊으셨나요?</a>
+        </div>
+      </section>
     )
   }
 }

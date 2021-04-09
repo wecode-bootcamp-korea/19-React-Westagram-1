@@ -5,18 +5,23 @@ import Feed from '../Feed/Feed';
 import MainRight from '../MainRight/MainRight';
 import './Main.scss';
 
-const userName = localStorage.getItem('userName');
-
 export default class Main extends Component {
 
   constructor() {
     super();
     this.state = {
-      userName
+      userName: ''
     }
   }
 
+  componentDidMount() {
+    this.setState({
+      userName: localStorage.getItem('userName')
+    })
+  }
+
   render() {
+    const { userName } = this.state;
     return (
       <>
         <Nav />
