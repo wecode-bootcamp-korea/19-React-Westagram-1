@@ -11,7 +11,7 @@ class CommentBox extends Component {
 		} = this.props;
 
 		const enableCommentButton = () => {
-			return commentValue ? false : true;
+			return !commentValue;
 		};
 
 		const changeCommentButtonStyle = () => {

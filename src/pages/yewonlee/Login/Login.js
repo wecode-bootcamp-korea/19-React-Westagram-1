@@ -3,10 +3,6 @@ import "./Login.scss";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-	goToMain = () => {
-		this.props.history.push("/mainyw");
-	};
-
 	constructor() {
 		super();
 		this.state = {
@@ -14,6 +10,10 @@ class Login extends Component {
 			pwValue: "",
 		};
 	}
+
+	goToMain = () => {
+		this.props.history.push("/mainyw");
+	};
 
 	clickLogin = (e) => {
 		e.preventDefault();
@@ -45,7 +45,7 @@ class Login extends Component {
 
 	enableLoginButton = () => {
 		const { idValue, pwValue } = this.state;
-		return idValue.includes("@") && pwValue.length >= 5 ? false : true;
+		return idValue.includes("@") && pwValue.length >= 5;
 	};
 
 	changeLoginButtonStyle = () => {

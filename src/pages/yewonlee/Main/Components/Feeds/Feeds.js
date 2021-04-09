@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-import CommentBox from "./CommentBox";
-import Comment from "./Comment";
+import React, {
+	Component,
+} from "react";
+import CommentBox from "../CommentBox/CommentBox";
+import Comment from "../Comment/Comment";
 import "./Feeds.scss";
-import heart from "../../images/heart.png";
-import speechBubble from "../../images/speech-bubble.png";
-import share from "../../images/export.png";
-import bookmark from "../../images/bookmark.png";
+import heart from "../../../images/heart.png";
+import speechBubble from "../../../images/speech-bubble.png";
+import share from "../../../images/export.png";
+import bookmark from "../../../images/bookmark.png";
 
 class Feeds extends Component {
 	constructor() {
@@ -23,13 +25,16 @@ class Feeds extends Component {
 	};
 
 	componentDidMount() {
-		fetch("http://localhost:3000/data/commentDataYW.json", {
-			method: "GET",
-		})
+		fetch(
+			"http://localhost:3002/data/commentDataYW.json",
+			{
+				method: "GET",
+			}
+		)
 			.then((res) => res.json())
-			.then((data) => {
+			.then((commentData) => {
 				this.setState({
-					commentLine: data,
+					commentLine: commentData,
 				});
 			});
 	}
@@ -38,7 +43,9 @@ class Feeds extends Component {
 		const { commentLine } = this.state;
 		this.setState({
 			commentLine: commentLine.concat({
-				commentId: this.state.commentLine.length + 1,
+				commentId:
+					this.state.commentLine
+						.length + 1,
 				accountName: "jessywlee",
 				text: this.state.commentValue,
 				commentIcon: "initial",
@@ -54,7 +61,10 @@ class Feeds extends Component {
 	};
 
 	enterCommentLine = (e) => {
-		if (this.state.commentValue !== "" && e.charCode === 13) {
+		if (
+			this.state.commentValue !== "" &&
+			e.charCode === 13
+		) {
 			this.setCommentLine();
 		}
 	};
@@ -62,12 +72,17 @@ class Feeds extends Component {
 	clickLikeIcon = (commentId) => {
 		const { commentLine } = this.state;
 		this.setState({
-			commentLine: commentLine.map((comment) => {
-				if (comment.commentId === commentId) {
-					comment.likeIcon = !comment.likeIcon;
+			commentLine: commentLine.map(
+				(comment) => {
+					if (
+						comment.commentId ===
+						commentId
+					) {
+						comment.likeIcon = !comment.likeIcon;
+					}
+					return comment;
 				}
-				return comment;
-			}),
+			),
 		});
 	};
 
@@ -75,13 +90,18 @@ class Feeds extends Component {
 		const { commentLine } = this.state;
 		this.setState({
 			commentLine: commentLine.filter(
-				(comment) => comment.commentId !== commentId
+				(comment) =>
+					comment.commentId !==
+					commentId
 			),
 		});
 	};
 
 	render() {
-		const { commentLine, commentValue } = this.state;
+		const {
+			commentLine,
+			commentValue,
+		} = this.state;
 		const {
 			clickLikeIcon,
 			clickDeleteIcon,
@@ -96,7 +116,9 @@ class Feeds extends Component {
 					<div className="feeds">
 						{feeds.map((val) => {
 							return (
-								<div key={val.feedId} className="feed">
+								<div
+									key={val.feedId}
+									className="feed">
 									<div className="feeds-header">
 										<div className="profile-info-description">
 											<img
@@ -105,7 +127,9 @@ class Feeds extends Component {
 												src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/59551160_331483447527536_8846521478770851840_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=FX9Oo9XB-LwAX_Y5yNc&edm=ABfd0MgAAAAA&ccb=7-4&oh=69e6af1321eff6a6344f38352bea3f58&oe=6091ECB6&_nc_sid=7bff83"
 											/>
 											<div className="profile-info-texts">
-												<span className="user-id">jessywlee</span>
+												<span className="user-id">
+													jessywlee
+												</span>
 											</div>
 										</div>
 										<i className="fas fa-ellipsis-h"></i>
@@ -113,7 +137,9 @@ class Feeds extends Component {
 									<article>
 										<img
 											className="article-img"
-											src={val.feedPicUrl}
+											src={
+												val.feedPicUrl
+											}
 											alt="by wecode"
 										/>
 
@@ -126,7 +152,9 @@ class Feeds extends Component {
 											<img
 												alt="comment icon"
 												className="article-icon"
-												src={speechBubble}
+												src={
+													speechBubble
+												}
 											/>
 											<img
 												alt="share icon"
@@ -142,28 +170,59 @@ class Feeds extends Component {
 										<div className="article-contents">
 											<div className="number-of-likes">
 												<span>
-													<span id="who-liked">{val.accountWhoLiked}</span>님
-													<span id="others">{val.numOfAccountsLiked}</span>이
-													좋아합니다
+													<span id="who-liked">
+														{
+															val.accountWhoLiked
+														}
+													</span>
+													님
+													<span id="others">
+														{
+															val.numOfAccountsLiked
+														}
+													</span>
+													이 좋아합니다
 												</span>
 											</div>
 											<div className="caption">
-												<span>{val.caption}</span>
-												<button id="caption-more">더 보기</button>
+												<span>
+													{val.caption}
+												</span>
+												<button id="caption-more">
+													더 보기
+												</button>
 											</div>
 											<Comment
-												commentLine={commentLine}
-												commentValue={commentValue}
-												clickLikeIcon={clickLikeIcon}
-												clickDeleteIcon={clickDeleteIcon}
+												commentLine={
+													commentLine
+												}
+												commentValue={
+													commentValue
+												}
+												clickLikeIcon={
+													clickLikeIcon
+												}
+												clickDeleteIcon={
+													clickDeleteIcon
+												}
 											/>
-											<span id="time">{val.timePosted}</span>
+											<span id="time">
+												{val.timePosted}
+											</span>
 										</div>
 										<CommentBox
-											enterCommentLine={enterCommentLine}
-											commentValue={commentValue}
-											handleCommentValue={handleCommentValue}
-											submitCommentLine={submitCommentLine}
+											enterCommentLine={
+												enterCommentLine
+											}
+											commentValue={
+												commentValue
+											}
+											handleCommentValue={
+												handleCommentValue
+											}
+											submitCommentLine={
+												submitCommentLine
+											}
 										/>
 									</article>
 								</div>

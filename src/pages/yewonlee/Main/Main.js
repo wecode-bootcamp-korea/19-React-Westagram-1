@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import Header from "./Components/Header";
-import Feeds from "./Components/Feeds";
+import React, {
+	Component,
+} from "react";
+import Header from "./Components/Header/Header";
+import Feeds from "./Components/Feeds/Feeds";
 import "./Main.scss";
 
 class Main extends Component {
@@ -12,9 +14,12 @@ class Main extends Component {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:3000/data/feedsDataYW.json", {
-			method: "GET",
-		})
+		fetch(
+			"http://localhost:3002/data/feedsDataYW.json",
+			{
+				method: "GET",
+			}
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				this.setState({
@@ -27,9 +32,11 @@ class Main extends Component {
 		return (
 			<>
 				<div className="Main">
-					<main className="main-middle-right">
+					<main className="main-feeds-aside">
 						<Header />
-						<Feeds feeds={this.state.feeds} />
+						<Feeds
+							feeds={this.state.feeds}
+						/>
 						<div className="main-right-container">
 							<div className="main-right">
 								<div className="profile-info-description">
@@ -39,15 +46,23 @@ class Main extends Component {
 										src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/59551160_331483447527536_8846521478770851840_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=FX9Oo9XB-LwAX_Y5yNc&edm=ABfd0MgAAAAA&ccb=7-4&oh=69e6af1321eff6a6344f38352bea3f58&oe=6091ECB6&_nc_sid=7bff83"
 									/>
 									<div className="profile-info-texts">
-										<span className="user-id">jessywlee</span>
-										<span className="user-description">jessica yw lee</span>
+										<span className="user-id">
+											jessywlee
+										</span>
+										<span className="user-description">
+											jessica yw lee
+										</span>
 									</div>
 								</div>
 								<div className="stories-follow-suggestions">
 									<div className="stories-suggestions">
 										<header className="stories-title">
-											<span>스토리</span>
-											<span>모두 보기</span>
+											<span>
+												스토리
+											</span>
+											<span>
+												모두 보기
+											</span>
 										</header>
 										<ul className="profile-list">
 											<li className="profile-info-description">
@@ -59,8 +74,12 @@ class Main extends Component {
 													/>
 												</div>
 												<div className="profile-info-texts">
-													<span className="user-id">junghyun0515</span>
-													<span className="user-description">16분 전</span>
+													<span className="user-id">
+														junghyun0515
+													</span>
+													<span className="user-description">
+														16분 전
+													</span>
 												</div>
 											</li>
 											<li className="profile-info-description">
@@ -72,8 +91,12 @@ class Main extends Component {
 													/>
 												</div>
 												<div className="profile-info-texts">
-													<span className="user-id">tennistv</span>
-													<span className="user-description">3시간 전</span>
+													<span className="user-id">
+														tennistv
+													</span>
+													<span className="user-description">
+														3시간 전
+													</span>
 												</div>
 											</li>
 											<li className="profile-info-description">
@@ -85,8 +108,12 @@ class Main extends Component {
 													/>
 												</div>
 												<div className="profile-info-texts">
-													<span className="user-id">domithiemteam</span>
-													<span className="user-description">20시간 전</span>
+													<span className="user-id">
+														domithiemteam
+													</span>
+													<span className="user-description">
+														20시간 전
+													</span>
 												</div>
 											</li>
 											<li className="profile-info-description">
@@ -98,16 +125,25 @@ class Main extends Component {
 													/>
 												</div>
 												<div className="profile-info-texts">
-													<span className="user-id">kygomusic</span>
-													<span className="user-description">21시간 전</span>
+													<span className="user-id">
+														kygomusic
+													</span>
+													<span className="user-description">
+														21시간 전
+													</span>
 												</div>
 											</li>
 										</ul>
 									</div>
 									<div className="follow-suggestions">
 										<header className="suggestions-title">
-											<span>회원님을 위한 추천</span>
-											<span>모두 보기</span>
+											<span>
+												회원님을 위한
+												추천
+											</span>
+											<span>
+												모두 보기
+											</span>
 										</header>
 										<ul className="profile-list">
 											<li className="profile-info-description">
@@ -117,12 +153,18 @@ class Main extends Component {
 													src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/161599129_1801795143336601_7346804126673758537_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=pA7bGfbpka4AX966tZg&ccb=7-4&oh=43a21e58ee1537e27777fa493cbdcb78&oe=60840137&_nc_sid=acd11b"
 												/>
 												<div className="profile-info-texts">
-													<span className="user-id">pieces.kr</span>
+													<span className="user-id">
+														pieces.kr
+													</span>
 													<span className="user-description">
-														swoon님 외 1명이 팔로우합니다
+														swoon님 외
+														1명이
+														팔로우합니다
 													</span>
 												</div>
-												<button className="follow-button">팔로우</button>
+												<button className="follow-button">
+													팔로우
+												</button>
 											</li>
 											<li className="profile-info-description">
 												<img
@@ -131,12 +173,18 @@ class Main extends Component {
 													src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/159116618_4319753811374779_1929304625812395884_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=YImgxB83NcYAX-FnHbL&ccb=7-4&oh=e9ac1b4a55ca72c4eb683d3828faef6e&oe=6082C7A8&_nc_sid=acd11b"
 												/>
 												<div className="profile-info-texts">
-													<span className="user-id">devaine.c</span>
+													<span className="user-id">
+														devaine.c
+													</span>
 													<span className="user-description">
-														canon.mj님 외 5명이 팔로우합니다
+														canon.mj님
+														외 5명이
+														팔로우합니다
 													</span>
 												</div>
-												<button className="follow-button">팔로우</button>
+												<button className="follow-button">
+													팔로우
+												</button>
 											</li>
 											<li className="profile-info-description">
 												<img
@@ -145,12 +193,18 @@ class Main extends Component {
 													src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s150x150/118570862_2093060344159002_8700948584721123822_n.jpg?tp=1&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=QjSXptR-tboAX-ztA3K&ccb=7-4&oh=480e9b9807715c0786628e1c174f4973&oe=608590A2&_nc_sid=7bff83"
 												/>
 												<div className="profile-info-texts">
-													<span className="user-id">domithiem</span>
+													<span className="user-id">
+														domithiem
+													</span>
 													<span className="user-description">
-														tennistv님 외 12명이 팔로우합니다
+														tennistv님
+														외 12명이
+														팔로우합니다
 													</span>
 												</div>
-												<button className="follow-button">팔로우</button>
+												<button className="follow-button">
+													팔로우
+												</button>
 											</li>
 										</ul>
 									</div>
@@ -159,51 +213,80 @@ class Main extends Component {
 								<nav id="footer">
 									<ul>
 										<li>
-											<a href="https://www.instagram.com/">About</a>
+											<a href="https://www.instagram.com/">
+												About
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Help</a>
+											<a href="https://www.instagram.com/">
+												Help
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Press</a>
+											<a href="https://www.instagram.com/">
+												Press
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">API</a>
+											<a href="https://www.instagram.com/">
+												API
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Jobs</a>
+											<a href="https://www.instagram.com/">
+												Jobs
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Privacy</a>
+											<a href="https://www.instagram.com/">
+												Privacy
+											</a>
 										</li>
 
 										<li>
-											<a href="https://www.instagram.com/">Terms</a>
+											<a href="https://www.instagram.com/">
+												Terms
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Locations</a>
+											<a href="https://www.instagram.com/">
+												Locations
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Top Accounts</a>
+											<a href="https://www.instagram.com/">
+												Top Accounts
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Hashtags</a>
+											<a href="https://www.instagram.com/">
+												Hashtags
+											</a>
 										</li>
 										<li>
-											<a href="https://www.instagram.com/">Language</a>
+											<a href="https://www.instagram.com/">
+												Language
+											</a>
 										</li>
 									</ul>
 									<div>
 										Icons made by{" "}
-										<a href="https://www.flaticon.com/" title="Those Icons">
+										<a
+											href="https://www.flaticon.com/"
+											title="Those Icons">
 											Those Icons
 										</a>{" "}
 										from{" "}
-										<a href="https://www.flaticon.com/" title="Flaticon">
+										<a
+											href="https://www.flaticon.com/"
+											title="Flaticon">
 											www.flaticon.com
 										</a>
 									</div>
-									<span>© 2021 INSTAGRAM FROM FACEBOOK</span>
+									<span>
+										© 2021 INSTAGRAM
+										FROM FACEBOOK
+									</span>
 								</nav>
 							</div>
 						</div>
