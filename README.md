@@ -41,5 +41,5 @@
 - 김남선 : https://velog.io/@nsunny0908
 - 김도희 : https://velog.io/@_dodo_hee
 - 이명진 : https://velog.io/@ljo094822
-- 이예원 : jessywlee.medium.com
+- 이예원 : https://jessywlee.medium.com
 - 황재원 : https://velog.io/@jaewon97

@@ -18,9 +18,9 @@ export default class CommentList extends Component {
     const { api } = prefix;
     fetch(`${api}/commentData.json`)
       .then(res => res.json())
-      .then(data => {
+      .then(commentData => {
         this.setState({
-          commentArr: data,
+          commentArr: commentData,
         });
       });
   }
@@ -42,7 +42,7 @@ export default class CommentList extends Component {
   };
 
   validation = () => {
-    const { comment, isEnable } = this.state;
+    const { comment } = this.state;
     this.setState(
       {
         isEnable: comment.trim()
@@ -53,12 +53,13 @@ export default class CommentList extends Component {
   addComment = (e) => {
     const { comment, commentArr } = this.state;
     const { userName } = this.props;
+    const { name } = defaultUser;
 
     if (comment) {
       this.setState({
         commentArr: [...commentArr, {
           id: commentArr.length + 1,
-          userName: userName ? userName : defaultUser.userName,
+          userName: userName === 'undefined' ? name : userName,
           content: comment,
           isLiked: false,
         }],
@@ -71,9 +72,8 @@ export default class CommentList extends Component {
   likeComment = (id) => {
     const { commentArr } = this.state;
 
-    this.setState(
-      ({ prevState }) =>
-        commentArr[id - 1].isLiked = (!commentArr[id - 1].isLiked)
+    this.setState(() =>
+      commentArr[id - 1].isLiked = (!commentArr[id - 1].isLiked)
     );
   }
 
@@ -95,12 +95,12 @@ export default class CommentList extends Component {
     return (
       <>
         <ul className="commentList">
-          {commentArr.map(commentArr => {
-            const { id } = commentArr;
+          {commentArr.map(comment => {
+            const { id } = comment;
             return (
               <Comment
                 key={id}
-                commentArr={commentArr}
+                commentArr={comment}
                 likeComment={likeComment}
                 deleteComment={deleteComment}
               />

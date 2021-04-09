@@ -24,47 +24,47 @@ export default class Login extends Component {
   };
 
   validation = () => {
-    const { id, password, isEnable } = this.state;
+    const { id, password } = this.state;
     this.setState(
       {
         isEnable: (id && id.includes('@')) && password.length >= 5
-      }
+      },
     )
   }
 
   goToMain = (e) => {
     e.preventDefault();
-    const { id, password, isEnable } = this.state;
+    const { id, password } = this.state;
     const { history } = this.props;
     (id && password) && history.push('/mainns');
     // this.login();
   }
 
-  // login = () => {
-  //   const { id, password } = this.state;
-  //   const { history } = this.props;
+  login = () => {
+    const { id, password } = this.state;
+    const { history } = this.props;
 
-  //   fetch('http://10.58.4.176:8000/users/login', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: id,
-  //       password: password
-  //     })
+    fetch('http://10.58.4.109:8000/accounts/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        user: id,
+        password: password,
+      })
 
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const { message, token, user_email } = data;
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const { message, token, user_email } = data;
 
-  //       if (message === 'SUCCESS') {
-  //         history.push('/mainns');
-  //         localStorage.setItem('token', token);
-  //         localStorage.setItem('userName', user_email);
-  //       } else {
-  //         alert('로그인 실패');
-  //       }
-  //     })
-  // }
+        if (message === 'Success!') {
+          history.push('/mainns');
+          localStorage.setItem('token', token);
+          // localStorage.setItem('userName', user_email);
+        } else {
+          alert('로그인 실패');
+        }
+      })
+  }
 
   render() {
     const { isEnable } = this.state;

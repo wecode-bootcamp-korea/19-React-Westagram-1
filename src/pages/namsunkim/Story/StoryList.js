@@ -15,9 +15,9 @@ export default class StoryList extends Component {
     const { api } = prefix;
     fetch(`${api}/storyData.json`)
       .then(res => res.json())
-      .then(data => {
+      .then(storyData => {
         this.setState({
-          storyArr: data,
+          storyArr: storyData,
         });
       });
   }

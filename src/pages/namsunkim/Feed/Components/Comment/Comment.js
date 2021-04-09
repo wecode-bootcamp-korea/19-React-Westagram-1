@@ -8,16 +8,14 @@ export default class Comment extends Component {
     const { id, isLiked, content, userName } = commentArr;
 
     return (
-      <>
-        <li>
-          <a href="#!" className="bold black">{userName}</a>
-          <span>{content}</span>
-          <i className="xi-close-min deleteComment pointer"
-            onClick={() => deleteComment(id)}></i>
-          <i className={'xi-heart' + (!isLiked ? '-o' : ' likeComment') + ' likeHeart pointer'}
-            onClick={() => likeComment(id)}></i>
-        </li>
-      </>
+      <li>
+        <a href="#!" className="bold black">{userName}</a>
+        <span>{content}</span>
+        <i className="xi-close-min deleteComment pointer"
+          onClick={() => deleteComment(id)}></i>
+        <i className={'xi-heart' + (isLiked ? ' likeComment' : '-o') + ' likeHeart pointer'}
+          onClick={() => likeComment(id)}></i>
+      </li>
     );
   }
 }

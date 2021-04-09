@@ -18,21 +18,21 @@ export default class Feed extends Component {
 
     fetch(`${api}/feedData.json`)
       .then(res => res.json())
-      .then(data => {
+      .then(feedData => {
         this.setState({
-          feedArr: data,
+          feedArr: feedData,
         });
       });
   }
 
   render() {
     const { feedArr } = this.state;
-    const { feed, profile } = prefix;
+    const { feeds, profile } = prefix;
     return (
       <>
         {
-          feedArr.map(feedArr => {
-            const { id, userName, profileImg, feedImg, content, likeList, commentArr } = feedArr;
+          feedArr.map(feed => {
+            const { id, userName, profileImg, feedImg, content, likeList, commentArr } = feed;
             return (
               <article className="feed" key={id}>
                 <div className="feedNav">
@@ -44,7 +44,7 @@ export default class Feed extends Component {
                   </div>
                 </div>
                 <img alt={`${userName}님의 feedImage`} className="feedImg"
-                  src={feed + feedImg} />
+                  src={feeds + feedImg} />
                 <div className="feedContent">
                   <FeedIcon />
                   <section className="likeList">

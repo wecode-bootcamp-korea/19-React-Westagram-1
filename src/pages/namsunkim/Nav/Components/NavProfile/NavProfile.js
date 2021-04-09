@@ -23,7 +23,6 @@ export default class NavProfile extends Component {
   }
 
   profileClick = () => {
-    const { isProfileClick } = this.state;
     this.setState(current => (
       {
         isProfileClick: !current.isProfileClick

@@ -16,9 +16,9 @@ export default class MainRight extends Component {
     const { api } = prefix;
     fetch(`${api}/recommendAccountData.json`)
       .then(res => res.json())
-      .then(data => {
+      .then(recommendData => {
         this.setState({
-          recommendAccount: data,
+          recommendAccount: recommendData,
         });
       });
   }
@@ -27,15 +27,16 @@ export default class MainRight extends Component {
     const { recommendAccount } = this.state;
     const { userName } = this.props;
     const { profile } = prefix;
+    const { name } = defaultUser;
 
     return (
       <>
-        <aside className="mainRight">
+        <aside className="sideBar">
           <div className="account">
             <img src={profile + defaultUser.profile}
               alt={`${userName}님의 profile`} />
             <div className="idWrap bold">
-              <span>{userName ? userName : defaultUser.userName}</span>
+              <span>{userName === 'undefined' ? name : userName}</span>
               <a href="#!">전환</a>
             </div>
           </div>
@@ -44,8 +45,8 @@ export default class MainRight extends Component {
               <span>회원님을 위한 추천</span>
               <a href="#!" className="black">모두 보기</a>
             </span>
-            {recommendAccount.map(recommendAccount => {
-              const { id, userName, imgSrc } = recommendAccount;
+            {recommendAccount.map(account => {
+              const { id, userName, imgSrc } = account;
               return (
                 <RecommendAccount
                   key={id}
