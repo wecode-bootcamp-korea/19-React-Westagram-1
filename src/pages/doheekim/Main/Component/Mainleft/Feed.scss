@@ -1,0 +1,202 @@
+.feeds {
+    width:100%;
+    height:auto;
+    border:1px solid #ddd;
+    background-color:#fff;
+    margin-top:30px;
+
+    article {
+        width:100%;
+        height:auto;
+
+        .feeds-header {
+            width:100%;
+            height:55px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            .feeds-idwrap {
+                width:100%;
+                height:inherit;
+        
+                ul{
+                    width:22%;
+                    height:inherit;
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+        
+                    .mini-profile {
+                        margin-left:20px;
+        
+                        img{
+                            width:30px;
+                            height:30px;
+                            border-radius: 50%;
+                        }
+                    }
+        
+                    .mini-id {
+                        font-weight: 600;
+                        font-size:16px;
+                        margin-left:20px;
+                        color:#000;
+                    }
+                }
+            }
+        
+            .more {
+                margin-right:20px;
+                font-size:15px;
+                cursor:pointer;
+            }
+        
+        }
+
+        img {
+            width:100%;
+            height:auto;
+        }
+
+        .feeds-bottom {
+            width:100%;
+            height:auto;
+        
+            .feeds-bottom-flex{
+                width:95%;
+                height:45px;
+                margin:auto;
+                display:flex;
+                justify-content:space-between;
+                align-items: center;
+        
+                .feeds-icon {
+        
+                    .feeds-iconbox{
+                        width:100%;
+                        height:40px;
+                        display:flex;
+                        justify-content:space-between;
+                        align-items: center;
+        
+                        li {
+                            margin-left:20px;
+                            &:first-child{
+                                margin-left:0;
+                            }
+        
+                            button {
+                                background-color:#fff;
+                                border:none;
+                
+                                svg {
+                                    font-size:22px;
+                                }
+                            }
+                        }   
+                    }
+                }
+        
+                .bookmark {
+                    button {
+                        background-color:#fff;
+                        border:none;
+        
+                        svg {
+                            font-size:22px;
+                        }
+                    }
+                }
+            }
+        
+            .heart-count {
+                width:94%;
+                margin:auto;
+                height:30px;
+                margin-bottom:10px;
+        
+                img {
+                    width:25px;
+                    height:25px;
+                    border-radius:50%;
+                    float:left;
+                }
+        
+                p {
+                    line-height:25px;
+                    margin-left:30px;
+        
+                    span {
+                        font-weight:700;
+                    }
+                }
+            }
+        
+            .content-write {
+                width:94%;
+                margin:auto;
+                height:auto;
+        
+                li {
+                    margin-bottom:10px;
+        
+                    .chat-id {
+                        font-weight:700;
+                        margin-right:10px;
+                    }
+                }
+            }
+        
+            .time {
+                font-size:12px;
+                margin:15px 18px;
+                color:#888;
+            }
+        }
+
+        .comment-write {
+            width:94%;
+            height:auto;
+            margin:auto;
+            padding:5px 0;
+            display:flex;
+            align-items: center;
+            border-top:1px solid #ddd;
+        
+            li{
+                float:left;
+                margin-right:20px;
+                &:nth-child(2){
+                    width:80%;
+                }
+                &:nth-child(3){
+                    margin-right:0;
+                }
+        
+                svg {
+                    font-size:30px;
+                }
+        
+                input {
+                    width:100%;
+                    height: 40px;
+                    border:none;
+                    font-size:20px;
+                    outline:none;
+                    &::placeholder{
+                        font-size:14px;
+                    }
+                }
+        
+                .submit {
+                    background-color:#fff;
+                    border:none;
+                    font-size:16px;
+                    color:#0094f64b;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
