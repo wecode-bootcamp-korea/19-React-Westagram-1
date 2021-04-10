@@ -1,0 +1,147 @@
+@import "../Main/index.scss";
+
+.Main {
+	@extend %flex-space-between-center;
+	flex-direction: column;
+	position: relative;
+	background-color: #fafafa;
+
+	button {
+		cursor: pointer;
+	}
+
+	.main-feeds-aside {
+		padding: 30px 60px 0px 60px;
+		margin-top: 60px;
+		display: flex;
+		justify-content: space-around;
+
+		/*class shared w. main-middle and main-right*/
+		.profile-info-description {
+			display: flex;
+			position: relative;
+			align-items: center;
+			.profile-info-img {
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+			}
+			.profile-info-texts {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin-left: 10px;
+				font-size: $main-font-size;
+				.user-id {
+					font-weight: bold;
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+
+	/*main-right*/
+	.main-right-container {
+		display: flex;
+		justify-content: flex-end;
+		width: 420px;
+
+		.main-right {
+			position: fixed;
+			width: 340px;
+
+			.profile-info-img-big {
+				width: 55px;
+				height: 55px;
+				border-radius: 50%;
+			}
+
+			.profile-list {
+				padding: 0;
+				list-style-type: none;
+			}
+
+			.profile-list {
+				li {
+					width: 100%;
+					margin-top: 15px;
+					padding: 0;
+				}
+			}
+
+			/*new stories border*/
+
+			.profile-info-img-wrap {
+				position: flex;
+				padding: 2px;
+				width: 43px;
+				height: 43px;
+				border-radius: 50%;
+				background: linear-gradient(45deg, #f99b4b, #da2f77);
+			}
+
+			.stories-profile {
+				box-sizing: initial;
+				border: 2px solid white;
+			}
+
+			/* stories & follow suggestions */
+			.stories-suggestions,
+			.follow-suggestions {
+				margin-top: 25px;
+				padding: 10px;
+				border: $main-border;
+				background-color: white;
+			}
+
+			.stories-title,
+			.suggestions-title {
+				display: flex;
+				justify-content: space-between;
+				font-size: $main-font-size;
+				font-weight: bold;
+				span:first-child {
+					color: $gray-text-color;
+				}
+			}
+
+			.follow-button {
+				position: absolute;
+				right: 0;
+				background-color: white;
+				color: $main-button-color;
+				border-style: none;
+			}
+
+			.user-description {
+				color: $gray-text-color;
+			}
+
+			#footer {
+				margin-top: 15px;
+				font-size: 10px;
+
+				a,
+				div,
+				span {
+					text-decoration: none;
+					color: #c7c7c7;
+				}
+
+				ul {
+					display: flex;
+					flex-flow: wrap;
+					padding: 0;
+					margin-bottom: 10px;
+					list-style-type: none;
+				}
+
+				li + li:before {
+					content: "•";
+					padding: 0px 2px;
+					color: $gray-text-color;
+				}
+			}
+		}
+	}
+}
