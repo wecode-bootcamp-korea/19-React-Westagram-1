@@ -9,27 +9,17 @@ class MainLeft extends React.Component {
     feedList: [],
   };
 
-  // componentDidMount() {
-  //   fetch("http://10.58.2.229:8000/posts/post", {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: localStorage.getItem("Token"),
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  //   //     });
-  //   // .then((data) => {
-  //   //   this.setState({
-  //   //     feedList: data,
-  //   //     console.log(data)
-  //   //   });
-  //   // });
-  // }
+  componentDidMount() {
+    fetch("/data/FeedData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          feedList: data,
+        });
+      });
+  }
 
   aaa = () => {
     // console.log("aaa 함수호출");
