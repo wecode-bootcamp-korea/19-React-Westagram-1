@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "./Components/Header/Header";
 import Feeds from "./Components/Feeds/Feeds";
 import "./Main.scss";
-
 class Main extends Component {
 	constructor() {
 		super();

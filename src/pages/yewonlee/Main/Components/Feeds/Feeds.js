@@ -6,7 +6,6 @@ import heart from "../../../images/heart.png";
 import speechBubble from "../../../images/speech-bubble.png";
 import share from "../../../images/export.png";
 import bookmark from "../../../images/bookmark.png";
-
 class Feeds extends Component {
 	constructor() {
 		super();

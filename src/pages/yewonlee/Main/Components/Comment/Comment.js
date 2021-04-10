@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Comment.scss";
-
 class Comment extends Component {
 	render() {
 		const { commentLine, clickLikeIcon, clickDeleteIcon } = this.props;
