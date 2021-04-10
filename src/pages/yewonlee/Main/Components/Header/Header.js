@@ -15,18 +15,18 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener("click", this.handleClickOutside);
+		document.addEventListener("click", this.clickOutside);
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener("click", this.handleClickOutside);
+		document.removeEventListener("click", this.clickOutside);
 	}
 
 	handleSearchInput = (e) => {
 		this.setState({
 			searchInput: e.target.value,
-		})
-	}
+		});
+	};
 
 	clickOutside = (e) => {
 		if (!this.searchRef.current.contains(e.target)) {
@@ -34,12 +34,12 @@ class Header extends Component {
 				searchIcon: false,
 				searchPlaceholder: false,
 				cancelIcon: false,
-			})
+			});
 		}
-	}
+	};
 
 	clickSearch = () => {
-		const { searchIcon, searchPlaceholder, cancelIcon} = this.state;
+		const { searchIcon, searchPlaceholder, cancelIcon } = this.state;
 		this.setState({
 			searchIcon: !searchIcon,
 			searchPlaceholder: !searchPlaceholder,
@@ -48,12 +48,10 @@ class Header extends Component {
 	};
 
 	clickCancel = () => {
-		
 		this.setState({
-			searchInput: ""
-		})
-
-	}
+			searchInput: "",
+		});
+	};
 
 	render() {
 		const { searchIcon, searchPlaceholder, cancelIcon } = this.state;
@@ -71,7 +69,9 @@ class Header extends Component {
 							onChange={this.handleSearchInput}
 							tabIndex="0"
 							onClick={this.clickSearch}
-							id={searchPlaceholder ? "search-placeholder-moved" : "search-input"}
+							id={
+								searchPlaceholder ? "search-placeholder-moved" : "search-input"
+							}
 							type="text"
 							placeholder="검색"
 							ref={this.searchRef}
@@ -79,9 +79,10 @@ class Header extends Component {
 						<i
 							id={searchIcon ? "search-icon-moved" : "search-icon"}
 							className="fas fa-search fa-sm"></i>
-						<i id={cancelIcon ? "cancel-icon-enabled" : "cancel-icon"} 
+						<i
+							id={cancelIcon ? "cancel-icon-enabled" : "cancel-icon"}
 							onClick={this.clickCancel}
-						className="fas fa-times-circle fa-sm"></i>
+							className="fas fa-times-circle fa-sm"></i>
 					</div>
 					<div className="header-right">
 						<i className="far fa-compass fa-2x"></i>
