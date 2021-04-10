@@ -26,7 +26,25 @@ class Feed extends React.Component {
   };
 
   addComment = () => {
+    console.log("함수를 실행된거임");
     const { comments, newComment } = this.state;
+    const token = localStorage.getItem("Token");
+    fetch("http://10.58.2.229:8000/comment", {
+      method: "POST",
+      headers: {
+        Authorization: token, //Authorization : 인증토큰을 서버로 보낼때
+      },
+      body: JSON.stringify({
+        newComment: newComment,
+        //경재님이 말해줄 이름
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ comments: res.message });
+        this.setState({ newComment: "" });
+      });
+
     this.setState({
       comments: [
         ...comments,

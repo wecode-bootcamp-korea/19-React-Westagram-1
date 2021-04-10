@@ -11,8 +11,19 @@ class Login extends Component {
     };
   }
 
+  // localStorage.clear();
+  // localStorage.removeItem('key');
+  // localStorage.getItem('key');
+
+  //저장
+
+  //조회
+  // let getValue = localStorage.getItem('Token');
+  // console.log(getValue);
+  // localStorage
+
   goToMain = () => {
-    fetch("http://10.58.3.73:8000/users/login", {
+    fetch("http://10.58.2.229:8000/users/login", {
       method: "POST",
       body: JSON.stringify({
         account: this.state.id,
@@ -25,7 +36,8 @@ class Login extends Component {
       .then((result) => {
         console.log(result);
         if (result.MESSAGE === "SUCCESS") {
-          alert("로그인성공");
+          localStorage.setItem("Token", result.Token);
+          alert("로그인성공!");
           this.props.history.push("/maindh");
         } else {
           alert("🤬IT'S YOUR FAULT!🤬");
